@@ -1,25 +1,81 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-VariableFont_wght.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpy-Kh-5fR">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="(O)" translatesAutoresizingMaskIntoConstraints="NO" id="9lr-gU-0o6">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="4zb-ZL-XNG">
+                                        <rect key="frame" x="146.66666666666666" y="308" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="3uF-UJ-1id"/>
+                                            <constraint firstAttribute="width" constant="100" id="w8d-it-rBY"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QuizUp Battle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.94999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="kDY-Y2-Z65">
+                                        <rect key="frame" x="134.66666666666666" y="424" width="123.99999999999997" height="98.333333333333371"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="124" id="nET-ep-mdH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="36"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.41568627450980389" green="0.3529411764705882" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="4zb-ZL-XNG" firstAttribute="centerX" secondItem="gpy-Kh-5fR" secondAttribute="centerX" id="0Ca-5r-kF8"/>
+                                    <constraint firstItem="4zb-ZL-XNG" firstAttribute="top" secondItem="gpy-Kh-5fR" secondAttribute="top" constant="308" id="7rc-jm-cLm"/>
+                                    <constraint firstItem="kDY-Y2-Z65" firstAttribute="centerX" secondItem="gpy-Kh-5fR" secondAttribute="centerX" id="8WA-cV-a60"/>
+                                    <constraint firstItem="kDY-Y2-Z65" firstAttribute="top" secondItem="4zb-ZL-XNG" secondAttribute="bottom" constant="16" id="WoV-z9-95j"/>
+                                    <constraint firstAttribute="bottom" secondItem="9lr-gU-0o6" secondAttribute="bottom" id="Yc2-Pi-P59"/>
+                                    <constraint firstAttribute="trailing" secondItem="9lr-gU-0o6" secondAttribute="trailing" id="kYl-yc-6F1"/>
+                                    <constraint firstItem="9lr-gU-0o6" firstAttribute="leading" secondItem="gpy-Kh-5fR" secondAttribute="leading" id="oWn-Gy-Jv8"/>
+                                    <constraint firstItem="9lr-gU-0o6" firstAttribute="top" secondItem="gpy-Kh-5fR" secondAttribute="top" id="tDe-l3-zau"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gpy-Kh-5fR" secondAttribute="trailing" id="Udk-Zl-1p4"/>
+                            <constraint firstItem="gpy-Kh-5fR" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Ycq-NL-c7R"/>
+                            <constraint firstItem="gpy-Kh-5fR" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="j3O-6g-KJZ"/>
+                            <constraint firstAttribute="bottom" secondItem="gpy-Kh-5fR" secondAttribute="bottom" id="rvN-U2-Lyp"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.671755725190835" y="374.64788732394368"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="(O)" width="1125" height="2436"/>
+        <image name="Logo" width="300" height="300"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
