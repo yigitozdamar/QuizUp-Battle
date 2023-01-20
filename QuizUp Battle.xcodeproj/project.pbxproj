@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7F70ECEB297AAB140044984C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70ECEA297AAB140044984C /* AppDelegate.swift */; };
 		7F70ECED297AAB140044984C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70ECEC297AAB140044984C /* SceneDelegate.swift */; };
-		7F70ECEF297AAB140044984C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70ECEE297AAB140044984C /* ViewController.swift */; };
+		7F70ECEF297AAB140044984C /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70ECEE297AAB140044984C /* OnboardingViewController.swift */; };
 		7F70ECF2297AAB140044984C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F70ECF0297AAB140044984C /* Main.storyboard */; };
 		7F70ECF4297AAB160044984C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F70ECF3297AAB160044984C /* Assets.xcassets */; };
 		7F70ECF7297AAB160044984C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F70ECF5297AAB160044984C /* LaunchScreen.storyboard */; };
@@ -33,13 +33,16 @@
 		7F70ED25297AB27B0044984C /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F70ED11297AB27B0044984C /* OFL.txt */; };
 		7F70ED26297AB27B0044984C /* Nunito-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F70ED12297AB27B0044984C /* Nunito-Italic-VariableFont_wght.ttf */; };
 		7F70ED27297AB27B0044984C /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F70ED13297AB27B0044984C /* README.txt */; };
+		C31036CE297AC4C5006EBBF3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036CD297AC4C5006EBBF3 /* UIView+Extension.swift */; };
+		C31036D1297AC5CB006EBBF3 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036D0297AC5CB006EBBF3 /* OnboardingSlide.swift */; };
+		C31036D3297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036D2297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7F70ECE7297AAB140044984C /* QuizUp Battle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QuizUp Battle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F70ECEA297AAB140044984C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F70ECEC297AAB140044984C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7F70ECEE297AAB140044984C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7F70ECEE297AAB140044984C /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		7F70ECF1297AAB140044984C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F70ECF3297AAB160044984C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F70ECF6297AAB160044984C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,6 +67,9 @@
 		7F70ED11297AB27B0044984C /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		7F70ED12297AB27B0044984C /* Nunito-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		7F70ED13297AB27B0044984C /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		C31036CD297AC4C5006EBBF3 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		C31036D0297AC5CB006EBBF3 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		C31036D2297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,14 +102,17 @@
 		7F70ECE9297AAB140044984C /* QuizUp Battle */ = {
 			isa = PBXGroup;
 			children = (
+				C31036CF297AC5BB006EBBF3 /* Models */,
+				C31036CC297AC49B006EBBF3 /* Extension */,
+				C31036CB297AC2DA006EBBF3 /* Views */,
 				7F70ED28297AB2840044984C /* Fonts */,
 				7F70ECEA297AAB140044984C /* AppDelegate.swift */,
 				7F70ECEC297AAB140044984C /* SceneDelegate.swift */,
-				7F70ECEE297AAB140044984C /* ViewController.swift */,
 				7F70ECF0297AAB140044984C /* Main.storyboard */,
 				7F70ECF3297AAB160044984C /* Assets.xcassets */,
 				7F70ECF5297AAB160044984C /* LaunchScreen.storyboard */,
 				7F70ECF8297AAB160044984C /* Info.plist */,
+				7F70ECEE297AAB140044984C /* OnboardingViewController.swift */,
 			);
 			path = "QuizUp Battle";
 			sourceTree = "<group>";
@@ -149,6 +158,38 @@
 				7F70ECFE297AB27B0044984C /* Nunito */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C31036CB297AC2DA006EBBF3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C3CFEAB0297AE5A3003D97D1 /* OnboardingView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C31036CC297AC49B006EBBF3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C31036CD297AC4C5006EBBF3 /* UIView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		C31036CF297AC5BB006EBBF3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C31036D0297AC5CB006EBBF3 /* OnboardingSlide.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C3CFEAB0297AE5A3003D97D1 /* OnboardingView */ = {
+			isa = PBXGroup;
+			children = (
+				C31036D2297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift */,
+			);
+			path = OnboardingView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,9 +283,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F70ECEF297AAB140044984C /* ViewController.swift in Sources */,
+				C31036D1297AC5CB006EBBF3 /* OnboardingSlide.swift in Sources */,
+				7F70ECEF297AAB140044984C /* OnboardingViewController.swift in Sources */,
 				7F70ECEB297AAB140044984C /* AppDelegate.swift in Sources */,
+				C31036CE297AC4C5006EBBF3 /* UIView+Extension.swift in Sources */,
 				7F70ECED297AAB140044984C /* SceneDelegate.swift in Sources */,
+				C31036D3297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
