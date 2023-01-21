@@ -33,6 +33,8 @@
 		7F70ED25297AB27B0044984C /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F70ED11297AB27B0044984C /* OFL.txt */; };
 		7F70ED26297AB27B0044984C /* Nunito-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F70ED12297AB27B0044984C /* Nunito-Italic-VariableFont_wght.ttf */; };
 		7F70ED27297AB27B0044984C /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F70ED13297AB27B0044984C /* README.txt */; };
+		7F70ED2B297C78290044984C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70ED2A297C78290044984C /* SignUpViewController.swift */; };
+		ACD93B6551FF2CEA854B357F /* Pods_QuizUp_Battle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6B86B0258E04F73EDB71F /* Pods_QuizUp_Battle.framework */; };
 		C31036CE297AC4C5006EBBF3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036CD297AC4C5006EBBF3 /* UIView+Extension.swift */; };
 		C31036D1297AC5CB006EBBF3 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036D0297AC5CB006EBBF3 /* OnboardingSlide.swift */; };
 		C31036D3297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036D2297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20B6B86B0258E04F73EDB71F /* Pods_QuizUp_Battle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizUp_Battle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		544F2829D202A5373C67D4DE /* Pods-QuizUp Battle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizUp Battle.release.xcconfig"; path = "Target Support Files/Pods-QuizUp Battle/Pods-QuizUp Battle.release.xcconfig"; sourceTree = "<group>"; };
 		7F70ECE7297AAB140044984C /* QuizUp Battle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QuizUp Battle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F70ECEA297AAB140044984C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F70ECEC297AAB140044984C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,11 +73,13 @@
 		7F70ED11297AB27B0044984C /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		7F70ED12297AB27B0044984C /* Nunito-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		7F70ED13297AB27B0044984C /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		7F70ED2A297C78290044984C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C31036CD297AC4C5006EBBF3 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		C31036D0297AC5CB006EBBF3 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		C31036D2297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		C3916D56297C61FB002E1760 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		C3916D58297C6277002E1760 /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
+		F026771AB7E90C8ED02B420E /* Pods-QuizUp Battle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizUp Battle.debug.xcconfig"; path = "Target Support Files/Pods-QuizUp Battle/Pods-QuizUp Battle.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACD93B6551FF2CEA854B357F /* Pods_QuizUp_Battle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +99,8 @@
 			children = (
 				7F70ECE9297AAB140044984C /* QuizUp Battle */,
 				7F70ECE8297AAB140044984C /* Products */,
+				8670A5BB54025778457FCEC5 /* Pods */,
+				FD519AAF9A77D9FFFAB80B30 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +122,7 @@
 				7F70ECEA297AAB140044984C /* AppDelegate.swift */,
 				7F70ECEC297AAB140044984C /* SceneDelegate.swift */,
 				7F70ECF0297AAB140044984C /* Main.storyboard */,
+				7F70ED2A297C78290044984C /* SignUpViewController.swift */,
 				7F70ECF3297AAB160044984C /* Assets.xcassets */,
 				7F70ECF5297AAB160044984C /* LaunchScreen.storyboard */,
 				7F70ECF8297AAB160044984C /* Info.plist */,
@@ -165,6 +175,16 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		8670A5BB54025778457FCEC5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F026771AB7E90C8ED02B420E /* Pods-QuizUp Battle.debug.xcconfig */,
+				544F2829D202A5373C67D4DE /* Pods-QuizUp Battle.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C31036CB297AC2DA006EBBF3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +218,14 @@
 			path = OnboardingView;
 			sourceTree = "<group>";
 		};
+		FD519AAF9A77D9FFFAB80B30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20B6B86B0258E04F73EDB71F /* Pods_QuizUp_Battle.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -205,9 +233,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F70ECFB297AAB160044984C /* Build configuration list for PBXNativeTarget "QuizUp Battle" */;
 			buildPhases = (
+				52E4B199349BBFF2BF8D885B /* [CP] Check Pods Manifest.lock */,
 				7F70ECE3297AAB140044984C /* Sources */,
 				7F70ECE4297AAB140044984C /* Frameworks */,
 				7F70ECE5297AAB140044984C /* Resources */,
+				18892D0E5EF6718B2324B8D5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -284,6 +314,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		18892D0E5EF6718B2324B8D5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuizUp Battle/Pods-QuizUp Battle-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuizUp Battle/Pods-QuizUp Battle-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuizUp Battle/Pods-QuizUp Battle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		52E4B199349BBFF2BF8D885B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuizUp Battle-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7F70ECE3297AAB140044984C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -295,6 +367,7 @@
 				7F70ECEB297AAB140044984C /* AppDelegate.swift in Sources */,
 				C3916D59297C6277002E1760 /* CustomTabbar.swift in Sources */,
 				C31036CE297AC4C5006EBBF3 /* UIView+Extension.swift in Sources */,
+				7F70ED2B297C78290044984C /* SignUpViewController.swift in Sources */,
 				7F70ECED297AAB140044984C /* SceneDelegate.swift in Sources */,
 				C31036D3297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift in Sources */,
 			);
@@ -438,6 +511,7 @@
 		};
 		7F70ECFC297AAB160044984C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F026771AB7E90C8ED02B420E /* Pods-QuizUp Battle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,6 +545,7 @@
 		};
 		7F70ECFD297AAB160044984C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 544F2829D202A5373C67D4DE /* Pods-QuizUp Battle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
