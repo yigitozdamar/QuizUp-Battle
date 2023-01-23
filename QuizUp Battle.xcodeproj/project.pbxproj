@@ -237,7 +237,6 @@
 				7F70ECE3297AAB140044984C /* Sources */,
 				7F70ECE4297AAB140044984C /* Frameworks */,
 				7F70ECE5297AAB140044984C /* Resources */,
-				18892D0E5EF6718B2324B8D5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -315,23 +314,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		18892D0E5EF6718B2324B8D5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-QuizUp Battle/Pods-QuizUp Battle-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-QuizUp Battle/Pods-QuizUp Battle-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuizUp Battle/Pods-QuizUp Battle-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		52E4B199349BBFF2BF8D885B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

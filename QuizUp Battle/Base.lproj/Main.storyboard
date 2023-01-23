@@ -221,7 +221,7 @@
                                         <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLd-fm-agH">
-                                        <rect key="frame" x="160.66666666666666" y="8.3333333333333268" width="72" height="23.333333333333329"/>
+                                        <rect key="frame" x="159.66666666666666" y="6.3333333333333268" width="74" height="27.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -275,13 +275,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFz-X2-EHk">
-                                        <rect key="frame" x="32" y="188" width="329" height="23.333333333333343"/>
+                                        <rect key="frame" x="32" y="188" width="329" height="27.333333333333343"/>
                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="20"/>
                                         <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8GA-nL-7wY">
-                                        <rect key="frame" x="32" y="227.33333333333331" width="329" height="70"/>
+                                        <rect key="frame" x="32" y="231.33333333333331" width="329" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Email Adress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cS1-Zj-Otn">
                                                 <rect key="frame" x="0.0" y="0.0" width="110.66666666666667" height="17"/>
@@ -304,6 +304,7 @@
                                                         <rect key="frame" x="48" y="6" width="281" height="36"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="36" id="7bb-vr-osL"/>
+                                                            <constraint firstAttribute="width" constant="281" id="W7b-aq-Bdc"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
@@ -330,7 +331,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="SmA-i2-l7X">
-                                        <rect key="frame" x="32" y="313.33333333333331" width="329" height="70"/>
+                                        <rect key="frame" x="32" y="317.33333333333331" width="329" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13q-dG-tgh">
                                                 <rect key="frame" x="0.0" y="0.0" width="86.666666666666671" height="17"/>
@@ -352,6 +353,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ua-Zh-zBG">
                                                         <rect key="frame" x="48" y="6" width="281" height="36"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="width" constant="281" id="GoG-6k-fiR"/>
                                                             <constraint firstAttribute="height" constant="36" id="hSn-FI-hGO"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="18"/>
@@ -379,7 +381,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ldw-Pf-bdf">
-                                        <rect key="frame" x="32" y="399.33333333333337" width="329" height="70"/>
+                                        <rect key="frame" x="32" y="403.33333333333337" width="329" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLd-ft-hiV">
                                                 <rect key="frame" x="0.0" y="0.0" width="151.66666666666666" height="17"/>
@@ -401,6 +403,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Your Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dFd-Bd-5eF">
                                                         <rect key="frame" x="48" y="6" width="281" height="36"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="width" constant="281" id="Jxf-zy-004"/>
                                                             <constraint firstAttribute="height" constant="36" id="sKO-Lp-8Vg"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="18"/>
@@ -428,7 +431,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZd-yS-U6t">
-                                        <rect key="frame" x="32" y="501.33333333333337" width="329" height="50"/>
+                                        <rect key="frame" x="32" y="505.33333333333337" width="329" height="50"/>
                                         <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="43z-yC-Oaz"/>
