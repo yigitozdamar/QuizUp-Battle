@@ -25,11 +25,18 @@ class OnboardingViewController: UIViewController {
     }
     
     @IBAction func signUpButton(_ sender: Any) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "SignUpViewController") as! SignUpViewController
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     
     @IBAction func loginButton(_ sender: Any) {
+        
     }
+    
+    
 }
 
 extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
