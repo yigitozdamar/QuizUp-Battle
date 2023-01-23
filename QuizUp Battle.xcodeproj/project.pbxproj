@@ -35,6 +35,7 @@
 		7F70ED26297AB27B0044984C /* Nunito-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F70ED12297AB27B0044984C /* Nunito-Italic-VariableFont_wght.ttf */; };
 		7F70ED27297AB27B0044984C /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F70ED13297AB27B0044984C /* README.txt */; };
 		7F70ED2B297C78290044984C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70ED2A297C78290044984C /* SignUpViewController.swift */; };
+		7FD106FF297F1FCC0005E9DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7FD106FE297F1FCC0005E9DF /* GoogleService-Info.plist */; };
 		C31036CE297AC4C5006EBBF3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036CD297AC4C5006EBBF3 /* UIView+Extension.swift */; };
 		C31036D1297AC5CB006EBBF3 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036D0297AC5CB006EBBF3 /* OnboardingSlide.swift */; };
 		C31036D3297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036D2297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift */; };
@@ -73,6 +74,7 @@
 		7F70ED12297AB27B0044984C /* Nunito-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		7F70ED13297AB27B0044984C /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		7F70ED2A297C78290044984C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		7FD106FE297F1FCC0005E9DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		829263A92AAC6B63C242ACAC /* Pods-QuizUp Battle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizUp Battle.release.xcconfig"; path = "Target Support Files/Pods-QuizUp Battle/Pods-QuizUp Battle.release.xcconfig"; sourceTree = "<group>"; };
 		98164C229831F220398D3A89 /* Pods-QuizUp Battle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizUp Battle.debug.xcconfig"; path = "Target Support Files/Pods-QuizUp Battle/Pods-QuizUp Battle.debug.xcconfig"; sourceTree = "<group>"; };
 		C31036CD297AC4C5006EBBF3 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -102,6 +104,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7F284D43297F18C2001A6F30 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				7F70ECEA297AAB140044984C /* AppDelegate.swift */,
+				7F70ECEC297AAB140044984C /* SceneDelegate.swift */,
+				7F70ECF5297AAB160044984C /* LaunchScreen.storyboard */,
+				7F70ECF3297AAB160044984C /* Assets.xcassets */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		7F284D44297F18D8001A6F30 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				C3916D58297C6277002E1760 /* CustomTabbar.swift */,
+				C3916D56297C61FB002E1760 /* TabbarViewController.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		7F284D45297F1C37001A6F30 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		7F70ECDE297AAB140044984C = {
 			isa = PBXGroup;
 			children = (
@@ -127,14 +156,10 @@
 				C31036CC297AC49B006EBBF3 /* Extension */,
 				C31036CB297AC2DA006EBBF3 /* Views */,
 				7F70ED28297AB2840044984C /* Fonts */,
-				7F70ECEA297AAB140044984C /* AppDelegate.swift */,
-				7F70ECEC297AAB140044984C /* SceneDelegate.swift */,
+				7F284D43297F18C2001A6F30 /* Support */,
 				7F70ECF0297AAB140044984C /* Main.storyboard */,
-				7F70ECF3297AAB160044984C /* Assets.xcassets */,
-				7F70ECF5297AAB160044984C /* LaunchScreen.storyboard */,
 				7F70ECF8297AAB160044984C /* Info.plist */,
-				C3916D56297C61FB002E1760 /* TabbarViewController.swift */,
-				C3916D58297C6277002E1760 /* CustomTabbar.swift */,
+				7FD106FE297F1FCC0005E9DF /* GoogleService-Info.plist */,
 			);
 			path = "QuizUp Battle";
 			sourceTree = "<group>";
@@ -185,8 +210,10 @@
 		C31036CB297AC2DA006EBBF3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C3116686297ECAAB007CEF01 /* SignUpVC */,
-				C3CFEAB0297AE5A3003D97D1 /* OnboardingView */,
+				7F284D45297F1C37001A6F30 /* Home */,
+				7F284D44297F18D8001A6F30 /* Tabbar */,
+				C3116686297ECAAB007CEF01 /* SignUp */,
+				C3CFEAB0297AE5A3003D97D1 /* Onboarding */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -207,21 +234,21 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		C3116686297ECAAB007CEF01 /* SignUpVC */ = {
+		C3116686297ECAAB007CEF01 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
 				7F70ED2A297C78290044984C /* SignUpViewController.swift */,
 			);
-			path = SignUpVC;
+			path = SignUp;
 			sourceTree = "<group>";
 		};
-		C3CFEAB0297AE5A3003D97D1 /* OnboardingView */ = {
+		C3CFEAB0297AE5A3003D97D1 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
 				7F70ECEE297AAB140044984C /* OnboardingViewController.swift */,
 				C31036D2297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift */,
 			);
-			path = OnboardingView;
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		F5A8D319ADAAA587979F96C0 /* Pods */ = {
@@ -295,6 +322,7 @@
 			files = (
 				7F70ED25297AB27B0044984C /* OFL.txt in Resources */,
 				7F70ED1A297AB27B0044984C /* Nunito-Regular.ttf in Resources */,
+				7FD106FF297F1FCC0005E9DF /* GoogleService-Info.plist in Resources */,
 				7F70ED22297AB27B0044984C /* Nunito-Italic.ttf in Resources */,
 				7F70ED1E297AB27B0044984C /* Nunito-Black.ttf in Resources */,
 				7F70ED14297AB27B0044984C /* Nunito-VariableFont_wght.ttf in Resources */,
@@ -452,7 +480,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -506,7 +534,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
