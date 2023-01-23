@@ -1,0 +1,6 @@
+framework module Pods_QuizUp_Battle {
+  umbrella header "Pods-QuizUp Battle-umbrella.h"
+
+  export *
+  module * { export * }
+}
