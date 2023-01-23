@@ -202,7 +202,7 @@
         <scene sceneID="gPS-Iy-CbO">
             <objects>
                 <viewController id="Ut8-Ll-H5M" customClass="SignUpViewController" customModule="QuizUp_Battle" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5jl-c2-Ai7">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="5jl-c2-Ai7">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -233,11 +233,11 @@
                                     <constraint firstItem="gmR-F2-zFE" firstAttribute="leading" secondItem="0ym-pc-sQZ" secondAttribute="leading" constant="16" id="lmd-lD-vZy"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eti-Nu-VAc">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eti-Nu-VAc">
                                 <rect key="frame" x="0.0" y="99" width="393" height="753"/>
                                 <subviews>
-                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GYc-YC-vvd">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="753"/>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GYc-YC-vvd">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="787"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zab-od-bQ7">
                                                 <rect key="frame" x="32" y="24" width="329" height="50"/>
@@ -483,12 +483,14 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="700" id="09t-9I-qev"/>
                                     <constraint firstAttribute="trailing" secondItem="GYc-YC-vvd" secondAttribute="trailing" id="66C-dI-pl1"/>
                                     <constraint firstItem="GYc-YC-vvd" firstAttribute="trailing" secondItem="UuW-LU-4SL" secondAttribute="trailing" id="C3K-Bc-gZ6"/>
                                     <constraint firstItem="GYc-YC-vvd" firstAttribute="leading" secondItem="UuW-LU-4SL" secondAttribute="leading" id="J2F-1d-Uak"/>
+                                    <constraint firstItem="GYc-YC-vvd" firstAttribute="bottom" secondItem="UuW-LU-4SL" secondAttribute="bottom" id="KVY-36-C73"/>
+                                    <constraint firstItem="GYc-YC-vvd" firstAttribute="width" secondItem="eti-Nu-VAc" secondAttribute="width" id="QHo-dS-xuc"/>
                                     <constraint firstItem="GYc-YC-vvd" firstAttribute="top" secondItem="eti-Nu-VAc" secondAttribute="top" id="Tat-rp-WNw"/>
-                                    <constraint firstItem="GYc-YC-vvd" firstAttribute="height" secondItem="Jsq-2D-5u7" secondAttribute="height" id="Zwo-wA-Z8J"/>
-                                    <constraint firstItem="GYc-YC-vvd" firstAttribute="bottom" secondItem="UuW-LU-4SL" secondAttribute="bottom" id="d04-GA-NOL"/>
+                                    <constraint firstItem="GYc-YC-vvd" firstAttribute="height" secondItem="eti-Nu-VAc" secondAttribute="height" multiplier="1.04515" id="b0q-4k-C5p"/>
                                     <constraint firstItem="GYc-YC-vvd" firstAttribute="top" secondItem="UuW-LU-4SL" secondAttribute="top" id="e3d-p6-U3c"/>
                                     <constraint firstAttribute="bottom" secondItem="GYc-YC-vvd" secondAttribute="bottom" id="mqX-WL-xBb"/>
                                     <constraint firstItem="GYc-YC-vvd" firstAttribute="leading" secondItem="eti-Nu-VAc" secondAttribute="leading" id="toW-Y5-X2t"/>
