@@ -11,10 +11,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Nunito-Bold.ttf">
-            <string>Nunito-Bold</string>
-        </array>
         <array key="Nunito-VariableFont_wght.ttf">
+            <string>Nunito-Bold</string>
             <string>Nunito-Regular</string>
         </array>
     </customFonts>
@@ -267,7 +265,7 @@
                                                     <action selector="googleSignUp:" destination="Ut8-Ll-H5M" eventType="touchUpInside" id="G12-1a-PYk"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNb-Kp-3TP">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNb-Kp-3TP" customClass="FBSDKLoginButton">
                                                 <rect key="frame" x="32" y="106" width="329" height="50"/>
                                                 <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -284,6 +282,9 @@
                                                         <real key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="facebookSignUp:" destination="Ut8-Ll-H5M" eventType="touchUpInside" id="DvA-GC-blR"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFz-X2-EHk">
                                                 <rect key="frame" x="32" y="192" width="329" height="30"/>
@@ -410,6 +411,9 @@
                                                         <real key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="signUpButton:" destination="Ut8-Ll-H5M" eventType="touchUpInside" id="MIh-Kh-12o"/>
+                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8GA-nL-7wY">
                                                 <rect key="frame" x="32" y="246" width="329" height="70"/>
@@ -523,8 +527,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="1h2-nV-RmF"/>
                     <connections>
+                        <outlet property="confirmPassword" destination="dFd-Bd-5eF" id="P3D-ZL-Fqc"/>
                         <outlet property="emailTextField" destination="3dx-8K-gcq" id="fh9-ra-UW3"/>
+                        <outlet property="password" destination="3ua-Zh-zBG" id="ReZ-NX-tVm"/>
                         <outlet property="scrollView" destination="eti-Nu-VAc" id="FVp-xF-ysh"/>
+                        <outlet property="signUpButton" destination="SZd-yS-U6t" id="pGT-HS-YwK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rhh-Bl-Osq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -552,7 +559,6 @@
         <!--View Controller-->
         <scene sceneID="pgL-2P-md1">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ali-jP-8Pr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="wGI-YK-n8n" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j3X-jl-KXt">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -562,6 +568,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="chart.bar" catalog="system" id="Pow-x3-SMj"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ali-jP-8Pr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2721.3740458015268" y="350.7042253521127"/>
         </scene>

@@ -10,6 +10,7 @@ import IQKeyboardManagerSwift
 import FirebaseCore
 import GoogleSignIn
 import FirebaseAuth
+import FacebookCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
+            ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
 //        GIDSignIn.sharedInstance.restorePreviousSignIn()
         
         IQKeyboardManager.shared.enable = true
@@ -30,14 +32,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    
-    
     @available(iOS 9.0, *)
     func application(_ application: UIApplication, open url: URL,
                      options: [UIApplication.OpenURLOptionsKey: Any])
       -> Bool {
       return GIDSignIn.sharedInstance.handle(url)
     }
+
+//    func application(_ app: UIApplication, open url: URL, options:[UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+//        let handled: Bool = ApplicationDelegate.shared.application(app, open: url, sourceApplication: options[.sourceApplication] as? String, annotation: options[.annotation])
+//        return handled
+//    }
 
     // MARK: UISceneSession Lifecycle
 
@@ -57,31 +62,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate {
-func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
     
-    //handle sign-in errors
-    if let error = error {
-        if (error as NSError).code == GIDSignInError.hasNoAuthInKeychain.rawValue {
-            print("The user has not signed in before or they have since signed out.")
-        } else {
-        print("error signing into Google \(error.localizedDescription)")
-        }
-    return
-    }
-    
-    // Get credential object using Google ID token and Google access token
-    guard let authentication = user else { return }
-    
-    let credential = GoogleAuthProvider.credential(withIDToken: "\(String(describing: authentication.idToken))",
-                                                    accessToken: "\(authentication.accessToken)")
-    
-    // Authenticate with Firebase using the credential object
-    Auth.auth().signIn(with: credential) { (authResult, error) in
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        
+        //handle sign-in errors
         if let error = error {
-            print("authentication error \(error.localizedDescription)")
+            if (error as NSError).code == GIDSignInError.hasNoAuthInKeychain.rawValue {
+                print("The user has not signed in before or they have since signed out.")
+            } else {
+                print("error signing into Google \(error.localizedDescription)")
+            }
+            return
         }
         
+        // Get credential object using Google ID token and Google access token
+        guard let authentication = user else { return }
+        
+        let credential = GoogleAuthProvider.credential(withIDToken: "\(String(describing: authentication.idToken))",
+                                                       accessToken: "\(authentication.accessToken)")
+        
+        // Authenticate with Firebase using the credential object
+        Auth.auth().signIn(with: credential) { (authResult, error) in
+            if let error = error {
+                print("authentication error \(error.localizedDescription)")
+            }
+            
+        }
     }
-}
+    
+      
 }
 
