@@ -11,10 +11,7 @@ import FirebaseCore
 import FirebaseAuth
 import ProgressHUD
 
-
 class SignUpViewController: UIViewController {
-    
-    
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -26,8 +23,6 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
     }
     
     @IBAction func googleSignUp(_ sender: UIButton) {
@@ -36,25 +31,20 @@ class SignUpViewController: UIViewController {
             
             // If sign in succeeded, display the app's main content View.
             print("Oldu")
-            print(signInResult?.user.userID)
-            print(signInResult?.user.profile?.email)
-            print(signInResult?.user.profile?.givenName)
-            print(signInResult?.user.profile?.name)
             
         }
     }
     
     @IBAction func facebookSignUp(_ sender: Any) {
-       
+        
     }
-    
     
     @IBAction func signUpButton(_ sender: UIButton) {
         
         guard let email = emailTextField.text else { return  }
         guard let passwordText = password.text else { return  }
         guard let passwordText2 = confirmPassword.text else { return  }
-    
+        
         if passwordText == passwordText2 {
             Auth.auth().createUser(withEmail: email, password: passwordText) {[weak self] authResult, error in
                 
@@ -78,7 +68,7 @@ class SignUpViewController: UIViewController {
                         default:
                             print("arrr:")
                     }
-                   
+                    
                 } else {
                     ProgressHUD.showSuccess("Başarıyla kayıt gerçekleşti.")
                     self?.emailTextField.text = ""
@@ -92,12 +82,12 @@ class SignUpViewController: UIViewController {
             print("şiflers uyusmuyoır")
         }
         
-       
+        
     }
-        
-        @IBAction func backToMain(_ sender: UIButton) {
-            navigationController?.popViewController(animated: true)
-        }
-        
+    
+    @IBAction func backToMain(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     
 }

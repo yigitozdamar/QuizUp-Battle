@@ -14,9 +14,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>859919675313408</string>
-			</array>
+			<array/>
 		</dict>
 	</array>
 	<key>GIDClientID</key>

@@ -10,7 +10,6 @@ import IQKeyboardManagerSwift
 import FirebaseCore
 import GoogleSignIn
 import FirebaseAuth
-import FacebookCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,8 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
-        
-            ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
 //        GIDSignIn.sharedInstance.restorePreviousSignIn()
         
         IQKeyboardManager.shared.enable = true
@@ -38,11 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       -> Bool {
       return GIDSignIn.sharedInstance.handle(url)
     }
-
-//    func application(_ app: UIApplication, open url: URL, options:[UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-//        let handled: Bool = ApplicationDelegate.shared.application(app, open: url, sourceApplication: options[.sourceApplication] as? String, annotation: options[.annotation])
-//        return handled
-//    }
 
     // MARK: UISceneSession Lifecycle
 
