@@ -719,7 +719,6 @@ PODS:
     - nanopb/encode (= 2.30909.0)
   - nanopb/decode (2.30909.0)
   - nanopb/encode (2.30909.0)
-  - ProgressHUD (2.51)
   - PromisesObjC (2.1.1)
 
 DEPENDENCIES:
@@ -727,7 +726,6 @@ DEPENDENCIES:
   - FirebaseFirestore
   - GoogleSignIn
   - IQKeyboardManagerSwift (= 6.3.0)
-  - ProgressHUD (from `https://github.com/relatedcode/ProgressHUD.git`, commit `83c3801e9aa69be157a47c40cdd8702bfaf29213`)
 
 SPEC REPOS:
   trunk:
@@ -750,16 +748,6 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
 
-EXTERNAL SOURCES:
-  ProgressHUD:
-    :commit: 83c3801e9aa69be157a47c40cdd8702bfaf29213
-    :git: https://github.com/relatedcode/ProgressHUD.git
-
-CHECKOUT OPTIONS:
-  ProgressHUD:
-    :commit: 83c3801e9aa69be157a47c40cdd8702bfaf29213
-    :git: https://github.com/relatedcode/ProgressHUD.git
-
 SPEC CHECKSUMS:
   abseil: ebe5b5529fb05d93a8bdb7951607be08b7fa71bc
   AppAuth: 8fca6b5563a5baef2c04bee27538025e4ceb2add
@@ -778,9 +766,8 @@ SPEC CHECKSUMS:
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   Libuv-gRPC: 55e51798e14ef436ad9bc45d12d43b77b49df378
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
-  ProgressHUD: 54b4c2fa202bf3da7dddc1c698ae4e6376333bd9
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
 
-PODFILE CHECKSUM: f7f49dad3ca3452fdf55a5fd69cfde66a312c92e
+PODFILE CHECKSUM: 88fd2e0ec9343016b5bc7818638f5f3878d82444
 
 COCOAPODS: 1.11.3

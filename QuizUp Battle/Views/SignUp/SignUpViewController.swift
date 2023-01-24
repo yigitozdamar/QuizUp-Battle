@@ -9,7 +9,7 @@ import UIKit
 import GoogleSignIn
 import FirebaseCore
 import FirebaseAuth
-import ProgressHUD
+
 
 class SignUpViewController: UIViewController {
     
@@ -57,20 +57,21 @@ class SignUpViewController: UIViewController {
                             
                             print("Wrong Password")
                         case AuthErrorCode.invalidEmail.rawValue:
+                        self?.errorMessage()
                             print("Wrong email")
                             
                         case AuthErrorCode.accountExistsWithDifferentCredential.rawValue:
                             print("account exists")
                             
                         case AuthErrorCode.emailAlreadyInUse.rawValue:
-                            ProgressHUD.showError("email already in use")
+                        self?.sameEmail()
                             print("email already in use")
                         default:
                             print("arrr:")
                     }
                     
                 } else {
-                    ProgressHUD.showSuccess("Başarıyla kayıt gerçekleşti.")
+                    self?.signUpDone()
                     self?.emailTextField.text = ""
                     self?.password.text = ""
                     self?.confirmPassword.text = ""
@@ -89,5 +90,23 @@ class SignUpViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    func sameEmail(){
+        let ac = UIAlertController(title: "Kayıtlı Email", message: "Bu email zaten kayıtlı", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+    }
+    
+    
+    func errorMessage(){
+        let ac = UIAlertController(title: "Geçersiz E-Mail", message: "Geçerli bir mail giriniz!", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+    }
+    
+    func signUpDone(){
+        let ac = UIAlertController(title: "Kayıt Başarılı", message: "Kayıtlı adresnizle giriş yapabilirsiniz", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+    }
     
 }
