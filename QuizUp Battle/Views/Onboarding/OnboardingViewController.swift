@@ -33,7 +33,9 @@ class OnboardingViewController: UIViewController {
     
     
     @IBAction func loginButton(_ sender: Any) {
-        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "LoginVC") as! LoginVC
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     

@@ -41,6 +41,7 @@
 		C31036D3297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036D2297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift */; };
 		C3916D57297C61FB002E1760 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3916D56297C61FB002E1760 /* TabbarViewController.swift */; };
 		C3916D59297C6277002E1760 /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3916D58297C6277002E1760 /* CustomTabbar.swift */; };
+		C3EDC68C298104E200D18DBC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EDC68B298104E200D18DBC /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		C31036D2297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		C3916D56297C61FB002E1760 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		C3916D58297C6277002E1760 /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
+		C3EDC68B298104E200D18DBC /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				7F70ECF0297AAB140044984C /* Main.storyboard */,
 				7F70ECF8297AAB160044984C /* Info.plist */,
 				7FD106FE297F1FCC0005E9DF /* GoogleService-Info.plist */,
+				C3EDC68B298104E200D18DBC /* LoginVC.swift */,
 			);
 			path = "QuizUp Battle";
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				7F70ECEF297AAB140044984C /* OnboardingViewController.swift in Sources */,
 				C3916D57297C61FB002E1760 /* TabbarViewController.swift in Sources */,
 				7F70ECEB297AAB140044984C /* AppDelegate.swift in Sources */,
+				C3EDC68C298104E200D18DBC /* LoginVC.swift in Sources */,
 				C3916D59297C6277002E1760 /* CustomTabbar.swift in Sources */,
 				C31036CE297AC4C5006EBBF3 /* UIView+Extension.swift in Sources */,
 				7F70ED2B297C78290044984C /* SignUpViewController.swift in Sources */,

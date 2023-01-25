@@ -71,10 +71,12 @@ class SignUpViewController: UIViewController {
                     }
                     
                 } else {
-                    self?.signUpDone()
+                  
+                    self?.navigationController?.popViewController(animated: true)
                     self?.emailTextField.text = ""
                     self?.password.text = ""
                     self?.confirmPassword.text = ""
+                    
                     print("done")
                 }
             }
@@ -102,11 +104,5 @@ class SignUpViewController: UIViewController {
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         present(ac, animated: true)
     }
-    
-    func signUpDone(){
-        let ac = UIAlertController(title: "Kayıt Başarılı", message: "Kayıtlı adresnizle giriş yapabilirsiniz", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
-        present(ac, animated: true)
-    }
-    
+ 
 }
