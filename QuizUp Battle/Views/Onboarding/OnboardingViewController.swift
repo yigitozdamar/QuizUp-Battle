@@ -25,17 +25,13 @@ class OnboardingViewController: UIViewController {
     }
     
     @IBAction func signUpButton(_ sender: Any) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(identifier: "SignUpViewController") as! SignUpViewController
-        navigationController?.pushViewController(vc, animated: true)
+        performSegue(withIdentifier: "signUp", sender: nil)
         
     }
     
     
     @IBAction func loginButton(_ sender: Any) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(identifier: "LoginVC") as! LoginVC
-        navigationController?.pushViewController(vc, animated: true)
+        performSegue(withIdentifier: "login", sender: nil)
     }
     
     

@@ -18,7 +18,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var forgotPassword: UIButton!
     
     @IBAction func backToBoardingBtn(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        self.performSegue(withIdentifier: "board", sender: nil)
     }
     
     override func viewDidLoad() {
@@ -33,6 +33,7 @@ class LoginVC: UIViewController {
             
             // If sign in succeeded, display the app's main content View.
             print("Oldu")
+            self.performSegue(withIdentifier: "tabbar", sender: nil)
             
         }
     }
@@ -66,11 +67,8 @@ class LoginVC: UIViewController {
                 
             } else {
                 print("User signs in successfully")
-                let userInfo = Auth.auth().currentUser
-                let email = userInfo?.email
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
-                self.navigationController?.pushViewController(vc, animated: true)
+               
+                self.performSegue(withIdentifier: "tabbar", sender: nil)
                 print("Girildi")
             }
             

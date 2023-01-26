@@ -31,9 +31,7 @@ class SignUpViewController: UIViewController {
             
             // If sign in succeeded, display the app's main content View.
             print("Oldu")
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.performSegue(withIdentifier: "boardingSignUp", sender: nil)
             
         }
     }
@@ -74,12 +72,12 @@ class SignUpViewController: UIViewController {
                     }
                     
                 } else {
+                    self?.performSegue(withIdentifier: "boardingSignUp", sender: nil)
+                    
                     self?.emailTextField.text = ""
                     self?.password.text = ""
                     self?.confirmPassword.text = ""
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let vc = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
-                    self?.navigationController?.pushViewController(vc, animated: true)
+                    
                     print("done")
                 }
             }
@@ -92,7 +90,7 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func backToMain(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        self.performSegue(withIdentifier: "boardingSignUp", sender: nil)
     }
     
     func sameEmail(){
