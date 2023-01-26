@@ -31,6 +31,9 @@ class SignUpViewController: UIViewController {
             
             // If sign in succeeded, display the app's main content View.
             print("Oldu")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
+            self.navigationController?.pushViewController(vc, animated: true)
             
         }
     }
@@ -71,12 +74,12 @@ class SignUpViewController: UIViewController {
                     }
                     
                 } else {
-                  
-                    self?.navigationController?.popViewController(animated: true)
                     self?.emailTextField.text = ""
                     self?.password.text = ""
                     self?.confirmPassword.text = ""
-                    
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
+                    self?.navigationController?.pushViewController(vc, animated: true)
                     print("done")
                 }
             }

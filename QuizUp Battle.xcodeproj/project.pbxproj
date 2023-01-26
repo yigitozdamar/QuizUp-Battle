@@ -36,6 +36,7 @@
 		7F70ED27297AB27B0044984C /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F70ED13297AB27B0044984C /* README.txt */; };
 		7F70ED2B297C78290044984C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70ED2A297C78290044984C /* SignUpViewController.swift */; };
 		7FD106FF297F1FCC0005E9DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7FD106FE297F1FCC0005E9DF /* GoogleService-Info.plist */; };
+		7FE490902981806B0007E6CA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE4908F2981806B0007E6CA /* HomeViewController.swift */; };
 		C31036CE297AC4C5006EBBF3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036CD297AC4C5006EBBF3 /* UIView+Extension.swift */; };
 		C31036D1297AC5CB006EBBF3 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036D0297AC5CB006EBBF3 /* OnboardingSlide.swift */; };
 		C31036D3297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036D2297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift */; };
@@ -76,6 +77,7 @@
 		7F70ED13297AB27B0044984C /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		7F70ED2A297C78290044984C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		7FD106FE297F1FCC0005E9DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7FE4908F2981806B0007E6CA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = "QuizUp Battle/Views/HomeViewController.swift"; sourceTree = SOURCE_ROOT; };
 		829263A92AAC6B63C242ACAC /* Pods-QuizUp Battle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizUp Battle.release.xcconfig"; path = "Target Support Files/Pods-QuizUp Battle/Pods-QuizUp Battle.release.xcconfig"; sourceTree = "<group>"; };
 		98164C229831F220398D3A89 /* Pods-QuizUp Battle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizUp Battle.debug.xcconfig"; path = "Target Support Files/Pods-QuizUp Battle/Pods-QuizUp Battle.debug.xcconfig"; sourceTree = "<group>"; };
 		C31036CD297AC4C5006EBBF3 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		7F284D45297F1C37001A6F30 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7FE4908F2981806B0007E6CA /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -162,7 +165,6 @@
 				7F70ECF0297AAB140044984C /* Main.storyboard */,
 				7F70ECF8297AAB160044984C /* Info.plist */,
 				7FD106FE297F1FCC0005E9DF /* GoogleService-Info.plist */,
-				C3EDC68B298104E200D18DBC /* LoginVC.swift */,
 			);
 			path = "QuizUp Battle";
 			sourceTree = "<group>";
@@ -210,11 +212,20 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		7F7C486329817DBE004A32EC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C3EDC68B298104E200D18DBC /* LoginVC.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		C31036CB297AC2DA006EBBF3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				7F284D45297F1C37001A6F30 /* Home */,
 				7F284D44297F18D8001A6F30 /* Tabbar */,
+				7F7C486329817DBE004A32EC /* Login */,
 				C3116686297ECAAB007CEF01 /* SignUp */,
 				C3CFEAB0297AE5A3003D97D1 /* Onboarding */,
 			);
@@ -410,6 +421,7 @@
 				C3EDC68C298104E200D18DBC /* LoginVC.swift in Sources */,
 				C3916D59297C6277002E1760 /* CustomTabbar.swift in Sources */,
 				C31036CE297AC4C5006EBBF3 /* UIView+Extension.swift in Sources */,
+				7FE490902981806B0007E6CA /* HomeViewController.swift in Sources */,
 				7F70ED2B297C78290044984C /* SignUpViewController.swift in Sources */,
 				7F70ECED297AAB140044984C /* SceneDelegate.swift in Sources */,
 				C31036D3297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift in Sources */,
