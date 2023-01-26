@@ -10,4 +10,5 @@ pod 'IQKeyboardManagerSwift', '6.3.0'
 pod 'GoogleSignIn'
 pod 'FirebaseAuth'
 pod 'FirebaseFirestore'
+pod 'SETabView'
 end

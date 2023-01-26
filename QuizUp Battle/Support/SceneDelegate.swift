@@ -8,6 +8,8 @@
 import UIKit
 import FirebaseCore
 import FirebaseAuth
+import GoogleSignIn
+import SETabView
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -15,15 +17,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
         let currentUser = Auth.auth().currentUser
-        if currentUser != nil{
+        if currentUser != nil || GIDSignIn.sharedInstance.currentUser != nil {
+            
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "tabbarVC") as! TabbarViewController
+            let vc = storyboard.instantiateViewController(withIdentifier: "tabbarVC") as! SETabViewController
+            
             window?.rootViewController = vc
         }
+        
+        
         
         
         guard let _ = (scene as? UIWindowScene) else { return }

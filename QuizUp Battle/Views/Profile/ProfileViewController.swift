@@ -1,14 +1,19 @@
 //
-//  FirstViewController.swift
+//  ProfileViewController.swift
 //  QuizUp Battle
 //
-//  Created by Emre ÖZKÖK on 26.01.2023.
+//  Created by Yigit Ozdamar on 26.01.2023.
 //
 
 import UIKit
+import SETabView
 import FirebaseAuth
 
-class FirstViewController: UIViewController {
+class ProfileViewController: UIViewController, SETabItemProvider {
+    
+    var seTabBarItem: UITabBarItem? {
+            return UITabBarItem(title: "", image: UIImage(systemName: "person"), tag: 0)
+        }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +21,7 @@ class FirstViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func logout(_ sender: UIButton) {
+    func logout(){
         print("basıldı")
         
         do{
@@ -26,9 +31,7 @@ class FirstViewController: UIViewController {
         }catch{
             print("logout hata")
         }
-        
     }
     
-  
 
 }

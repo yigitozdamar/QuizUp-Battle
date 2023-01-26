@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Regular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+        <array key="Nunito-SemiBold.ttf">
+            <string>Nunito-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCollectionViewCell" id="gTV-IL-0wX" customClass="HomeCollectionViewCell" customModule="QuizUp_Battle" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UNO-So-a0y">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ZzO-w1-Axf">
+                                <rect key="frame" x="50" y="9" width="50" height="48.666666666666671"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="1hH-0Y-mfp"/>
+                                    <constraint firstAttribute="height" constant="50" id="96p-y9-fKe"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Math" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="Wj6-JQ-SVv">
+                                <rect key="frame" x="46.666666666666671" y="62" width="56.666666666666671" height="33"/>
+                                <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="wRU-GQ-7m6">
+                                <rect key="frame" x="19.666666666666664" y="97" width="110.66666666666669" height="27.333333333333329"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93333333333333335" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.41568627450000001" green="0.35294117650000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZzO-w1-Axf" firstAttribute="top" secondItem="UNO-So-a0y" secondAttribute="top" constant="8" id="8Pn-tI-wDC"/>
+                            <constraint firstItem="wRU-GQ-7m6" firstAttribute="centerX" secondItem="UNO-So-a0y" secondAttribute="centerX" id="MzG-Rn-REO"/>
+                            <constraint firstItem="ZzO-w1-Axf" firstAttribute="centerX" secondItem="UNO-So-a0y" secondAttribute="centerX" id="W6h-a1-I11"/>
+                            <constraint firstItem="Wj6-JQ-SVv" firstAttribute="centerX" secondItem="UNO-So-a0y" secondAttribute="centerX" id="WJL-i0-3yO"/>
+                            <constraint firstItem="wRU-GQ-7m6" firstAttribute="top" secondItem="Wj6-JQ-SVv" secondAttribute="bottom" constant="2" id="gSD-ao-2Sj"/>
+                            <constraint firstItem="Wj6-JQ-SVv" firstAttribute="top" secondItem="ZzO-w1-Axf" secondAttribute="bottom" constant="4" id="k3q-u3-cB5"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="UNO-So-a0y" secondAttribute="trailing" id="8Jy-5s-shU"/>
+                <constraint firstItem="UNO-So-a0y" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Dlo-3D-7xA"/>
+                <constraint firstItem="UNO-So-a0y" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="P4X-Ak-DP9"/>
+                <constraint firstAttribute="bottom" secondItem="UNO-So-a0y" secondAttribute="bottom" id="xPw-Hb-4zF"/>
+            </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="20"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="headerLabel" destination="Wj6-JQ-SVv" id="yDs-2T-DFL"/>
+                <outlet property="iconImageView" destination="ZzO-w1-Axf" id="g4B-Vn-jpj"/>
+                <outlet property="questionLabel" destination="wRU-GQ-7m6" id="GNN-ia-zdW"/>
+            </connections>
+            <point key="canvasLocation" x="-3.0534351145038165" y="19.718309859154932"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="pencil.circle.fill" catalog="system" width="128" height="123"/>
+    </resources>
+</document>

@@ -33,7 +33,7 @@ class LoginVC: UIViewController {
             
             // If sign in succeeded, display the app's main content View.
             print("Oldu")
-            self.performSegue(withIdentifier: "tabbar", sender: nil)
+            self.performSegue(withIdentifier: "toTabbarVC", sender: nil)
             
         }
     }
@@ -41,7 +41,6 @@ class LoginVC: UIViewController {
     @IBAction func loginButton(_ sender: UIButton) {
         guard let email = emailTextField.text else { return  }
         guard let password = passwordTextField.text else { return  }
-        
         
         Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
             if let error = error as? NSError {
@@ -68,7 +67,7 @@ class LoginVC: UIViewController {
             } else {
                 print("User signs in successfully")
                
-                self.performSegue(withIdentifier: "tabbar", sender: nil)
+                self.performSegue(withIdentifier: "toTabbarVC", sender: nil)
                 print("Girildi")
             }
             

@@ -6,19 +6,28 @@
 //
 
 import UIKit
+import SETabView
 
-class TabbarViewController: UITabBarController {
+class TabbarViewController:  SETabViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        // set tab bar look collectively
+        
+        setTabColors(backgroundColor: UIColor(red: 239/255, green: 238/255, blue: 252/255, alpha: 1.0), ballColor: UIColor.white, tintColor: UIColor.purple, unselectedItemTintColor: UIColor.black, barTintColor: .clear)
+        
+        // set the view controllers
+        setViewControllers(getViewControllers())
+       
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        tabBar.frame.size.height = 95
-        tabBar.frame.origin.y = view.frame.height - 95
+    private func getViewControllers() -> [UIViewController] {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        return [
+            storyboard.instantiateViewController(withIdentifier: "homeVC"),
+            storyboard.instantiateViewController(withIdentifier: "rankingsVC"),
+            storyboard.instantiateViewController(withIdentifier: "profileVC"),
+        ]
     }
 
 }
