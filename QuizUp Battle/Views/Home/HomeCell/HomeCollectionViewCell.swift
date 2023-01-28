@@ -10,6 +10,8 @@ import UIKit
 class HomeCollectionViewCell: UICollectionViewCell {
     
     static let identifier = String(describing: HomeCollectionViewCell.self)
+    
+    static let shared = HomeCollectionViewCell()
 
     @IBOutlet weak var iconImageView: UIImageView!
     
@@ -17,5 +19,8 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var questionLabel: UILabel!
     
+    func setup(_ category : Category ) {
+        headerLabel.text = category.name
+    }
     
 }

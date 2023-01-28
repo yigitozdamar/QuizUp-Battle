@@ -41,6 +41,11 @@
 		7FF74DFA2982BC450067C3D9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF74DF92982BC450067C3D9 /* HomeViewController.swift */; };
 		7FF74DFE2982BD5E0067C3D9 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF74DFC2982BD5E0067C3D9 /* HomeCollectionViewCell.swift */; };
 		7FF74DFF2982BD5E0067C3D9 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF74DFD2982BD5E0067C3D9 /* HomeCollectionViewCell.xib */; };
+		7FF74E01298591360067C3D9 /* QuizData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF74E00298591360067C3D9 /* QuizData.swift */; };
+		7FF74E03298594810067C3D9 /* CategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF74E02298594810067C3D9 /* CategoryData.swift */; };
+		7FF74E06298596390067C3D9 /* CategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF74E05298596390067C3D9 /* CategoryManager.swift */; };
+		7FF74E08298597980067C3D9 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF74E07298597980067C3D9 /* AuthManager.swift */; };
+		7FF74E0A298598600067C3D9 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF74E09298598600067C3D9 /* Route.swift */; };
 		C31036CE297AC4C5006EBBF3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036CD297AC4C5006EBBF3 /* UIView+Extension.swift */; };
 		C31036D1297AC5CB006EBBF3 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036D0297AC5CB006EBBF3 /* OnboardingSlide.swift */; };
 		C31036D3297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036D2297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift */; };
@@ -85,6 +90,11 @@
 		7FF74DF92982BC450067C3D9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7FF74DFC2982BD5E0067C3D9 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		7FF74DFD2982BD5E0067C3D9 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		7FF74E00298591360067C3D9 /* QuizData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizData.swift; sourceTree = "<group>"; };
+		7FF74E02298594810067C3D9 /* CategoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryData.swift; sourceTree = "<group>"; };
+		7FF74E05298596390067C3D9 /* CategoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManager.swift; sourceTree = "<group>"; };
+		7FF74E07298597980067C3D9 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		7FF74E09298598600067C3D9 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		829263A92AAC6B63C242ACAC /* Pods-QuizUp Battle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizUp Battle.release.xcconfig"; path = "Target Support Files/Pods-QuizUp Battle/Pods-QuizUp Battle.release.xcconfig"; sourceTree = "<group>"; };
 		98164C229831F220398D3A89 /* Pods-QuizUp Battle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizUp Battle.debug.xcconfig"; path = "Target Support Files/Pods-QuizUp Battle/Pods-QuizUp Battle.debug.xcconfig"; sourceTree = "<group>"; };
 		C31036CD297AC4C5006EBBF3 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -163,6 +173,7 @@
 		7F70ECE9297AAB140044984C /* QuizUp Battle */ = {
 			isa = PBXGroup;
 			children = (
+				7FF74E04298596200067C3D9 /* Managers */,
 				C31036CF297AC5BB006EBBF3 /* Models */,
 				C31036CC297AC49B006EBBF3 /* Extension */,
 				C31036CB297AC2DA006EBBF3 /* Views */,
@@ -251,6 +262,15 @@
 			path = HomeCell;
 			sourceTree = "<group>";
 		};
+		7FF74E04298596200067C3D9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				7FF74E05298596390067C3D9 /* CategoryManager.swift */,
+				7FF74E07298597980067C3D9 /* AuthManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		C31036CB297AC2DA006EBBF3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +297,9 @@
 			isa = PBXGroup;
 			children = (
 				C31036D0297AC5CB006EBBF3 /* OnboardingSlide.swift */,
+				7FF74E00298591360067C3D9 /* QuizData.swift */,
+				7FF74E02298594810067C3D9 /* CategoryData.swift */,
+				7FF74E09298598600067C3D9 /* Route.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -325,8 +348,6 @@
 			dependencies = (
 			);
 			name = "QuizUp Battle";
-			packageProductDependencies = (
-			);
 			productName = "QuizUp Battle";
 			productReference = 7F70ECE7297AAB140044984C /* QuizUp Battle.app */;
 			productType = "com.apple.product-type.application";
@@ -355,8 +376,6 @@
 				Base,
 			);
 			mainGroup = 7F70ECDE297AAB140044984C;
-			packageReferences = (
-			);
 			productRefGroup = 7F70ECE8297AAB140044984C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -448,13 +467,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FF74E01298591360067C3D9 /* QuizData.swift in Sources */,
+				7FF74E03298594810067C3D9 /* CategoryData.swift in Sources */,
 				C31036D1297AC5CB006EBBF3 /* OnboardingSlide.swift in Sources */,
 				7F70ECEF297AAB140044984C /* OnboardingViewController.swift in Sources */,
 				C3916D57297C61FB002E1760 /* TabbarViewController.swift in Sources */,
 				7F70ECEB297AAB140044984C /* AppDelegate.swift in Sources */,
 				C3EDC68C298104E200D18DBC /* LoginVC.swift in Sources */,
+				7FF74E08298597980067C3D9 /* AuthManager.swift in Sources */,
 				7FF74DFE2982BD5E0067C3D9 /* HomeCollectionViewCell.swift in Sources */,
+				7FF74E0A298598600067C3D9 /* Route.swift in Sources */,
 				C31036CE297AC4C5006EBBF3 /* UIView+Extension.swift in Sources */,
+				7FF74E06298596390067C3D9 /* CategoryManager.swift in Sources */,
 				7F70ED2B297C78290044984C /* SignUpViewController.swift in Sources */,
 				7F70ECED297AAB140044984C /* SceneDelegate.swift in Sources */,
 				C31036D3297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift in Sources */,

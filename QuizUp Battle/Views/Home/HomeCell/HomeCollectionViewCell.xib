@@ -8,10 +8,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Nunito-Regular.ttf">
+        <array key="Nunito-VariableFont_wght.ttf">
             <string>Nunito-Regular</string>
-        </array>
-        <array key="Nunito-SemiBold.ttf">
             <string>Nunito-SemiBold</string>
         </array>
     </customFonts>
@@ -35,15 +33,18 @@
                                     <constraint firstAttribute="height" constant="50" id="96p-y9-fKe"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Math" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="Wj6-JQ-SVv">
-                                <rect key="frame" x="46.666666666666671" y="62" width="56.666666666666671" height="33"/>
-                                <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Math Deneme karıaşsdık" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.84999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Wj6-JQ-SVv">
+                                <rect key="frame" x="4" y="62" width="142" height="64"/>
+                                <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="wRU-GQ-7m6">
-                                <rect key="frame" x="19.666666666666664" y="97" width="110.66666666666669" height="27.333333333333329"/>
-                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="15 Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="wRU-GQ-7m6">
+                                <rect key="frame" x="33.666666666666664" y="128" width="82.666666666666686" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="7uY-bb-7BG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -52,11 +53,14 @@
                         <color key="tintColor" red="0.41568627450000001" green="0.35294117650000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ZzO-w1-Axf" firstAttribute="top" secondItem="UNO-So-a0y" secondAttribute="top" constant="8" id="8Pn-tI-wDC"/>
+                            <constraint firstAttribute="bottom" secondItem="wRU-GQ-7m6" secondAttribute="bottom" constant="2" id="Kll-SE-imp"/>
                             <constraint firstItem="wRU-GQ-7m6" firstAttribute="centerX" secondItem="UNO-So-a0y" secondAttribute="centerX" id="MzG-Rn-REO"/>
+                            <constraint firstItem="Wj6-JQ-SVv" firstAttribute="leading" secondItem="UNO-So-a0y" secondAttribute="leading" constant="4" id="RYB-aK-kvj"/>
                             <constraint firstItem="ZzO-w1-Axf" firstAttribute="centerX" secondItem="UNO-So-a0y" secondAttribute="centerX" id="W6h-a1-I11"/>
                             <constraint firstItem="Wj6-JQ-SVv" firstAttribute="centerX" secondItem="UNO-So-a0y" secondAttribute="centerX" id="WJL-i0-3yO"/>
                             <constraint firstItem="wRU-GQ-7m6" firstAttribute="top" secondItem="Wj6-JQ-SVv" secondAttribute="bottom" constant="2" id="gSD-ao-2Sj"/>
                             <constraint firstItem="Wj6-JQ-SVv" firstAttribute="top" secondItem="ZzO-w1-Axf" secondAttribute="bottom" constant="4" id="k3q-u3-cB5"/>
+                            <constraint firstAttribute="trailing" secondItem="Wj6-JQ-SVv" secondAttribute="trailing" constant="4" id="vaT-db-jyY"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
