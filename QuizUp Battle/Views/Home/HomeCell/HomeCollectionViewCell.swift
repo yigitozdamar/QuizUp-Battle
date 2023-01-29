@@ -20,7 +20,9 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var questionLabel: UILabel!
     
     func setup(_ category : Category ) {
+   
         headerLabel.text = category.name
+        questionLabel.text = "\(category.totalQuestion) Questions"
     }
     
 }

@@ -14,14 +14,16 @@ struct CateogoryData: Decodable {
 struct Category: Decodable {
     let id: Int
     let name: String
+    var totalQuestion: Int
+    
 }
 
 
 struct CategoryStats: Decodable {
     let category_id: Int
-    var category_question_count: Category_question_count
+    var category_question_count: category_question_count
 }
-struct Category_question_count: Decodable {
+struct category_question_count: Decodable {
     let total_question_count: Int
     let total_easy_question_count: Int
     let total_medium_question_count: Int
