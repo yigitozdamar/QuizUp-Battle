@@ -6,60 +6,48 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
+
 
 struct CategoryManager {
     
     static let shared = CategoryManager()
     let baseURL = "https://opentdb.com"
+    let cache = NSCache<NSString, AnyObject>()
     
     init() { }
     
-    func fetchCategories(completion: @escaping ([Category]?) -> Void) {
-        let url = URL(string: "https://opentdb.com/api_category.php")!
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let error = error {
-                print(error.localizedDescription)
-                completion(nil)
-                return
+    func fetchCategories(completion: @escaping ([Category]) -> Void) {
+        AF.request("https://opentdb.com/api_category.php").response { response in
+            guard let data = response.data else { return }
+            let json = JSON(data)
+            var categories = [Category]()
+            for category in json["trivia_categories"].arrayValue {
+                let id = category["id"].intValue
+                let name = category["name"].stringValue
+                self.fetchQuestionCount(categoryId: id) { questionCount in
+                    categories.append(Category(id: id, name: name, totalQuestion: questionCount))
+                    if categories.count == json["trivia_categories"].arrayValue.count {
+                        completion(categories)
+                    }
+                }
             }
-            guard let data = data else {
-                completion(nil)
-                return
-            }
-            do {
-                let categoryData = try JSONDecoder().decode(CateogoryData.self, from: data)
-                completion(categoryData.trivia_categories)
-            } catch let error {
-                print(error)
-                completion(nil)
-            }
-        }.resume()
+        }
     }
-    
-    func fetchCategoryTotalQuestion(id: Int,completion: @escaping (Category_question_count?) -> Void) {
-        
-        let url = URL(string: "\(baseURL)/api_count.php?category=\(id)")!
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                print(error.localizedDescription)
-                completion(nil)
-                return
-            }
-            guard let data = data else {
-                completion(nil)
-                return
-            }
-            do {
-                let totalQuestions = try JSONDecoder().decode(CategoryStats.self, from: data)
-                completion(totalQuestions.category_question_count)
-            } catch let error {
-                print(error.localizedDescription)
-                completion(nil)
-            }
-        }.resume()
-        
-        
+
+    func fetchQuestionCount(categoryId: Int, completion: @escaping (Int) -> Void) {
+        let url = "https://opentdb.com/api_count.php?category=\(categoryId)"
+        AF.request(url).response{ response in
+            guard let data = response.data else { return }
+            let json = JSON(data)
+            let questionCount = json["category_question_count"]["total_question_count"].intValue
+
+            completion(questionCount)
+
+        }
     }
+
     
     
 }
