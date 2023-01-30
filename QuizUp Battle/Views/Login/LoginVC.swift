@@ -33,7 +33,7 @@ class LoginVC: UIViewController {
             
             // If sign in succeeded, display the app's main content View.
             print("Oldu")
-            self.performSegue(withIdentifier: "toTabbarVC", sender: nil)
+            self.performSegue(withIdentifier: "toLaunchVC", sender: nil)
             
         }
     }
@@ -67,7 +67,7 @@ class LoginVC: UIViewController {
             } else {
                 print("User signs in successfully")
                
-                self.performSegue(withIdentifier: "launch", sender: nil)
+                self.performSegue(withIdentifier: "toLaunchVC", sender: nil)
                 print("Girildi")
             }
             

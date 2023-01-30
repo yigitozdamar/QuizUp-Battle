@@ -17,18 +17,20 @@ class LaunchViewController: UIViewController {
         setupAnimation()
         categoryManager.fetchCategories { result in
             DispatchQueue.main.async{
-              
-                    self.categoryList = result.sorted { $0.name < $1.name }
-              
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let vc = storyboard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
-                    vc.categoryList = self.categoryList
-                    vc.modalPresentationStyle = .fullScreen
-                    self.present(vc, animated: true, completion: nil)
+                
+                self.categoryList = result
+                
+                let filteredCategories = self.categoryList.map { Category(id: $0.id, name: $0.name.replacingOccurrences(of: "Entertainment:", with: ""), totalQuestion: $0.totalQuestion) }
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
+                vc.categoryList = filteredCategories
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
                 self.animationView.play { (finished) in
                     self.animationView!.isHidden = true
                 }
-
+                
             }
         }
         

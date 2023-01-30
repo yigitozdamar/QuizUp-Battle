@@ -42,6 +42,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = UINavigationController(rootViewController: SettingsViewController())
+        
+        
+    }
+    
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {

@@ -7,23 +7,43 @@
 
 import Foundation
 
-extension String {
-    /// Converts HTML string to a `NSAttributedString`
-
-    var htmlAttributedString: NSAttributedString? {
-        return try? NSAttributedString(data: Data(utf8), options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
-    }
+// MARK: - QuestionSelect
+struct QuestionSelect {
+    let responseCode: Int
+    let results: [Result]
 }
 
-struct QuizData: Decodable {
-    var results: [QuestionData]
-}
-
-struct QuestionData: Decodable {
+// MARK: - Result
+struct Result {
     let category: String
-    let type: String
-    let difficulty: String
-    let question: String
-    let correct_answer: String
-    let incorrect_answers: [String]
+    let type: TypeEnum
+    let difficulty: Difficulty
+    let question, correctAnswer: String
+    let incorrectAnswers: [String]
 }
+
+enum Difficulty {
+    case easy
+    case hard
+    case medium
+}
+
+enum TypeEnum {
+    case boolean
+    case multiple
+}
+
+
+//
+//struct QuizData: Decodable {
+//    var results: [QuestionData]
+//}
+//
+//struct QuestionData: Decodable {
+//    let category: String
+//    let type: String
+//    let difficulty: String
+//    let question: String
+//    let correct_answer: String
+//    let incorrect_answers: [String]
+//}

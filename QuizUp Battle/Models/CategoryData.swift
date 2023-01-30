@@ -12,6 +12,7 @@ struct CateogoryData: Decodable {
 }
 
 struct Category: Decodable {
+    
     let id: Int
     let name: String
     var totalQuestion: Int

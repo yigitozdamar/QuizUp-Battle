@@ -36,6 +36,9 @@
 		7F70ED27297AB27B0044984C /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F70ED13297AB27B0044984C /* README.txt */; };
 		7F70ED2B297C78290044984C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70ED2A297C78290044984C /* SignUpViewController.swift */; };
 		7FD106FF297F1FCC0005E9DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7FD106FE297F1FCC0005E9DF /* GoogleService-Info.plist */; };
+		7FE0C9D129885C9500EBB913 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE0C9D029885C9500EBB913 /* SettingsViewController.swift */; };
+		7FE0C9D329885D4D00EBB913 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE0C9D229885D4D00EBB913 /* String+Extension.swift */; };
+		7FE0C9D52988712200EBB913 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE0C9D42988712200EBB913 /* SettingsManager.swift */; };
 		7FF74DED2982AE7F0067C3D9 /* RankingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF74DEC2982AE7F0067C3D9 /* RankingsViewController.swift */; };
 		7FF74DF02982AE910067C3D9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF74DEF2982AE910067C3D9 /* ProfileViewController.swift */; };
 		7FF74DFA2982BC450067C3D9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF74DF92982BC450067C3D9 /* HomeViewController.swift */; };
@@ -87,6 +90,9 @@
 		7F70ED13297AB27B0044984C /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		7F70ED2A297C78290044984C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		7FD106FE297F1FCC0005E9DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7FE0C9D029885C9500EBB913 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		7FE0C9D229885D4D00EBB913 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		7FE0C9D42988712200EBB913 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		7FF74DEC2982AE7F0067C3D9 /* RankingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingsViewController.swift; sourceTree = "<group>"; };
 		7FF74DEF2982AE910067C3D9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7FF74DF92982BC450067C3D9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +132,30 @@
 				698208958E628852CB7E910E /* Pods_QuizUp_Battle.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7F07396F29884DE100C183C9 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				C3BEDE522987EC7400D4D2BF /* LaunchViewController.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		7F07397029884DF700C183C9 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C3BEDE542987F86F00D4D2BF /* 116593-triviaw.json */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		7F073971298858DD00C183C9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				7FE0C9D029885C9500EBB913 /* SettingsViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		7F284D43297F18C2001A6F30 /* Support */ = {
@@ -177,6 +207,7 @@
 		7F70ECE9297AAB140044984C /* QuizUp Battle */ = {
 			isa = PBXGroup;
 			children = (
+				7F07397029884DF700C183C9 /* Assets */,
 				7FF74E04298596200067C3D9 /* Managers */,
 				C31036CF297AC5BB006EBBF3 /* Models */,
 				C31036CC297AC49B006EBBF3 /* Extension */,
@@ -186,8 +217,6 @@
 				7F70ECF0297AAB140044984C /* Main.storyboard */,
 				7F70ECF8297AAB160044984C /* Info.plist */,
 				7FD106FE297F1FCC0005E9DF /* GoogleService-Info.plist */,
-				C3BEDE542987F86F00D4D2BF /* 116593-triviaw.json */,
-				C3BEDE522987EC7400D4D2BF /* LaunchViewController.swift */,
 			);
 			path = "QuizUp Battle";
 			sourceTree = "<group>";
@@ -273,6 +302,7 @@
 			children = (
 				7FF74E05298596390067C3D9 /* CategoryManager.swift */,
 				7FF74E07298597980067C3D9 /* AuthManager.swift */,
+				7FE0C9D42988712200EBB913 /* SettingsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -280,6 +310,8 @@
 		C31036CB297AC2DA006EBBF3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7F073971298858DD00C183C9 /* Settings */,
+				7F07396F29884DE100C183C9 /* Launch */,
 				7FF74DEE2982AE850067C3D9 /* Profile */,
 				7FF74DEB2982AE4D0067C3D9 /* Rankings */,
 				7F284D45297F1C37001A6F30 /* Home */,
@@ -295,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				C31036CD297AC4C5006EBBF3 /* UIView+Extension.swift */,
+				7FE0C9D229885D4D00EBB913 /* String+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -475,8 +508,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FF74E01298591360067C3D9 /* QuizData.swift in Sources */,
+				7FE0C9D329885D4D00EBB913 /* String+Extension.swift in Sources */,
 				7FF74E03298594810067C3D9 /* CategoryData.swift in Sources */,
 				C31036D1297AC5CB006EBBF3 /* OnboardingSlide.swift in Sources */,
+				7FE0C9D129885C9500EBB913 /* SettingsViewController.swift in Sources */,
 				7F70ECEF297AAB140044984C /* OnboardingViewController.swift in Sources */,
 				C3916D57297C61FB002E1760 /* TabbarViewController.swift in Sources */,
 				7F70ECEB297AAB140044984C /* AppDelegate.swift in Sources */,
@@ -492,6 +527,7 @@
 				C31036D3297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift in Sources */,
 				7FF74DF02982AE910067C3D9 /* ProfileViewController.swift in Sources */,
 				7FF74DED2982AE7F0067C3D9 /* RankingsViewController.swift in Sources */,
+				7FE0C9D52988712200EBB913 /* SettingsManager.swift in Sources */,
 				7FF74DFA2982BC450067C3D9 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
