@@ -50,6 +50,8 @@
 		C31036D1297AC5CB006EBBF3 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036D0297AC5CB006EBBF3 /* OnboardingSlide.swift */; };
 		C31036D3297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036D2297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift */; };
 		C3916D57297C61FB002E1760 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3916D56297C61FB002E1760 /* TabbarViewController.swift */; };
+		C3BEDE532987EC7400D4D2BF /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BEDE522987EC7400D4D2BF /* LaunchViewController.swift */; };
+		C3BEDE552987F86F00D4D2BF /* 116593-triviaw.json in Resources */ = {isa = PBXBuildFile; fileRef = C3BEDE542987F86F00D4D2BF /* 116593-triviaw.json */; };
 		C3EDC68C298104E200D18DBC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EDC68B298104E200D18DBC /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +103,8 @@
 		C31036D0297AC5CB006EBBF3 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		C31036D2297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		C3916D56297C61FB002E1760 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		C3BEDE522987EC7400D4D2BF /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		C3BEDE542987F86F00D4D2BF /* 116593-triviaw.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "116593-triviaw.json"; sourceTree = "<group>"; };
 		C3EDC68B298104E200D18DBC /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,6 +186,8 @@
 				7F70ECF0297AAB140044984C /* Main.storyboard */,
 				7F70ECF8297AAB160044984C /* Info.plist */,
 				7FD106FE297F1FCC0005E9DF /* GoogleService-Info.plist */,
+				C3BEDE542987F86F00D4D2BF /* 116593-triviaw.json */,
+				C3BEDE522987EC7400D4D2BF /* LaunchViewController.swift */,
 			);
 			path = "QuizUp Battle";
 			sourceTree = "<group>";
@@ -393,6 +399,7 @@
 				7F70ED25297AB27B0044984C /* OFL.txt in Resources */,
 				7F70ED1A297AB27B0044984C /* Nunito-Regular.ttf in Resources */,
 				7FD106FF297F1FCC0005E9DF /* GoogleService-Info.plist in Resources */,
+				C3BEDE552987F86F00D4D2BF /* 116593-triviaw.json in Resources */,
 				7F70ED22297AB27B0044984C /* Nunito-Italic.ttf in Resources */,
 				7F70ED1E297AB27B0044984C /* Nunito-Black.ttf in Resources */,
 				7F70ED14297AB27B0044984C /* Nunito-VariableFont_wght.ttf in Resources */,
@@ -480,6 +487,7 @@
 				C31036CE297AC4C5006EBBF3 /* UIView+Extension.swift in Sources */,
 				7FF74E06298596390067C3D9 /* CategoryManager.swift in Sources */,
 				7F70ED2B297C78290044984C /* SignUpViewController.swift in Sources */,
+				C3BEDE532987EC7400D4D2BF /* LaunchViewController.swift in Sources */,
 				7F70ECED297AAB140044984C /* SceneDelegate.swift in Sources */,
 				C31036D3297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift in Sources */,
 				7FF74DF02982AE910067C3D9 /* ProfileViewController.swift in Sources */,

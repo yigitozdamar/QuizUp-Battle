@@ -13,4 +13,5 @@ pod 'FirebaseFirestore'
 pod 'SETabView'
 pod 'SwiftyJSON', '~> 4.0'
 pod 'Alamofire'
+pod 'lottie-ios'
 end

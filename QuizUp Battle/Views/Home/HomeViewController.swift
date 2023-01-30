@@ -10,7 +10,6 @@ import SETabView
 
 class HomeViewController: UIViewController, SETabItemProvider {
     
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
     let categoryManager = CategoryManager()
     var categoryList: [Category] = []
@@ -20,15 +19,8 @@ class HomeViewController: UIViewController, SETabItemProvider {
         super.viewDidLoad()
         
         collectionView.register(UINib(nibName: HomeCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
+        collectionView.reloadData()
         
-        categoryManager.fetchCategories { result in
-            DispatchQueue.main.async{
-                self.activityIndicator.startAnimating()
-                self.categoryList = result.sorted { $0.name < $1.name }
-                self.collectionView.reloadData()
-                self.activityIndicator.stopAnimating()
-            }
-        }
     }
     
     var seTabBarItem: UITabBarItem? {

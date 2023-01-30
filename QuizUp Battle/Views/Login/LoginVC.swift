@@ -67,7 +67,7 @@ class LoginVC: UIViewController {
             } else {
                 print("User signs in successfully")
                
-                self.performSegue(withIdentifier: "toTabbarVC", sender: nil)
+                self.performSegue(withIdentifier: "launch", sender: nil)
                 print("Girildi")
             }
             
