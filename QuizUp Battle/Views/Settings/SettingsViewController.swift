@@ -16,28 +16,65 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var questionNumberPicker: UIPickerView!
     
     @IBOutlet weak var questionTitleLabel: UILabel!
+    
     var selectedTitle: String?
-    private var difficultySelected = ""
+    private var selectedDifficulty = Difficulty.easy.rawValue
+    private var selectedQuestionType = QuestionType.trueFalse.rawValue
+    private var selectedQuestionNumber = 10
+    private var pickerArray = Array(10...50)
+    
+    enum QuestionType: String {
+        case trueFalse = "boolean"
+        case multiple = "multiple"
+        case all = ""
+    }
+    
+    enum Difficulty: String {
+        case easy = "easy"
+        case medium = "medium"
+        case hard = "hard"
+    }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         questionTitleLabel.text = selectedTitle
-        print(difficultySelected)
+        
     }
     
-  
-    @IBAction func difficultyChanged(_ sender: AnyObject) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toGameVC" {
+            let destinationVC = segue.destination as! GameViewController
+            destinationVC.modalTransitionStyle = .flipHorizontal
+            destinationVC.difficulty = selectedDifficulty
+            destinationVC.questionType = selectedQuestionType
+            destinationVC.questionNumber = selectedQuestionNumber
+        }
+    }
+
+    @IBAction func questionTypeChanged(_ sender: UISegmentedControl) {
         
-        switch difficultyControl.selectedSegmentIndex {
+        switch sender.selectedSegmentIndex {
             case 0:
-                difficultySelected = "easy"
+                selectedQuestionType = QuestionType.trueFalse.rawValue
             case 1:
-                difficultySelected = "medium"
+                selectedQuestionType = QuestionType.multiple.rawValue
             case 2:
-                difficultySelected = "hard"
-                
-                print(difficultySelected)
+                selectedQuestionType = QuestionType.all.rawValue
+            default:
+                break
+        }
+    }
+    
+    @IBAction func difficultyChanged(_ sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+            case 0:
+                selectedDifficulty = Difficulty.easy.rawValue
+            case 1:
+                selectedDifficulty = Difficulty.medium.rawValue
+            case 2:
+                selectedDifficulty = Difficulty.hard.rawValue
             default:
                 break
         }
@@ -48,6 +85,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func startGameButtonTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "toGameVC", sender: self)
     }
     
     
@@ -60,12 +98,16 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 50
+        return pickerArray.count
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "\(10+row)"
+        return "\(pickerArray[row])"
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedQuestionNumber = pickerArray[row]
+    }
     
 }

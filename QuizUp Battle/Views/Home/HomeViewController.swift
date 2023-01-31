@@ -19,7 +19,17 @@ class HomeViewController: UIViewController, SETabItemProvider {
         super.viewDidLoad()
         
         collectionView.register(UINib(nibName: HomeCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
+     
         collectionView.reloadData()
+        
+    }
+    
+    func didCategoryList(category: [Category]) {
+        categoryList = category
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
     }
     

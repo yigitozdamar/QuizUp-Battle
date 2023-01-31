@@ -39,6 +39,7 @@
 		7FE0C9D129885C9500EBB913 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE0C9D029885C9500EBB913 /* SettingsViewController.swift */; };
 		7FE0C9D329885D4D00EBB913 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE0C9D229885D4D00EBB913 /* String+Extension.swift */; };
 		7FE0C9D52988712200EBB913 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE0C9D42988712200EBB913 /* SettingsManager.swift */; };
+		7FE0C9D8298930F600EBB913 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE0C9D7298930F600EBB913 /* GameViewController.swift */; };
 		7FF74DED2982AE7F0067C3D9 /* RankingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF74DEC2982AE7F0067C3D9 /* RankingsViewController.swift */; };
 		7FF74DF02982AE910067C3D9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF74DEF2982AE910067C3D9 /* ProfileViewController.swift */; };
 		7FF74DFA2982BC450067C3D9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF74DF92982BC450067C3D9 /* HomeViewController.swift */; };
@@ -93,6 +94,7 @@
 		7FE0C9D029885C9500EBB913 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7FE0C9D229885D4D00EBB913 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		7FE0C9D42988712200EBB913 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		7FE0C9D7298930F600EBB913 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		7FF74DEC2982AE7F0067C3D9 /* RankingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingsViewController.swift; sourceTree = "<group>"; };
 		7FF74DEF2982AE910067C3D9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7FF74DF92982BC450067C3D9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +274,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		7FE0C9D6298930DA00EBB913 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				7FE0C9D7298930F600EBB913 /* GameViewController.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
 		7FF74DEB2982AE4D0067C3D9 /* Rankings */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +320,7 @@
 		C31036CB297AC2DA006EBBF3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7FE0C9D6298930DA00EBB913 /* Game */,
 				7F073971298858DD00C183C9 /* Settings */,
 				7F07396F29884DE100C183C9 /* Launch */,
 				7FF74DEE2982AE850067C3D9 /* Profile */,
@@ -521,6 +532,7 @@
 				7FF74E0A298598600067C3D9 /* Route.swift in Sources */,
 				C31036CE297AC4C5006EBBF3 /* UIView+Extension.swift in Sources */,
 				7FF74E06298596390067C3D9 /* CategoryManager.swift in Sources */,
+				7FE0C9D8298930F600EBB913 /* GameViewController.swift in Sources */,
 				7F70ED2B297C78290044984C /* SignUpViewController.swift in Sources */,
 				C3BEDE532987EC7400D4D2BF /* LaunchViewController.swift in Sources */,
 				7F70ECED297AAB140044984C /* SceneDelegate.swift in Sources */,

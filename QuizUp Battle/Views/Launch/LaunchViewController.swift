@@ -12,6 +12,8 @@ class LaunchViewController: UIViewController {
     private var animationView: LottieAnimationView!
     let categoryManager = CategoryManager()
     var categoryList: [Category] = []
+    var filteredCategories: [Category] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAnimation()
@@ -21,12 +23,14 @@ class LaunchViewController: UIViewController {
                 self.categoryList = result
                 
                 let filteredCategories = self.categoryList.map { Category(id: $0.id, name: $0.name.replacingOccurrences(of: "Entertainment: ", with: ""), totalQuestion: $0.totalQuestion) }
-                
+                                
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
                 vc.categoryList = filteredCategories
                 vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: true, completion: nil)
+                
+                self.performSegue(withIdentifier: "toTabbarVC", sender: self)
+                
                 self.animationView.play { (finished) in
                     self.animationView!.isHidden = true
                 }
@@ -34,6 +38,14 @@ class LaunchViewController: UIViewController {
             }
         }
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toTabbarVC" {
+            if let destinationVC = segue.destination as? HomeViewController {
+                destinationVC.categoryList = categoryList
+            }
+        }
     }
     
     func setupAnimation(){
