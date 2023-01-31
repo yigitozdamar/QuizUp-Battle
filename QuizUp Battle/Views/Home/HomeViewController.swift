@@ -13,7 +13,7 @@ class HomeViewController: UIViewController, SETabItemProvider {
     @IBOutlet weak var collectionView: UICollectionView!
     let categoryManager = CategoryManager()
     var categoryList: [Category] = []
-    
+    var selectedTitle = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,16 @@ class HomeViewController: UIViewController, SETabItemProvider {
     
     var seTabBarItem: UITabBarItem? {
             return UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     
+        if segue.identifier == "toSettingsVC" {
+            if let destinationVC = segue.destination as? SettingsViewController {
+                destinationVC.selectedTitle = selectedTitle
+            }
         }
+    }
     
 }
 
@@ -43,8 +52,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = UINavigationController(rootViewController: SettingsViewController())
-        
+       
+        let selectedTitleName = categoryList[indexPath.item].name
+        self.selectedTitle = selectedTitleName
+        performSegue(withIdentifier: "toSettingsVC", sender: self)
         
     }
     

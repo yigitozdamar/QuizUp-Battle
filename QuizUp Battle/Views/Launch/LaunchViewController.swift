@@ -20,7 +20,7 @@ class LaunchViewController: UIViewController {
                 
                 self.categoryList = result
                 
-                let filteredCategories = self.categoryList.map { Category(id: $0.id, name: $0.name.replacingOccurrences(of: "Entertainment:", with: ""), totalQuestion: $0.totalQuestion) }
+                let filteredCategories = self.categoryList.map { Category(id: $0.id, name: $0.name.replacingOccurrences(of: "Entertainment: ", with: ""), totalQuestion: $0.totalQuestion) }
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController

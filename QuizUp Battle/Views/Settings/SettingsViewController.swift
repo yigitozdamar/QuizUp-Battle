@@ -16,15 +16,35 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var questionNumberPicker: UIPickerView!
     
     @IBOutlet weak var questionTitleLabel: UILabel!
+    var selectedTitle: String?
+    private var difficultySelected = ""
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        questionTitleLabel.text = selectedTitle
+        print(difficultySelected)
     }
-
+    
+  
+    @IBAction func difficultyChanged(_ sender: AnyObject) {
+        
+        switch difficultyControl.selectedSegmentIndex {
+            case 0:
+                difficultySelected = "easy"
+            case 1:
+                difficultySelected = "medium"
+            case 2:
+                difficultySelected = "hard"
+                
+                print(difficultySelected)
+            default:
+                break
+        }
+    }
+    
     @IBAction func backButtonTapped(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        dismiss(animated: true)
     }
     
     @IBAction func startGameButtonTapped(_ sender: UIButton) {
