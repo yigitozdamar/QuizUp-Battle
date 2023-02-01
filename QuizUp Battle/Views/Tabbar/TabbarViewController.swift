@@ -9,6 +9,8 @@ import UIKit
 import SETabView
 
 class TabbarViewController:  SETabViewController {
+ 
+    var categoryList: [Category] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +20,9 @@ class TabbarViewController:  SETabViewController {
         
         // set the view controllers
         setViewControllers(getViewControllers())
-       
+        if let homeViewController = viewControllers.first as? HomeViewController {
+           homeViewController.categoryList = categoryList
+        }
     }
     private func getViewControllers() -> [UIViewController] {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

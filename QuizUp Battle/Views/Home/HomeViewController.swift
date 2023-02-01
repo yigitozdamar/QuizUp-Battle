@@ -9,6 +9,7 @@ import UIKit
 import SETabView
 
 class HomeViewController: UIViewController, SETabItemProvider {
+  
     
     @IBOutlet weak var collectionView: UICollectionView!
     let categoryManager = CategoryManager()
@@ -19,13 +20,9 @@ class HomeViewController: UIViewController, SETabItemProvider {
         super.viewDidLoad()
         
         collectionView.register(UINib(nibName: HomeCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
-     
+   
         collectionView.reloadData()
         
-    }
-    
-    func didCategoryList(category: [Category]) {
-        categoryList = category
     }
     
     override func viewWillAppear(_ animated: Bool) {
