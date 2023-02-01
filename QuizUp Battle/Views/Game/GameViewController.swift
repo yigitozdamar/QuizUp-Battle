@@ -9,15 +9,20 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    var difficulty: String!
-    var questionType: String!
-    var questionNumber: Int!
+//    var difficulty: String!
+//    var questionType: String!
+//    var questionNumber: Int!
+//
+    var questions: [QuestionData] = []
     
+    let settingsManager = SettingsManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("1233",difficulty)
-        print("1223",questionType)
-        print(questionNumber)
+//        settingsManager.request { result in
+//            self.questions = result
+//                print(self.questions)
+//
+//        }
         
     }
     

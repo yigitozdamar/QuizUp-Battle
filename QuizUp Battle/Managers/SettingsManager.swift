@@ -11,22 +11,35 @@ import SwiftyJSON
 
 struct SettingsManager {
     static let shared = SettingsManager()
-    
-//    func fetchQuestions(completion: @escaping ([QuestionSelect]) -> Void) {
-//        AF.request("https://opentdb.com/api_category.php").response { response in
-//            guard let data = response.data else { return }
-//            let json = JSON(data)
-//            var categories = [Category]()
-//            for category in json["trivia_categories"].arrayValue {
-//                let id = category["id"].intValue
-//                let name = category["name"].stringValue
-//                self.fetchQuestionCount(categoryId: id) { questionCount in
-//                    categories.append(Category(id: id, name: name, totalQuestion: questionCount))
-//                    if categories.count == json["trivia_categories"].arrayValue.count {
-//                        completion(categories)
-//                    }
-//                }
-//            }
-//        }
-//    }
+        let base_URL = "https://opentdb.com/api.php?"
+        var urlRequest: String?
+  
+    func request( completion: @escaping ([QuestionData]) -> Void){
+        AF.request(urlRequest ?? "").responseData { response in
+            print("Response Data:", response)
+            if let data = response.data {
+                do {
+                    let quizData = try JSONDecoder().decode(QuizData.self, from: data)
+                    print("Quiz Data:", quizData)
+                    completion(quizData.results)
+                    print("Completion handler executed")
+                } catch {
+                    print("Decoding error:", error)
+                }
+            }
+        }
+    }
+    mutating func createUrl(amount: String,
+                   difficulty:String,
+                   type: String,
+                   category: String) -> String?{
+        let urlString = "\(base_URL)amount=\(amount)&difficulty=\(difficulty)&type=\(type)&category=\(category)"
+       urlRequest = urlString
+      
+        
+      
+        return urlRequest
+    }
 }
+
+

@@ -15,6 +15,8 @@ class HomeViewController: UIViewController, SETabItemProvider {
     let categoryManager = CategoryManager()
     var categoryList: [Category] = []
     var selectedTitle = ""
+    var selectedCategory = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +25,12 @@ class HomeViewController: UIViewController, SETabItemProvider {
    
         collectionView.reloadData()
         
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         
     }
     
@@ -39,6 +43,8 @@ class HomeViewController: UIViewController, SETabItemProvider {
         if segue.identifier == "toSettingsVC" {
             if let destinationVC = segue.destination as? SettingsViewController {
                 destinationVC.selectedTitle = selectedTitle
+                destinationVC.selectedCategory = selectedCategory
+                
             }
         }
     }
@@ -60,8 +66,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
        
-        let selectedTitleName = categoryList[indexPath.item].name
-        self.selectedTitle = selectedTitleName
+        let selectedItem = categoryList[indexPath.item]
+        self.selectedTitle = selectedItem.name
+        self.selectedCategory = selectedItem.id.description
+        
         performSegue(withIdentifier: "toSettingsVC", sender: self)
         
     }

@@ -53,6 +53,7 @@
 		C31036CE297AC4C5006EBBF3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036CD297AC4C5006EBBF3 /* UIView+Extension.swift */; };
 		C31036D1297AC5CB006EBBF3 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036D0297AC5CB006EBBF3 /* OnboardingSlide.swift */; };
 		C31036D3297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036D2297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift */; };
+		C32A81F0298A9861004AD5B0 /* Url+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32A81EF298A9861004AD5B0 /* Url+Extension.swift */; };
 		C3916D57297C61FB002E1760 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3916D56297C61FB002E1760 /* TabbarViewController.swift */; };
 		C3BEDE532987EC7400D4D2BF /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BEDE522987EC7400D4D2BF /* LaunchViewController.swift */; };
 		C3BEDE552987F86F00D4D2BF /* 116593-triviaw.json in Resources */ = {isa = PBXBuildFile; fileRef = C3BEDE542987F86F00D4D2BF /* 116593-triviaw.json */; };
@@ -110,6 +111,7 @@
 		C31036CD297AC4C5006EBBF3 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		C31036D0297AC5CB006EBBF3 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		C31036D2297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		C32A81EF298A9861004AD5B0 /* Url+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Url+Extension.swift"; sourceTree = "<group>"; };
 		C3916D56297C61FB002E1760 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		C3BEDE522987EC7400D4D2BF /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		C3BEDE542987F86F00D4D2BF /* 116593-triviaw.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "116593-triviaw.json"; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 			children = (
 				C31036CD297AC4C5006EBBF3 /* UIView+Extension.swift */,
 				7FE0C9D229885D4D00EBB913 /* String+Extension.swift */,
+				C32A81EF298A9861004AD5B0 /* Url+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				7FE0C9D8298930F600EBB913 /* GameViewController.swift in Sources */,
 				7F70ED2B297C78290044984C /* SignUpViewController.swift in Sources */,
 				C3BEDE532987EC7400D4D2BF /* LaunchViewController.swift in Sources */,
+				C32A81F0298A9861004AD5B0 /* Url+Extension.swift in Sources */,
 				7F70ECED297AAB140044984C /* SceneDelegate.swift in Sources */,
 				C31036D3297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift in Sources */,
 				7FF74DF02982AE910067C3D9 /* ProfileViewController.swift in Sources */,

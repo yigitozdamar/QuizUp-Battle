@@ -21,7 +21,10 @@ class SettingsViewController: UIViewController {
     private var selectedDifficulty = Difficulty.easy.rawValue
     private var selectedQuestionType = QuestionType.trueFalse.rawValue
     private var selectedQuestionNumber = 10
+    var selectedCategory = ""
     private var pickerArray = Array(10...50)
+    
+    var settingsManager = SettingsManager()
     
     enum QuestionType: String {
         case trueFalse = "boolean"
@@ -46,9 +49,9 @@ class SettingsViewController: UIViewController {
         if segue.identifier == "toGameVC" {
             let destinationVC = segue.destination as! GameViewController
             destinationVC.modalTransitionStyle = .flipHorizontal
-            destinationVC.difficulty = selectedDifficulty
-            destinationVC.questionType = selectedQuestionType
-            destinationVC.questionNumber = selectedQuestionNumber
+//            destinationVC.difficulty = selectedDifficulty
+//            destinationVC.questionType = selectedQuestionType
+//            destinationVC.questionNumber = selectedQuestionNumber
         }
     }
 
@@ -85,7 +88,12 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func startGameButtonTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "toGameVC", sender: self)
+       
+        settingsManager.createUrl(amount: String(selectedQuestionNumber), difficulty: selectedDifficulty, type: selectedQuestionType, category: selectedCategory)
+        settingsManager.request { result in
+            print("result :   \(result)")
+            self.performSegue(withIdentifier: "toGameVC", sender: self)
+        }
     }
     
     

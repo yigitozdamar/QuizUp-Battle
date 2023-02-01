@@ -8,30 +8,20 @@
 import Foundation
 
 // MARK: - QuestionSelect
-struct QuestionSelect {
-    let responseCode: Int
-    let results: [Result]
+
+struct QuizData: Decodable {
+    var results: [QuestionData]
 }
 
-// MARK: - Result
-struct Result {
+struct QuestionData: Decodable {
     let category: String
-    let type: TypeEnum
-    let difficulty: Difficulty
-    let question, correctAnswer: String
-    let incorrectAnswers: [String]
+    let type: String
+    let difficulty: String
+    let question: String
+    let correct_answer: String
+    let incorrect_answers: [String]
 }
-
-enum Difficulty {
-    case easy
-    case hard
-    case medium
-}
-
-enum TypeEnum {
-    case boolean
-    case multiple
-}
+// MARK: - Result
 
 
 //
