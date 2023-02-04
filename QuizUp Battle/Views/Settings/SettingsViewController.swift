@@ -8,9 +8,9 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
+    
     @IBOutlet weak var questionTypeControl: UISegmentedControl!
- 
+    
     @IBOutlet weak var difficultyControl: UISegmentedControl!
     
     @IBOutlet weak var questionNumberPicker: UIPickerView!
@@ -37,49 +37,47 @@ class SettingsViewController: UIViewController {
         case medium = "medium"
         case hard = "hard"
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         questionTitleLabel.text = selectedTitle
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toGameVC" {
             let destinationVC = segue.destination as! GameViewController
             destinationVC.modalTransitionStyle = .flipHorizontal
-//            destinationVC.difficulty = selectedDifficulty
-//            destinationVC.questionType = selectedQuestionType
-//            destinationVC.questionNumber = selectedQuestionNumber
+            //            destinationVC.difficulty = selectedDifficulty
+            //            destinationVC.questionType = selectedQuestionType
+            //            destinationVC.questionNumber = selectedQuestionNumber
         }
     }
-
+    
     @IBAction func questionTypeChanged(_ sender: UISegmentedControl) {
         
         switch sender.selectedSegmentIndex {
-            case 0:
-                selectedQuestionType = QuestionType.trueFalse.rawValue
-            case 1:
-                selectedQuestionType = QuestionType.multiple.rawValue
-            case 2:
-                selectedQuestionType = QuestionType.all.rawValue
-            default:
-                break
+        case 0:
+            selectedQuestionType = QuestionType.trueFalse.rawValue
+        case 1:
+            selectedQuestionType = QuestionType.multiple.rawValue
+        case 2:
+            selectedQuestionType = QuestionType.all.rawValue
+        default:
+            break
         }
     }
     
     @IBAction func difficultyChanged(_ sender: UISegmentedControl) {
         
         switch sender.selectedSegmentIndex {
-            case 0:
-                selectedDifficulty = Difficulty.easy.rawValue
-            case 1:
-                selectedDifficulty = Difficulty.medium.rawValue
-            case 2:
-                selectedDifficulty = Difficulty.hard.rawValue
-            default:
-                break
+        case 0:
+            selectedDifficulty = Difficulty.easy.rawValue
+        case 1:
+            selectedDifficulty = Difficulty.medium.rawValue
+        case 2:
+            selectedDifficulty = Difficulty.hard.rawValue
+        default:
+            break
         }
     }
     
@@ -88,15 +86,13 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func startGameButtonTapped(_ sender: UIButton) {
-       
+        
         settingsManager.createUrl(amount: String(selectedQuestionNumber), difficulty: selectedDifficulty, type: selectedQuestionType, category: selectedCategory)
         settingsManager.request { result in
             print("result :   \(result)")
             self.performSegue(withIdentifier: "toGameVC", sender: self)
         }
     }
-    
-    
 }
 
 extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -107,7 +103,6 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerArray.count
-        
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -117,5 +112,4 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedQuestionNumber = pickerArray[row]
     }
-    
 }

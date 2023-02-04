@@ -11,9 +11,9 @@ import SwiftyJSON
 
 struct SettingsManager {
     static let shared = SettingsManager()
-        let base_URL = "https://opentdb.com/api.php?"
-        var urlRequest: String?
-  
+    let base_URL = "https://opentdb.com/api.php?"
+    var urlRequest: String?
+    
     func request( completion: @escaping ([QuestionData]) -> Void){
         AF.request(urlRequest ?? "").responseData { response in
             print("Response Data:", response)
@@ -30,14 +30,12 @@ struct SettingsManager {
         }
     }
     mutating func createUrl(amount: String,
-                   difficulty:String,
-                   type: String,
-                   category: String) -> String?{
+                            difficulty:String,
+                            type: String,
+                            category: String) -> String?{
         let urlString = "\(base_URL)amount=\(amount)&difficulty=\(difficulty)&type=\(type)&category=\(category)"
-       urlRequest = urlString
-      
+        urlRequest = urlString
         
-      
         return urlRequest
     }
 }
