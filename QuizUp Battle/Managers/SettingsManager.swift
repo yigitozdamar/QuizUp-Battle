@@ -15,20 +15,23 @@ struct SettingsManager {
     var urlRequest: String?
     
     func request( completion: @escaping ([QuestionData]) -> Void){
-        AF.request(urlRequest ?? "").responseData { response in
-            print("Response Data:", response)
-            if let data = response.data {
-                do {
-                    let quizData = try JSONDecoder().decode(QuizData.self, from: data)
-                    print("Quiz Data:", quizData)
-                    completion(quizData.results)
-                    print("Completion handler executed")
-                } catch {
-                    print("Decoding error:", error)
-                }
+        AF.request(urlRequest ?? "").response { response in
+            guard let data = response.data else { return }
+            let json = JSON(data)
+            var questions = [QuestionData]()
+            for question in json["results"].arrayValue {
+                let category = question["category"].stringValue
+                let type = question["type"].stringValue
+                let difficulty = question["difficulty"].stringValue
+                let questionText = question["question"].stringValue.htmlToString
+                let correctAnswer = question["correct_answer"].stringValue
+                let incorrectAnswers = question["incorrect_answers"].arrayValue.map { $0.stringValue }
+                questions.append(QuestionData(category: category, type: type, difficulty: difficulty, question: questionText, correct_answer: correctAnswer, incorrect_answers: incorrectAnswers))
             }
+            completion(questions)
         }
     }
+
     mutating func createUrl(amount: String,
                             difficulty:String,
                             type: String,

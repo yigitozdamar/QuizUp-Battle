@@ -10,6 +10,7 @@ import Foundation
 // MARK: - QuestionSelect
 
 struct QuizData: Decodable {
+    var response_code: Int
     var results: [QuestionData]
 }
 
