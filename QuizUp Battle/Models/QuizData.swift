@@ -22,6 +22,7 @@ struct QuestionData: Decodable {
     let correct_answer: String
     let incorrect_answers: [String]
 }
+
 // MARK: - Result
 
 

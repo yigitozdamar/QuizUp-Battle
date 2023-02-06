@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, GameCollectionViewCellDelegate {
     
     var difficulty: String!
     var questionType: String!
@@ -21,21 +21,28 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        settingsManager.request { result in
-//            self.questions = result
-//                print(self.questions)
-//
-//        }
         print("GAME:.....")
         print(questions)
       collectionView.reloadData()
     }
     
-//    func checkQuestion(correctAnswer: String) {
-//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameDetail", for: indexPath) as? GameCollectionViewCell else {return GameCollectionViewCell()}
-//        index += 1
-//        collectionView.scrollToItem(at: index, at: .right, animated: true)
-//    }
+    func answerSelected(for cell: GameCollectionViewCell, with result: Bool) {
+        guard let indexPath = collectionView.indexPath(for: cell) else { return }
+        if result {
+            // Show next question
+            let nextIndexPath = IndexPath(item: indexPath.item + 1, section: indexPath.section)
+            if nextIndexPath.item < questions.count {
+                collectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
+            } else {
+                // All questions answered, show a message or take any other appropriate action
+                print("DONE")
+            }
+        } else {
+            // Incorrect answer, show a message or take any other appropriate action
+            print("Incorrect")
+        }
+    }
+
     
 }
 
@@ -48,15 +55,16 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameDetail", for: indexPath) as? GameCollectionViewCell else {return GameCollectionViewCell()}
+        cell.delegate = self
         cell.questionAmount.text = "QUESTION 3 OF 10"
         cell.questionLbl.text = questions[indexPath.row].question
         cell.firstBtn.setTitle(questions[indexPath.row].correct_answer, for: .normal)
         cell.secondBtn.setTitle(questions[indexPath.row].incorrect_answers[0], for: .normal)
         cell.thirdBtn.setTitle(questions[indexPath.row].incorrect_answers[1], for: .normal)
         cell.fourthBtn.setTitle(questions[indexPath.row].incorrect_answers[2], for: .normal)
-        
-        
       
+        cell.questions = questions[indexPath.row]
+        
         return cell
     }
     
