@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		09CF46E81B26D78A5193C648 /* Pods_QuizUp_Battle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698208958E628852CB7E910E /* Pods_QuizUp_Battle.framework */; };
+		7F347B5529957CDF001D4B35 /* ResultGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F347B5429957CDF001D4B35 /* ResultGameViewController.swift */; };
+		7F347B582995899D001D4B35 /* CircleBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F347B572995899D001D4B35 /* CircleBase.swift */; };
+		7F347B5A299589B6001D4B35 /* CircleCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F347B59299589B6001D4B35 /* CircleCount.swift */; };
+		7F347B5C299589C9001D4B35 /* CircleTic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F347B5B299589C9001D4B35 /* CircleTic.swift */; };
+		7F347B5E299589E1001D4B35 /* CircleTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F347B5D299589E1001D4B35 /* CircleTimer.swift */; };
 		7F70ECEB297AAB140044984C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70ECEA297AAB140044984C /* AppDelegate.swift */; };
 		7F70ECED297AAB140044984C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70ECEC297AAB140044984C /* SceneDelegate.swift */; };
 		7F70ECEF297AAB140044984C /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70ECEE297AAB140044984C /* OnboardingViewController.swift */; };
@@ -63,6 +68,11 @@
 
 /* Begin PBXFileReference section */
 		698208958E628852CB7E910E /* Pods_QuizUp_Battle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizUp_Battle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F347B5429957CDF001D4B35 /* ResultGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultGameViewController.swift; sourceTree = "<group>"; };
+		7F347B572995899D001D4B35 /* CircleBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleBase.swift; sourceTree = "<group>"; };
+		7F347B59299589B6001D4B35 /* CircleCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCount.swift; sourceTree = "<group>"; };
+		7F347B5B299589C9001D4B35 /* CircleTic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTic.swift; sourceTree = "<group>"; };
+		7F347B5D299589E1001D4B35 /* CircleTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTimer.swift; sourceTree = "<group>"; };
 		7F70ECE7297AAB140044984C /* QuizUp Battle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QuizUp Battle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F70ECEA297AAB140044984C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F70ECEC297AAB140044984C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +177,7 @@
 		7F284D43297F18C2001A6F30 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				7F347B562995898F001D4B35 /* BKTimer */,
 				7F70ECEA297AAB140044984C /* AppDelegate.swift */,
 				7F70ECEC297AAB140044984C /* SceneDelegate.swift */,
 				7F70ECF5297AAB160044984C /* LaunchScreen.storyboard */,
@@ -190,6 +201,25 @@
 				7FF74DF92982BC450067C3D9 /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		7F347B5329957CC5001D4B35 /* ResultGame */ = {
+			isa = PBXGroup;
+			children = (
+				7F347B5429957CDF001D4B35 /* ResultGameViewController.swift */,
+			);
+			path = ResultGame;
+			sourceTree = "<group>";
+		};
+		7F347B562995898F001D4B35 /* BKTimer */ = {
+			isa = PBXGroup;
+			children = (
+				7F347B572995899D001D4B35 /* CircleBase.swift */,
+				7F347B59299589B6001D4B35 /* CircleCount.swift */,
+				7F347B5B299589C9001D4B35 /* CircleTic.swift */,
+				7F347B5D299589E1001D4B35 /* CircleTimer.swift */,
+			);
+			path = BKTimer;
 			sourceTree = "<group>";
 		};
 		7F70ECDE297AAB140044984C = {
@@ -325,6 +355,7 @@
 		C31036CB297AC2DA006EBBF3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7F347B5329957CC5001D4B35 /* ResultGame */,
 				7FE0C9D6298930DA00EBB913 /* Game */,
 				7F073971298858DD00C183C9 /* Settings */,
 				7F07396F29884DE100C183C9 /* Launch */,
@@ -531,20 +562,25 @@
 				7FE0C9D129885C9500EBB913 /* SettingsViewController.swift in Sources */,
 				7F70ECEF297AAB140044984C /* OnboardingViewController.swift in Sources */,
 				C3916D57297C61FB002E1760 /* TabbarViewController.swift in Sources */,
+				7F347B5A299589B6001D4B35 /* CircleCount.swift in Sources */,
+				7F347B5C299589C9001D4B35 /* CircleTic.swift in Sources */,
 				7F70ECEB297AAB140044984C /* AppDelegate.swift in Sources */,
 				C3EDC68C298104E200D18DBC /* LoginVC.swift in Sources */,
 				7FF74E08298597980067C3D9 /* AuthManager.swift in Sources */,
 				7FF74DFE2982BD5E0067C3D9 /* HomeCollectionViewCell.swift in Sources */,
+				7F347B5E299589E1001D4B35 /* CircleTimer.swift in Sources */,
 				7FF74E0A298598600067C3D9 /* Route.swift in Sources */,
 				C31036CE297AC4C5006EBBF3 /* UIView+Extension.swift in Sources */,
 				7FF74E06298596390067C3D9 /* CategoryManager.swift in Sources */,
 				7FE0C9D8298930F600EBB913 /* GameViewController.swift in Sources */,
+				7F347B582995899D001D4B35 /* CircleBase.swift in Sources */,
 				7F70ED2B297C78290044984C /* SignUpViewController.swift in Sources */,
 				C3BEDE532987EC7400D4D2BF /* LaunchViewController.swift in Sources */,
 				C32A81F0298A9861004AD5B0 /* Url+Extension.swift in Sources */,
 				7F70ECED297AAB140044984C /* SceneDelegate.swift in Sources */,
 				C31036D3297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift in Sources */,
 				7FF74DF02982AE910067C3D9 /* ProfileViewController.swift in Sources */,
+				7F347B5529957CDF001D4B35 /* ResultGameViewController.swift in Sources */,
 				C32A81F2298CFBA3004AD5B0 /* GameCollectionViewCell.swift in Sources */,
 				7FF74DED2982AE7F0067C3D9 /* RankingsViewController.swift in Sources */,
 				7FE0C9D52988712200EBB913 /* SettingsManager.swift in Sources */,

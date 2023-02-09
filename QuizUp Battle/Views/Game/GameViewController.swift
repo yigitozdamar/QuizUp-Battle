@@ -14,38 +14,48 @@ class GameViewController: UIViewController, GameCollectionViewCellDelegate {
     var questionNumber: Int!
 
     var questions: [QuestionData] = []
-    
-    @IBOutlet weak var collectionView: UICollectionView!
+    var shuffledAnswersArray = [[String]]()
     let settingsManager = SettingsManager()
     var index = 0
+    var count = 0
+    @IBOutlet weak var collectionView: UICollectionView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("GAME:.....")
-        print(questions)
-      collectionView.reloadData()
+        setUpQuestionsAndAnswers()
+
+        collectionView.reloadData()
+    }
+    
+    func setUpQuestionsAndAnswers() {
+        for question in questions {
+            let shuffledAnswers = question.shuffleAnswers()
+            shuffledAnswersArray.append(shuffledAnswers)
+        }
     }
     
     func answerSelected(for cell: GameCollectionViewCell, with result: Bool) {
         guard let indexPath = collectionView.indexPath(for: cell) else { return }
-        if result {
-            // Show next question
-            let nextIndexPath = IndexPath(item: indexPath.item + 1, section: indexPath.section)
-            if nextIndexPath.item < questions.count {
-                collectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
-            } else {
-                // All questions answered, show a message or take any other appropriate action
-                print("DONE")
-            }
+        let nextIndexPath = IndexPath(item: indexPath.item + 1, section: indexPath.section)
+        
+        
+        if nextIndexPath.item < questions.count && result {
+            collectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
+            count += 1
+            
+        }else if nextIndexPath.item < questions.count && !result{
+            collectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
+           
         } else {
-            // Incorrect answer, show a message or take any other appropriate action
-            print("Incorrect")
+            print("Sayfa Bitti")
+            performSegue(withIdentifier: "endGame", sender: self)
         }
+     
     }
-
     
 }
-
     
 extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
@@ -55,13 +65,36 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameDetail", for: indexPath) as? GameCollectionViewCell else {return GameCollectionViewCell()}
+        
+        cell.circleTimer.startTimer(block: { (count, minute, second) in
+            print("\(minute) : \(second)")
+        }) {
+            print("complete")
+        }
+        
         cell.delegate = self
-        cell.questionAmount.text = "QUESTION 3 OF 10"
+        cell.questionAmount.text = "QUESTION \(indexPath.row + 1) OF \(questions.count)"
         cell.questionLbl.text = questions[indexPath.row].question
-        cell.firstBtn.setTitle(questions[indexPath.row].correct_answer, for: .normal)
-        cell.secondBtn.setTitle(questions[indexPath.row].incorrect_answers[0], for: .normal)
-        cell.thirdBtn.setTitle(questions[indexPath.row].incorrect_answers[1], for: .normal)
-        cell.fourthBtn.setTitle(questions[indexPath.row].incorrect_answers[2], for: .normal)
+        cell.scoreLabel.text = "Score: \(count)"
+        
+        if questions[indexPath.row].type == "boolean" {
+            cell.firstBtn.setTitle(shuffledAnswersArray[indexPath.row][0], for: .normal)
+            cell.secondBtn.setTitle(shuffledAnswersArray[indexPath.row][1], for: .normal)
+            cell.thirdBtn.isHidden = true
+            cell.fourthBtn.isHidden = true
+          
+        } else {
+            cell.firstBtn.setTitle(shuffledAnswersArray[indexPath.row][0], for: .normal)
+            cell.secondBtn.setTitle(shuffledAnswersArray[indexPath.row][1], for: .normal)
+            cell.thirdBtn.setTitle(shuffledAnswersArray[indexPath.row][2], for: .normal)
+            cell.fourthBtn.setTitle(shuffledAnswersArray[indexPath.row][3], for: .normal)
+        }
+       
+        
+        cell.firstBtn.backgroundColor = UIColor.systemGray6
+        cell.secondBtn.backgroundColor = UIColor.systemGray6
+        cell.thirdBtn.backgroundColor = UIColor.systemGray6
+        cell.fourthBtn.backgroundColor = UIColor.systemGray6
       
         cell.questions = questions[indexPath.row]
         

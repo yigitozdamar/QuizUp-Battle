@@ -24,6 +24,7 @@ class SettingsViewController: UIViewController {
     var selectedCategory = ""
     private var pickerArray = Array(10...50)
     var questions = [QuestionData]()
+    var shuffledAnswers = [String]()
     
     var settingsManager = SettingsManager()
     
@@ -41,7 +42,7 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        questionTitleLabel.text = selectedTitle
+        questionTitleLabel?.text = selectedTitle
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -55,28 +56,28 @@ class SettingsViewController: UIViewController {
     @IBAction func questionTypeChanged(_ sender: UISegmentedControl) {
         
         switch sender.selectedSegmentIndex {
-        case 0:
-            selectedQuestionType = QuestionType.trueFalse.rawValue
-        case 1:
-            selectedQuestionType = QuestionType.multiple.rawValue
-        case 2:
-            selectedQuestionType = QuestionType.all.rawValue
-        default:
-            break
+            case 0:
+                selectedQuestionType = QuestionType.trueFalse.rawValue
+            case 1:
+                selectedQuestionType = QuestionType.multiple.rawValue
+            case 2:
+                selectedQuestionType = QuestionType.all.rawValue
+            default:
+                break
         }
     }
     
     @IBAction func difficultyChanged(_ sender: UISegmentedControl) {
         
         switch sender.selectedSegmentIndex {
-        case 0:
-            selectedDifficulty = Difficulty.easy.rawValue
-        case 1:
-            selectedDifficulty = Difficulty.medium.rawValue
-        case 2:
-            selectedDifficulty = Difficulty.hard.rawValue
-        default:
-            break
+            case 0:
+                selectedDifficulty = Difficulty.easy.rawValue
+            case 1:
+                selectedDifficulty = Difficulty.medium.rawValue
+            case 2:
+                selectedDifficulty = Difficulty.hard.rawValue
+            default:
+                break
         }
     }
     
@@ -90,6 +91,11 @@ class SettingsViewController: UIViewController {
         settingsManager.request { result in
             print("result :   \(result)")
             self.questions = result
+            print("SHUFFLE")
+            for question in self.questions {
+                self.shuffledAnswers = question.shuffleAnswers()
+            }
+            
             self.performSegue(withIdentifier: "toGameVC", sender: self)
         }
     }

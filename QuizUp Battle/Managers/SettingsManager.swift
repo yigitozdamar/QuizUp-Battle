@@ -24,8 +24,8 @@ struct SettingsManager {
                 let type = question["type"].stringValue
                 let difficulty = question["difficulty"].stringValue
                 let questionText = question["question"].stringValue.htmlToString
-                let correctAnswer = question["correct_answer"].stringValue
-                let incorrectAnswers = question["incorrect_answers"].arrayValue.map { $0.stringValue }
+                let correctAnswer = question["correct_answer"].stringValue.htmlToString
+                let incorrectAnswers = question["incorrect_answers"].arrayValue.map { $0.stringValue.htmlToString }
                 questions.append(QuestionData(category: category, type: type, difficulty: difficulty, question: questionText, correct_answer: correctAnswer, incorrect_answers: incorrectAnswers))
             }
             completion(questions)

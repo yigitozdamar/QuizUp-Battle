@@ -21,7 +21,14 @@ struct QuestionData: Decodable {
     let question: String
     let correct_answer: String
     let incorrect_answers: [String]
+    
+    func shuffleAnswers() -> [String] {
+        var allAnswers = incorrect_answers
+        allAnswers.append(correct_answer)
+        return allAnswers.shuffled()
+    }
 }
+
 
 // MARK: - Result
 
