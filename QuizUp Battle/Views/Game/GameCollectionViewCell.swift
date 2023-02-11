@@ -9,16 +9,16 @@ import UIKit
 
 protocol GameCollectionViewCellDelegate: AnyObject {
     func answerSelected(for cell: GameCollectionViewCell, with result: Bool)
+    func countdownFinished(for cell: GameCollectionViewCell)
 }
 
 
 class GameCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var imageViewTop: UIImageView!
+    @IBOutlet weak var proggresbar: Progressbar!
     @IBOutlet weak var questionAmount: UILabel!
     @IBOutlet weak var questionLbl: UILabel!
     
-    @IBOutlet weak var circleTimer: CircleCount!
     @IBOutlet var answerButtons: [UIButton]!
     
     @IBOutlet weak var scoreLabel: UILabel!
@@ -32,7 +32,25 @@ class GameCollectionViewCell: UICollectionViewCell {
     
     var questions : QuestionData!
     weak var delegate: GameCollectionViewCellDelegate?
-
+    var countFired: CGFloat = 10
+    var timer: Timer!
+    
+    func startCountdown() {
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
+            self?.countFired -= 1
+            DispatchQueue.main.async {
+                self?.proggresbar.progress = max(self!.countFired / 10 , 0)
+                
+                if self?.countFired == 0 {
+                    timer.invalidate()
+                    self?.countFired = 11
+                    
+                    self?.delegate?.countdownFinished(for: self!)
+                }
+            }
+        }
+    }
     
     @IBAction func selectAnswer(_ sender: UIButton){
         selectedAnswer = sender.currentTitle
@@ -41,8 +59,14 @@ class GameCollectionViewCell: UICollectionViewCell {
         for button in answerButtons {
             if button.currentTitle == selectedAnswer && button.currentTitle == questions.correct_answer {
                 button.backgroundColor = UIColor.green
+                timer.invalidate()
+                countFired = 11
+              
             } else if button.currentTitle == selectedAnswer {
                 button.backgroundColor = UIColor.red
+                timer.invalidate()
+                countFired = 11
+            
             } else {
                 button.backgroundColor = UIColor.systemGray6
             }

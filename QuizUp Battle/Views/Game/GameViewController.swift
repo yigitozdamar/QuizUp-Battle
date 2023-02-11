@@ -55,6 +55,22 @@ class GameViewController: UIViewController, GameCollectionViewCellDelegate {
      
     }
     
+    func countdownFinished(for cell: GameCollectionViewCell) {
+         guard let indexPath = collectionView.indexPath(for: cell) else { return }
+         let nextIndexPath = IndexPath(item: indexPath.item + 1, section: indexPath.section)
+         
+         if nextIndexPath.item < questions.count {
+             collectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
+            
+         }else if nextIndexPath.item < questions.count {
+             collectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
+            
+         } else {
+             print("Sayfa Bitti")
+             performSegue(withIdentifier: "endGame", sender: self)
+         }
+     }
+    
 }
     
 extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -65,12 +81,6 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameDetail", for: indexPath) as? GameCollectionViewCell else {return GameCollectionViewCell()}
-        
-        cell.circleTimer.startTimer(block: { (count, minute, second) in
-            print("\(minute) : \(second)")
-        }) {
-            print("complete")
-        }
         
         cell.delegate = self
         cell.questionAmount.text = "QUESTION \(indexPath.row + 1) OF \(questions.count)"
@@ -97,6 +107,7 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.fourthBtn.backgroundColor = UIColor.systemGray6
       
         cell.questions = questions[indexPath.row]
+        cell.startCountdown()
         
         return cell
     }

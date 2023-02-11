@@ -735,42 +735,27 @@
                                                     <color key="textColor" red="0.41568627450000001" green="0.35294117650000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m0C-E6-4Ht" customClass="CircleCount" customModule="QuizUp_Battle" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DUf-Eo-VCm" customClass="Progressbar" customModule="QuizUp_Battle" customModuleProvider="target">
                                                     <rect key="frame" x="128.66666666666666" y="54" width="120" height="120"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="120" id="07r-dz-baJ"/>
-                                                        <constraint firstAttribute="height" constant="120" id="pHI-LO-bNK"/>
+                                                        <constraint firstAttribute="height" constant="120" id="0cU-Cf-Cye"/>
+                                                        <constraint firstAttribute="width" constant="120" id="vhQ-Fq-xcz"/>
                                                     </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isAutoControl" value="YES"/>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                            <color key="value" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="boldBezelColor">
-                                                            <color key="value" red="0.41568627450000001" green="0.35294117650000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="labelColor">
-                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="minuteValue">
-                                                            <real key="value" value="12"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="fSV-tn-ORC" firstAttribute="top" secondItem="m0C-E6-4Ht" secondAttribute="bottom" constant="8" id="0Mr-Eh-526"/>
-                                                <constraint firstItem="m0C-E6-4Ht" firstAttribute="top" secondItem="74F-u1-tqf" secondAttribute="bottom" constant="8" id="1v5-0b-SGA"/>
+                                                <constraint firstItem="DUf-Eo-VCm" firstAttribute="centerX" secondItem="JYV-aw-OQh" secondAttribute="centerX" id="9i8-bF-gRR"/>
                                                 <constraint firstAttribute="trailing" secondItem="fSV-tn-ORC" secondAttribute="trailing" constant="12" id="FHj-u2-eu7"/>
                                                 <constraint firstItem="74F-u1-tqf" firstAttribute="top" secondItem="JYV-aw-OQh" secondAttribute="top" constant="16" id="OfI-OD-JYc"/>
+                                                <constraint firstItem="DUf-Eo-VCm" firstAttribute="top" secondItem="74F-u1-tqf" secondAttribute="bottom" constant="8" id="ZDE-e0-8ap"/>
                                                 <constraint firstItem="NHq-M6-uec" firstAttribute="top" secondItem="74F-u1-tqf" secondAttribute="top" id="abK-GD-qwX"/>
-                                                <constraint firstItem="m0C-E6-4Ht" firstAttribute="centerX" secondItem="JYV-aw-OQh" secondAttribute="centerX" id="fMg-Eq-aCr"/>
                                                 <constraint firstAttribute="bottom" secondItem="fSV-tn-ORC" secondAttribute="bottom" constant="20" id="gC3-1D-wti"/>
                                                 <constraint firstItem="NHq-M6-uec" firstAttribute="centerY" secondItem="74F-u1-tqf" secondAttribute="centerY" id="l8W-4G-hZp"/>
                                                 <constraint firstItem="74F-u1-tqf" firstAttribute="centerX" secondItem="JYV-aw-OQh" secondAttribute="centerX" id="ngz-mH-ewv"/>
                                                 <constraint firstItem="fSV-tn-ORC" firstAttribute="leading" secondItem="JYV-aw-OQh" secondAttribute="leading" constant="12" id="pMg-lc-rVI"/>
                                                 <constraint firstItem="NHq-M6-uec" firstAttribute="height" secondItem="74F-u1-tqf" secondAttribute="height" id="sL9-FR-GHf"/>
+                                                <constraint firstItem="fSV-tn-ORC" firstAttribute="top" secondItem="DUf-Eo-VCm" secondAttribute="bottom" constant="8" id="vVn-Ri-LMl"/>
                                                 <constraint firstItem="74F-u1-tqf" firstAttribute="leading" secondItem="JYV-aw-OQh" secondAttribute="leading" constant="8" id="xAc-Gf-kSB"/>
                                                 <constraint firstAttribute="trailing" secondItem="NHq-M6-uec" secondAttribute="trailing" constant="8" id="zUt-j2-CiD"/>
                                             </constraints>
@@ -779,9 +764,9 @@
                                         <connections>
                                             <outlet property="answerStackBottom" destination="2Pe-w3-I7h" id="sXG-Vn-29h"/>
                                             <outlet property="answersStackView" destination="fEj-tW-TDr" id="MEq-Ew-Z6H"/>
-                                            <outlet property="circleTimer" destination="m0C-E6-4Ht" id="gbl-uU-y4i"/>
                                             <outlet property="firstBtn" destination="hAV-rX-ylx" id="zJG-rE-wFn"/>
                                             <outlet property="fourthBtn" destination="clJ-Wz-53E" id="9pO-2M-d4w"/>
+                                            <outlet property="proggresbar" destination="DUf-Eo-VCm" id="Scd-Bz-3jM"/>
                                             <outlet property="questionAmount" destination="74F-u1-tqf" id="Qzo-hC-YMd"/>
                                             <outlet property="questionLbl" destination="BFN-py-k0d" id="YTd-FX-qkr"/>
                                             <outlet property="scoreLabel" destination="NHq-M6-uec" id="R2W-ar-Dkm"/>
