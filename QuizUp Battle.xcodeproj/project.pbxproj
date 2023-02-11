@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		09CF46E81B26D78A5193C648 /* Pods_QuizUp_Battle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698208958E628852CB7E910E /* Pods_QuizUp_Battle.framework */; };
 		7F347B5529957CDF001D4B35 /* ResultGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F347B5429957CDF001D4B35 /* ResultGameViewController.swift */; };
+		7F347B6029982653001D4B35 /* cup.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F347B5F29982653001D4B35 /* cup.json */; };
 		7F70ECEB297AAB140044984C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70ECEA297AAB140044984C /* AppDelegate.swift */; };
 		7F70ECED297AAB140044984C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70ECEC297AAB140044984C /* SceneDelegate.swift */; };
 		7F70ECEF297AAB140044984C /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70ECEE297AAB140044984C /* OnboardingViewController.swift */; };
@@ -66,6 +67,7 @@
 /* Begin PBXFileReference section */
 		698208958E628852CB7E910E /* Pods_QuizUp_Battle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizUp_Battle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F347B5429957CDF001D4B35 /* ResultGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultGameViewController.swift; sourceTree = "<group>"; };
+		7F347B5F29982653001D4B35 /* cup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cup.json; sourceTree = "<group>"; };
 		7F70ECE7297AAB140044984C /* QuizUp Battle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QuizUp Battle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F70ECEA297AAB140044984C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F70ECEC297AAB140044984C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				C3BEDE542987F86F00D4D2BF /* 116593-triviaw.json */,
+				7F347B5F29982653001D4B35 /* cup.json */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				C3BEDE552987F86F00D4D2BF /* 116593-triviaw.json in Resources */,
 				7F70ED22297AB27B0044984C /* Nunito-Italic.ttf in Resources */,
 				7F70ED1E297AB27B0044984C /* Nunito-Black.ttf in Resources */,
+				7F347B6029982653001D4B35 /* cup.json in Resources */,
 				7F70ED14297AB27B0044984C /* Nunito-VariableFont_wght.ttf in Resources */,
 				7F70ECF7297AAB160044984C /* LaunchScreen.storyboard in Resources */,
 				7F70ED27297AB27B0044984C /* README.txt in Resources */,

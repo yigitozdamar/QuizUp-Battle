@@ -50,9 +50,17 @@ class GameViewController: UIViewController, GameCollectionViewCellDelegate {
            
         } else {
             print("Sayfa Bitti")
-            performSegue(withIdentifier: "endGame", sender: self)
+            performSegue(withIdentifier: "toResultGameVC", sender: self)
         }
      
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toResultGameVC" {
+            let destinationVC = segue.destination as! ResultGameViewController
+            destinationVC.result = count
+            destinationVC.questionDifficulty = difficulty
+        }
     }
     
     func countdownFinished(for cell: GameCollectionViewCell) {
@@ -100,14 +108,13 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.fourthBtn.setTitle(shuffledAnswersArray[indexPath.row][3], for: .normal)
         }
        
-        
         cell.firstBtn.backgroundColor = UIColor.systemGray6
         cell.secondBtn.backgroundColor = UIColor.systemGray6
         cell.thirdBtn.backgroundColor = UIColor.systemGray6
         cell.fourthBtn.backgroundColor = UIColor.systemGray6
       
         cell.questions = questions[indexPath.row]
-        cell.startCountdown()
+        cell.startCountdown(countFired: 10)
         
         return cell
     }

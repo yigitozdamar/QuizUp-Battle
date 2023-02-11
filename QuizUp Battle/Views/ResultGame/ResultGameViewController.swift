@@ -6,24 +6,45 @@
 //
 
 import UIKit
+import Lottie
 
 class ResultGameViewController: UIViewController {
 
+    @IBOutlet var cupAnimationView: LottieAnimationView!
+    
+    @IBOutlet weak var correctAnswerLabel: UILabel!
+    
+    @IBOutlet weak var scoreLabel: UILabel!
+    var result: Int = 0
+    var questionDifficulty: String = ""
+    var totalScore: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+//        setupAnimation()
+        self.cupAnimationView.play()
+        self.cupAnimationView.loopMode = .loop
+        scoreCalculate()
+        correctAnswerLabel.text = "\(result)"
+        scoreLabel.text = "\(totalScore)"
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func returnHomeTapped(_ sender: UIButton) {
     }
-    */
-
+    
+    @IBAction func restartGameTapped(_ sender: UIButton) {
+    }
+    
+    func scoreCalculate() {
+        switch questionDifficulty {
+            case "easy":
+                totalScore = result * 1
+            case "medium":
+                totalScore = result * 2
+            case "hard":
+                totalScore = result * 3
+            default:
+                break
+        }
+    }
 }

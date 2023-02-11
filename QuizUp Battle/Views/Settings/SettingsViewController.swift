@@ -50,6 +50,7 @@ class SettingsViewController: UIViewController {
             let destinationVC = segue.destination as! GameViewController
             destinationVC.modalTransitionStyle = .flipHorizontal
             destinationVC.questions = questions
+            destinationVC.difficulty = selectedDifficulty
         }
     }
     
