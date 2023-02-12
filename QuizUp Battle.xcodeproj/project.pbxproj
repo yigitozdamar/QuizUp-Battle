@@ -60,7 +60,7 @@
 		C3422B9D299774AF00C7F1A3 /* Progressbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3422B9C299774AF00C7F1A3 /* Progressbar.swift */; };
 		C3916D57297C61FB002E1760 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3916D56297C61FB002E1760 /* TabbarViewController.swift */; };
 		C3BEDE532987EC7400D4D2BF /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BEDE522987EC7400D4D2BF /* LaunchViewController.swift */; };
-		C3BEDE552987F86F00D4D2BF /* 116593-triviaw.json in Resources */ = {isa = PBXBuildFile; fileRef = C3BEDE542987F86F00D4D2BF /* 116593-triviaw.json */; };
+		C3BEDE552987F86F00D4D2BF /* triviaw.json in Resources */ = {isa = PBXBuildFile; fileRef = C3BEDE542987F86F00D4D2BF /* triviaw.json */; };
 		C3EDC68C298104E200D18DBC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EDC68B298104E200D18DBC /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -117,12 +117,13 @@
 		C31036CD297AC4C5006EBBF3 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		C31036D0297AC5CB006EBBF3 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		C31036D2297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		C3287786299987D100B8710F /* TODOS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODOS.md; sourceTree = "<group>"; };
 		C32A81EF298A9861004AD5B0 /* Url+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Url+Extension.swift"; sourceTree = "<group>"; };
 		C32A81F1298CFBA3004AD5B0 /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
 		C3422B9C299774AF00C7F1A3 /* Progressbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progressbar.swift; sourceTree = "<group>"; };
 		C3916D56297C61FB002E1760 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		C3BEDE522987EC7400D4D2BF /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
-		C3BEDE542987F86F00D4D2BF /* 116593-triviaw.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "116593-triviaw.json"; sourceTree = "<group>"; };
+		C3BEDE542987F86F00D4D2BF /* triviaw.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triviaw.json; sourceTree = "<group>"; };
 		C3EDC68B298104E200D18DBC /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,7 +158,7 @@
 		7F07397029884DF700C183C9 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				C3BEDE542987F86F00D4D2BF /* 116593-triviaw.json */,
+				C3BEDE542987F86F00D4D2BF /* triviaw.json */,
 				7F347B5F29982653001D4B35 /* cup.json */,
 			);
 			path = Assets;
@@ -239,6 +240,7 @@
 				7F70ECF0297AAB140044984C /* Main.storyboard */,
 				7F70ECF8297AAB160044984C /* Info.plist */,
 				7FD106FE297F1FCC0005E9DF /* GoogleService-Info.plist */,
+				C3287786299987D100B8710F /* TODOS.md */,
 			);
 			path = "QuizUp Battle";
 			sourceTree = "<group>";
@@ -474,7 +476,7 @@
 				7F70ED25297AB27B0044984C /* OFL.txt in Resources */,
 				7F70ED1A297AB27B0044984C /* Nunito-Regular.ttf in Resources */,
 				7FD106FF297F1FCC0005E9DF /* GoogleService-Info.plist in Resources */,
-				C3BEDE552987F86F00D4D2BF /* 116593-triviaw.json in Resources */,
+				C3BEDE552987F86F00D4D2BF /* triviaw.json in Resources */,
 				7F70ED22297AB27B0044984C /* Nunito-Italic.ttf in Resources */,
 				7F70ED1E297AB27B0044984C /* Nunito-Black.ttf in Resources */,
 				7F347B6029982653001D4B35 /* cup.json in Resources */,

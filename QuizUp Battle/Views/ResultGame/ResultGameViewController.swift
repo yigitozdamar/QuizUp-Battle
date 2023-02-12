@@ -30,47 +30,10 @@ class ResultGameViewController: UIViewController {
         scoreCalculate()
         correctAnswerLabel.text = "\(result)"
         scoreLabel.text = "\(totalScore)"
-        
-//        categoryManager.fetchCategories { result in
-//            DispatchQueue.main.async{
-//
-//                self.categoryList = result
-//
-//                self.filterCat = self.categoryList.map { Category(id: $0.id, name: $0.name.replacingOccurrences(of: "Entertainment: ", with: ""), totalQuestion: $0.totalQuestion)
-//
-//                }
-//            }
-//        }
     }
     
     @IBAction func returnHomeTapped(_ sender: UIButton) {
-//        if filterCat.isEmpty {
-//            let activityIndicator = UIActivityIndicatorView(style: .large)
-//                  activityIndicator.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-//                  activityIndicator.center = view.center
-//                  activityIndicator.startAnimating()
-//              view.addSubview(activityIndicator)
-//
-//              categoryManager.fetchCategories { result in
-//                  DispatchQueue.main.async{
-//                      self.categoryList = result
-//                      self.filterCat = self.categoryList.map { Category(id: $0.id, name: $0.name.replacingOccurrences(of: "Entertainment: ", with: ""), totalQuestion: $0.totalQuestion)
-//                      }
-//                      activityIndicator.stopAnimating()
-//                      activityIndicator.removeFromSuperview()
-//                      let tabbarViewController = TabbarViewController()
-//                      tabbarViewController.categoryList = self.filterCat
-//                      tabbarViewController.modalPresentationStyle = .fullScreen
-//                      self.present(tabbarViewController, animated: true, completion: nil)
-//                  }
-//              }
-//          } else {
-//              let tabbarViewController = TabbarViewController()
-//              tabbarViewController.categoryList = filterCat
-//              tabbarViewController.modalPresentationStyle = .fullScreen
-//              self.present(tabbarViewController, animated: true, completion: nil)
-//          }
-        
+        self.cupAnimationView.stop()
         let launchScreen = LaunchViewController()
         launchScreen.modalPresentationStyle = .fullScreen
         self.present(launchScreen, animated: true, completion: nil)

@@ -12,9 +12,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Nunito-Regular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
         <array key="Nunito-VariableFont_wght.ttf">
             <string>Nunito-Bold</string>
-            <string>Nunito-Regular</string>
             <string>Nunito-SemiBold</string>
         </array>
     </customFonts>
@@ -242,11 +244,27 @@
                     <view key="view" contentMode="scaleToFill" id="My8-X2-Ra8">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="lOl-fi-fnz" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="triviaw"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="z0v-Yd-3S3"/>
                         <color key="backgroundColor" red="0.41568627450000001" green="0.35294117650000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lOl-fi-fnz" firstAttribute="leading" secondItem="z0v-Yd-3S3" secondAttribute="leading" id="3Ce-bi-ASo"/>
+                            <constraint firstItem="z0v-Yd-3S3" firstAttribute="trailing" secondItem="lOl-fi-fnz" secondAttribute="trailing" id="KpV-Cj-meI"/>
+                            <constraint firstItem="z0v-Yd-3S3" firstAttribute="bottom" secondItem="lOl-fi-fnz" secondAttribute="bottom" id="bLO-gY-ytb"/>
+                            <constraint firstItem="lOl-fi-fnz" firstAttribute="top" secondItem="z0v-Yd-3S3" secondAttribute="top" id="vVg-6E-MZA"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="znH-pi-F7v"/>
                     <connections>
+                        <outlet property="animationView" destination="lOl-fi-fnz" id="AQD-wd-Zcu"/>
                         <segue destination="Pba-IB-Buz" kind="presentation" identifier="toTabbarVC" modalPresentationStyle="fullScreen" id="3NF-2U-Dxb"/>
                         <segue destination="4KN-kT-ers" kind="presentation" identifier="toHomeVC" modalPresentationStyle="fullScreen" id="sBd-Xc-xWR"/>
                     </connections>
@@ -283,7 +301,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2dg-FR-yed">
-                                <rect key="frame" x="12" y="99" width="369" height="740"/>
+                                <rect key="frame" x="12" y="99" width="369" height="789"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="t2N-vT-61O">
                                     <size key="itemSize" width="128" height="128"/>
@@ -1664,7 +1682,7 @@
     </designables>
     <inferredMetricsTieBreakers>
         <segue reference="izH-mk-aRG"/>
-        <segue reference="c3a-DN-QNs"/>
+        <segue reference="sBd-Xc-xWR"/>
         <segue reference="jYS-L7-A2a"/>
     </inferredMetricsTieBreakers>
     <resources>
