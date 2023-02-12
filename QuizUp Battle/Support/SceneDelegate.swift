@@ -25,6 +25,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let vc = storyboard.instantiateViewController(withIdentifier: "launchVC") as! LaunchViewController
             
             window?.rootViewController = vc
+            
+            
         }
         
         

@@ -897,6 +897,7 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="restartGameTapped:" destination="mJ7-cN-gk0" eventType="touchUpInside" id="eMr-Uu-cGD"/>
+                                                    <action selector="returnHomeTapped:" destination="mJ7-cN-gk0" eventType="touchUpInside" id="U9c-rK-mPh"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -954,6 +955,7 @@
                         <outlet property="correctAnswerLabel" destination="aDy-t5-aQC" id="Ui9-Up-HAE"/>
                         <outlet property="cupAnimationView" destination="hVm-Br-e1k" id="O0Z-Cp-NxX"/>
                         <outlet property="scoreLabel" destination="QzR-C9-tVa" id="ENb-y8-Sen"/>
+                        <segue destination="O2F-1o-F8G" kind="presentation" identifier="toSettingsVC" modalPresentationStyle="fullScreen" id="izH-mk-aRG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFi-tg-7qx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1657,7 +1659,11 @@
             <point key="canvasLocation" x="4248" y="-344"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="hVm-Br-e1k"/>
+    </designables>
     <inferredMetricsTieBreakers>
+        <segue reference="izH-mk-aRG"/>
         <segue reference="c3a-DN-QNs"/>
         <segue reference="jYS-L7-A2a"/>
     </inferredMetricsTieBreakers>

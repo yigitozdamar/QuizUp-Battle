@@ -11,7 +11,7 @@ struct CateogoryData: Decodable {
     var trivia_categories: [Category]
 }
 
-struct Category: Decodable {
+struct Category: Codable{
     
     let id: Int
     let name: String

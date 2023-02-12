@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         IQKeyboardManager.shared.previousNextDisplayMode = .alwaysShow
         IQKeyboardManager.shared.toolbarPreviousNextAllowedClasses.append(UIScrollView.self)
-        
+   
         return true
     }
     
