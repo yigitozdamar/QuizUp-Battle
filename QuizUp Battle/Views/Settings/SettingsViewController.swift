@@ -81,23 +81,36 @@ class SettingsViewController: UIViewController {
                 break
         }
     }
-    
+    //TODO: back button will be fixed
     @IBAction func backButtonTapped(_ sender: UIButton) {
-        dismiss(animated: true)
+        self.navigationController?.dismiss(animated: true)
     }
     
     @IBAction func startGameButtonTapped(_ sender: UIButton) {
         
         settingsManager.createUrl(amount: String(selectedQuestionNumber), difficulty: selectedDifficulty, type: selectedQuestionType, category: selectedCategory)
-        settingsManager.request { result in
+        settingsManager.request { [weak self] result in
+            guard let self = self else { return }
             print("result :   \(result)")
             self.questions = result
             print("SHUFFLE")
             for question in self.questions {
                 self.shuffledAnswers = question.shuffleAnswers()
             }
-            
-            self.performSegue(withIdentifier: "toGameVC", sender: self)
+            if result.isEmpty {
+                let alert = UIAlertController(title: "Oppps",
+                                              message: "Unfortunately we have not enough questions in your selection.",
+                                              preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK",
+                                              style: .default,
+                                              handler: { _ in
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }else {
+                self.performSegue(withIdentifier: "toGameVC", sender: self)
+
+            }
         }
     }
 }

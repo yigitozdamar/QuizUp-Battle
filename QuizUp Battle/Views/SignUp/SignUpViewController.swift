@@ -31,7 +31,7 @@ class SignUpViewController: UIViewController {
             
             // If sign in succeeded, display the app's main content View.
             print("Oldu")
-            self.performSegue(withIdentifier: "boardingSignUp", sender: nil)
+            self.performSegue(withIdentifier: "toLaunchVCfromRegister", sender: nil)
             
         }
     }
@@ -72,7 +72,7 @@ class SignUpViewController: UIViewController {
                     }
                     
                 } else {
-                    self?.performSegue(withIdentifier: "boardingSignUp", sender: nil)
+                    self?.performSegue(withIdentifier: "toLaunchVCfromRegister", sender: nil)
                     
                     self?.emailTextField.text = ""
                     self?.password.text = ""

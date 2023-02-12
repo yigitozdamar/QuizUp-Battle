@@ -21,17 +21,16 @@ class ProfileViewController: UIViewController, SETabItemProvider {
         // Do any additional setup after loading the view.
     }
     
-    func logout(){
-        print("basıldı")
+    @IBAction func logoutTapped(_ sender: UIButton) {
         
         do{
             try Auth.auth().signOut()
-            performSegue(withIdentifier: "hometoborad", sender: nil)
-            
+            performSegue(withIdentifier: "toLoginVC", sender: nil)
         }catch{
             print("logout hata")
         }
     }
+   
     
 
 }

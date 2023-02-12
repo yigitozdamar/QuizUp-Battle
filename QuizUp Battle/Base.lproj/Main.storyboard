@@ -12,11 +12,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Nunito-Regular.ttf">
-            <string>Nunito-Regular</string>
-        </array>
         <array key="Nunito-VariableFont_wght.ttf">
             <string>Nunito-Bold</string>
+            <string>Nunito-Regular</string>
             <string>Nunito-SemiBold</string>
         </array>
     </customFonts>
@@ -24,7 +22,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="OnboardingViewController" id="BYZ-38-t0r" customClass="OnboardingViewController" customModule="QuizUp_Battle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingVC" id="BYZ-38-t0r" customClass="OnboardingViewController" customModule="QuizUp_Battle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <subviews>
@@ -203,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="973.28244274809151" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="-1308" y="69"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="YUO-hs-UQE">
@@ -212,14 +210,31 @@
                     <view key="view" contentMode="scaleToFill" id="eLY-FY-b3f">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N55-6Z-h3a">
+                                <rect key="frame" x="154.33333333333334" y="408.66666666666669" width="84.666666666666657" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log Out"/>
+                                <connections>
+                                    <action selector="logoutTapped:" destination="Erf-sv-r4g" eventType="touchUpInside" id="yex-Wo-xjY"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ubA-HD-P0i"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="N55-6Z-h3a" firstAttribute="centerY" secondItem="eLY-FY-b3f" secondAttribute="centerY" id="2NV-Ur-Vao"/>
+                            <constraint firstItem="N55-6Z-h3a" firstAttribute="centerX" secondItem="eLY-FY-b3f" secondAttribute="centerX" id="qIg-lB-ICP"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="ifx-ak-coj"/>
+                    <connections>
+                        <segue destination="hjZ-Hz-8p8" kind="presentation" identifier="toLoginVC" modalPresentationStyle="fullScreen" id="f03-Qz-MdW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xwp-UY-8zS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2992" y="1218"/>
+            <point key="canvasLocation" x="3323" y="1108"/>
         </scene>
         <!--Rankings View Controller-->
         <scene sceneID="fdB-pK-2kP">
@@ -235,7 +250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yau-0i-WxN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3764" y="525"/>
+            <point key="canvasLocation" x="3323" y="313"/>
         </scene>
         <!--Launch View Controller-->
         <scene sceneID="hWg-Jz-4TK">
@@ -271,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VrL-ZK-kpm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1329" y="737"/>
+            <point key="canvasLocation" x="659" y="314"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="YgP-7D-DKJ">
@@ -350,7 +365,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZnJ-m1-8y4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5245" y="-344"/>
+            <point key="canvasLocation" x="4369" y="-404"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="eBc-J4-CJw">
@@ -581,11 +596,12 @@
                         <outlet property="questionTitleLabel" destination="dgw-VZ-Huu" id="W0r-7G-dNE"/>
                         <outlet property="questionTypeControl" destination="xca-cw-Bo0" id="3I3-Jl-OPt"/>
                         <segue destination="TME-m9-7Fn" kind="presentation" identifier="toGameVC" modalPresentationStyle="fullScreen" id="JVq-XB-eor"/>
+                        <segue destination="4KN-kT-ers" kind="presentation" identifier="backToHome" modalPresentationStyle="fullScreen" id="FLa-6p-Gvh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nLz-t1-y0Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6096.9465648854957" y="-343.66197183098592"/>
+            <point key="canvasLocation" x="5384" y="-404"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="b6U-10-tbA">
@@ -819,7 +835,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jYX-yl-dmZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7012.9770992366412" y="-344.36619718309862"/>
+            <point key="canvasLocation" x="6445" y="-404"/>
         </scene>
         <!--Result Game View Controller-->
         <scene sceneID="PSc-br-iVA">
@@ -978,7 +994,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFi-tg-7qx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7846.5648854961828" y="-353.52112676056339"/>
+            <point key="canvasLocation" x="7384" y="-404"/>
         </scene>
         <!--Tabbar View Controller-->
         <scene sceneID="vhg-Fo-ddW">
@@ -999,7 +1015,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fJi-cd-YNK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2766" y="-177"/>
+            <point key="canvasLocation" x="1808" y="313"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="gPS-Iy-CbO">
@@ -1335,11 +1351,12 @@
                         <outlet property="scrollView" destination="eti-Nu-VAc" id="FVp-xF-ysh"/>
                         <outlet property="signUpButton" destination="SZd-yS-U6t" id="pGT-HS-YwK"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="boardingSignUp" modalPresentationStyle="fullScreen" id="haf-T0-msJ"/>
+                        <segue destination="lcO-aJ-Czh" kind="presentation" identifier="toLaunchVCfromRegister" modalPresentationStyle="fullScreen" id="7hz-3M-ou6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rhh-Bl-Osq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-686" y="737"/>
+            <point key="canvasLocation" x="-390" y="711"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="m2c-eg-NlP">
@@ -1653,7 +1670,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="viq-bW-8I8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="302" y="744"/>
+            <point key="canvasLocation" x="-390" y="-177"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oDH-Sf-dUl">
@@ -1674,16 +1691,19 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xpA-2J-0Ll" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4248" y="-344"/>
+            <point key="canvasLocation" x="3323" y="-404"/>
         </scene>
     </scenes>
     <designables>
         <designable name="hVm-Br-e1k"/>
+        <designable name="lOl-fi-fnz"/>
     </designables>
     <inferredMetricsTieBreakers>
+        <segue reference="f03-Qz-MdW"/>
         <segue reference="izH-mk-aRG"/>
-        <segue reference="sBd-Xc-xWR"/>
-        <segue reference="jYS-L7-A2a"/>
+        <segue reference="FLa-6p-Gvh"/>
+        <segue reference="7hz-3M-ou6"/>
+        <segue reference="haf-T0-msJ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="(O)" width="1125" height="2436"/>
