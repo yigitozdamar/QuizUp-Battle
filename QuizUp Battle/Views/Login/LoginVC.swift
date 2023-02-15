@@ -33,6 +33,7 @@ class LoginVC: UIViewController {
             
             // If sign in succeeded, display the app's main content View.
             print("Oldu")
+            UserDefaults().set(signInResult?.user.profile?.name.components(separatedBy: " ")[0], forKey: "name")
             self.performSegue(withIdentifier: "toLaunchVC", sender: nil)
             
         }
@@ -66,7 +67,7 @@ class LoginVC: UIViewController {
                 
             } else {
                 print("User signs in successfully")
-               
+                UserDefaults().set(email.components(separatedBy: "@")[0], forKey: "name")
                 self.performSegue(withIdentifier: "toLaunchVC", sender: nil)
                 print("Girildi")
             }

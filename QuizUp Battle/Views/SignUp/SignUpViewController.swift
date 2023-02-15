@@ -31,6 +31,7 @@ class SignUpViewController: UIViewController {
             
             // If sign in succeeded, display the app's main content View.
             print("Oldu")
+            UserDefaults().set(signInResult?.user.profile?.name, forKey: "name")
             self.performSegue(withIdentifier: "toLaunchVCfromRegister", sender: nil)
             
         }
@@ -73,7 +74,7 @@ class SignUpViewController: UIViewController {
                     
                 } else {
                     self?.performSegue(withIdentifier: "toLaunchVCfromRegister", sender: nil)
-                    
+                    UserDefaults().set(email.components(separatedBy: "@")[0], forKey: "name")
                     self?.emailTextField.text = ""
                     self?.password.text = ""
                     self?.confirmPassword.text = ""

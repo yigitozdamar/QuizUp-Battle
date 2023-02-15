@@ -83,7 +83,7 @@ class SettingsViewController: UIViewController {
     }
     //TODO: back button will be fixed
     @IBAction func backButtonTapped(_ sender: UIButton) {
-        self.navigationController?.dismiss(animated: true)
+        self.performSegue(withIdentifier: "toLaunchVCfromSettings", sender: self)
     }
     
     @IBAction func startGameButtonTapped(_ sender: UIButton) {

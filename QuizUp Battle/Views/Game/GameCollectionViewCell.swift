@@ -40,7 +40,6 @@ class GameCollectionViewCell: UICollectionViewCell {
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (Timer) in
             if remainingTime >= 0 {
                 self.timeLabel.text = String(describing: remainingTime)
-                print ("\(remainingTime) seconds")
                 remainingTime -= 1
             } else {
                 Timer.invalidate()

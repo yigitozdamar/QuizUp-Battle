@@ -26,8 +26,9 @@ class LaunchViewController: UIViewController{
         }
         
         if !filteredCategories.isEmpty{
-           
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            animationView?.isHidden = true
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 let tabbarVC = TabbarViewController()
                 tabbarVC.categoryList = self.filteredCategories
                 tabbarVC.modalPresentationStyle = .fullScreen

@@ -37,6 +37,9 @@
 		7F70ED26297AB27B0044984C /* Nunito-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F70ED12297AB27B0044984C /* Nunito-Italic-VariableFont_wght.ttf */; };
 		7F70ED27297AB27B0044984C /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F70ED13297AB27B0044984C /* README.txt */; };
 		7F70ED2B297C78290044984C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70ED2A297C78290044984C /* SignUpViewController.swift */; };
+		7F84FA8D299CF85F00827DC3 /* RankingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84FA8C299CF85F00827DC3 /* RankingsTableViewCell.swift */; };
+		7F84FA8F299CFD1F00827DC3 /* Rankings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84FA8E299CFD1F00827DC3 /* Rankings.swift */; };
+		7F84FA91299D048300827DC3 /* RankingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84FA90299D048300827DC3 /* RankingsManager.swift */; };
 		7FD106FF297F1FCC0005E9DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7FD106FE297F1FCC0005E9DF /* GoogleService-Info.plist */; };
 		7FE0C9D129885C9500EBB913 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE0C9D029885C9500EBB913 /* SettingsViewController.swift */; };
 		7FE0C9D329885D4D00EBB913 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE0C9D229885D4D00EBB913 /* String+Extension.swift */; };
@@ -97,6 +100,9 @@
 		7F70ED12297AB27B0044984C /* Nunito-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		7F70ED13297AB27B0044984C /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		7F70ED2A297C78290044984C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		7F84FA8C299CF85F00827DC3 /* RankingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingsTableViewCell.swift; sourceTree = "<group>"; };
+		7F84FA8E299CFD1F00827DC3 /* Rankings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rankings.swift; sourceTree = "<group>"; };
+		7F84FA90299D048300827DC3 /* RankingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingsManager.swift; sourceTree = "<group>"; };
 		7FD106FE297F1FCC0005E9DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7FE0C9D029885C9500EBB913 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7FE0C9D229885D4D00EBB913 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -309,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				7FF74DEC2982AE7F0067C3D9 /* RankingsViewController.swift */,
+				7F84FA8C299CF85F00827DC3 /* RankingsTableViewCell.swift */,
 			);
 			path = Rankings;
 			sourceTree = "<group>";
@@ -336,6 +343,7 @@
 				7FF74E05298596390067C3D9 /* CategoryManager.swift */,
 				7FF74E07298597980067C3D9 /* AuthManager.swift */,
 				7FE0C9D42988712200EBB913 /* SettingsManager.swift */,
+				7F84FA90299D048300827DC3 /* RankingsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -375,6 +383,7 @@
 				7FF74E00298591360067C3D9 /* QuizData.swift */,
 				7FF74E02298594810067C3D9 /* CategoryData.swift */,
 				7FF74E09298598600067C3D9 /* Route.swift */,
+				7F84FA8E299CFD1F00827DC3 /* Rankings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -563,9 +572,12 @@
 				C3EDC68C298104E200D18DBC /* LoginVC.swift in Sources */,
 				C3422B9D299774AF00C7F1A3 /* Progressbar.swift in Sources */,
 				7FF74E08298597980067C3D9 /* AuthManager.swift in Sources */,
+				7F84FA8F299CFD1F00827DC3 /* Rankings.swift in Sources */,
 				7FF74DFE2982BD5E0067C3D9 /* HomeCollectionViewCell.swift in Sources */,
 				7FF74E0A298598600067C3D9 /* Route.swift in Sources */,
+				7F84FA91299D048300827DC3 /* RankingsManager.swift in Sources */,
 				C31036CE297AC4C5006EBBF3 /* UIView+Extension.swift in Sources */,
+				7F84FA8D299CF85F00827DC3 /* RankingsTableViewCell.swift in Sources */,
 				7FF74E06298596390067C3D9 /* CategoryManager.swift in Sources */,
 				7FE0C9D8298930F600EBB913 /* GameViewController.swift in Sources */,
 				7F70ED2B297C78290044984C /* SignUpViewController.swift in Sources */,

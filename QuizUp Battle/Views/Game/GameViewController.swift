@@ -100,6 +100,7 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.secondBtn.setTitle(shuffledAnswersArray[indexPath.row][1], for: .normal)
             cell.thirdBtn.isHidden = true
             cell.fourthBtn.isHidden = true
+            cell.invalidateIntrinsicContentSize()
           
         } else {
             cell.firstBtn.setTitle(shuffledAnswersArray[indexPath.row][0], for: .normal)
