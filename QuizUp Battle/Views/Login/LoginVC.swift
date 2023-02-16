@@ -49,19 +49,25 @@ class LoginVC: UIViewController {
                 switch error.code{
                         
                     case AuthErrorCode.operationNotAllowed.rawValue:
-                        
+                        self.alert(message: error.localizedDescription)
                         print("Wrong Password")
                     case AuthErrorCode.userDisabled.rawValue:
-                        //                      self?.errorMessage()
+                        self.alert(message: error.localizedDescription)
+
                         print("Wrong email")
                         
                     case AuthErrorCode.wrongPassword.rawValue:
+                        self.alert(message: error.localizedDescription)
+
                         print("account exists")
                         
                     case AuthErrorCode.invalidEmail.rawValue:
-                        //                      self?.sameEmail()
+                        self.alert(message: error.localizedDescription)
+
                         print("email already in use")
                     default:
+                        self.alert(message: error.localizedDescription)
+
                         print("error: \(error.localizedDescription)")
                 }
                 
@@ -75,6 +81,18 @@ class LoginVC: UIViewController {
             
         }
         
+    }
+    
+    func alert(message: String){
+        let alert = UIAlertController(title: "Oppps",
+                                      message: "\(message)",
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK",
+                                      style: .default,
+                                      handler: { _ in
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func isValidEmail(_ email: String) -> Bool {

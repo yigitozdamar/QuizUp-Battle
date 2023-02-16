@@ -11,9 +11,6 @@ struct Rankings {
     
     var name: String
     var totalScore: Int
-    
-    init(name: String, totalScore: Int) {
-        self.name = name
-        self.totalScore = totalScore
-    }
+    var timestamp = Date().timeIntervalSince1970
+   
 }
