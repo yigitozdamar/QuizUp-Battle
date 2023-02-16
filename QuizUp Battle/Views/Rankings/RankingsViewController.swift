@@ -134,6 +134,8 @@ extension RankingsViewController: UITableViewDataSource, UITableViewDelegate {
             cell.backgroundColor = .clear
         }
     }
+    
+   
 
     
 }
