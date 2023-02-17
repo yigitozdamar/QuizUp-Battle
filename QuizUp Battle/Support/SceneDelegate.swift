@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if currentUser != nil || clientID != nil {
+        if currentUser != nil || UserDefaults().bool(forKey: "name") {
             let vc = storyboard.instantiateViewController(withIdentifier: "launchVC") as! LaunchViewController
             window?.rootViewController = vc
             
@@ -31,7 +31,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.rootViewController = vc
         }
         
-        
+        GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+            if error != nil || user == nil {
+                // Show the app's signed-out state.
+                let vc = storyboard.instantiateViewController(withIdentifier: "OnboardingVC") as! OnboardingViewController
+                self.window?.rootViewController = vc
+            } else {
+                // Show the app's signed-in state.
+                let vc = storyboard.instantiateViewController(withIdentifier: "launchVC") as! LaunchViewController
+                self.window?.rootViewController = vc
+            }
+        }
         
         
         guard let _ = (scene as? UIWindowScene) else { return }
