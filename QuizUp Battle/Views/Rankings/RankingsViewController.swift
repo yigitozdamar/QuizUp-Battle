@@ -15,15 +15,15 @@ class RankingsViewController: UIViewController, SETabItemProvider {
     var indexPath: IndexPath!
     
     var seTabBarItem: UITabBarItem? {
-            return UITabBarItem(title: "", image: UIImage(systemName: "chart.bar"), tag: 0)
-        }
+        return UITabBarItem(title: "", image: UIImage(systemName: "chart.bar"), tag: 0)
+    }
     
     @IBOutlet weak var tableView: UITableView!
     var users: [Rankings] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -33,14 +33,14 @@ class RankingsViewController: UIViewController, SETabItemProvider {
     @IBAction func timeSegment(_ sender: UISegmentedControl) {
         
         switch sender.selectedSegmentIndex {
-            case 0:
-                print("weekly")
-                fetchFromDbWeekly()
-            case 1:
-                print("Alltime")
-                fetchFromDbAllTime()
-            default:
-                break
+        case 0:
+            print("weekly")
+            fetchFromDbWeekly()
+        case 1:
+            print("Alltime")
+            fetchFromDbAllTime()
+        default:
+            break
         }
     }
     
@@ -72,7 +72,7 @@ class RankingsViewController: UIViewController, SETabItemProvider {
                     print("6 is not in the array")
                 }
                 
-              
+                
             }
         })
     }
@@ -110,7 +110,7 @@ class RankingsViewController: UIViewController, SETabItemProvider {
             }
         })
     }
-
+    
     
 }
 
@@ -135,7 +135,7 @@ extension RankingsViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-   
-
+    
+    
     
 }
