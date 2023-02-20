@@ -150,11 +150,11 @@ extension RankingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        
-        if indexPath == self.indexPath {
-            cell.backgroundColor = .red
-        } else {
-            cell.backgroundColor = .clear
-        }
+        guard let cell = cell as? RankingsTableViewCell else { return }
+            if indexPath == self.indexPath {
+                cell.view.backgroundColor = .red
+            } else {
+                cell.view.backgroundColor = .white
+            }
     }
 }
