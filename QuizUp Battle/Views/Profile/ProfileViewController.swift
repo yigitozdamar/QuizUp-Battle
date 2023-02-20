@@ -12,6 +12,7 @@ import FirebaseDatabase
 
 class ProfileViewController: UIViewController, SETabItemProvider {
     
+    @IBOutlet weak var totalScoreLbl: UILabel!
     var ref: DatabaseReference!
     var user = UserDefaults().object(forKey: "name") ?? "Noname"
     var gender: String = "male"
@@ -24,7 +25,7 @@ class ProfileViewController: UIViewController, SETabItemProvider {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        score()
     }
     
     @IBAction func genderType(_ sender: UISegmentedControl) {
@@ -66,6 +67,29 @@ class ProfileViewController: UIViewController, SETabItemProvider {
     @IBAction func saveButton(_ sender: UIButton) {
         saveToDb()
     }
+    
+    func score(){
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        let databaseRef = Database.database(url: "https://quizupbattle-default-rtdb.europe-west1.firebasedatabase.app").reference()
+        let userRef = databaseRef.child("Users").child(userID)
+        userRef.observeSingleEvent(of: .value) { snapshot, _  in
+            if snapshot.exists() {
+                if let userData = snapshot.value as? [String: Any], let name = userData["TotalScore"] as? Int{
+                    // User already exists, update TotalScore field
+                    self.totalScoreLbl.text = name.description
+                  
+                }
+                
+            } else {
+                
+                print("hata var")
+            }
+     //       UserDefaults.standard.set(self.totalScore, forKey: "totalScore")
+//            print("Saved to FB")
+//            print("Snapshot value: \(snapshot.value ?? "nil")")
+        }
+    }
+    
     
     
     func saveToDb() {

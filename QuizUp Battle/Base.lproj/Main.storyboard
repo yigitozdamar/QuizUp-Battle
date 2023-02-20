@@ -12,12 +12,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Nunito-Bold.ttf">
-            <string>Nunito-Bold</string>
+        <array key="Nunito-SemiBold.ttf">
+            <string>Nunito-SemiBold</string>
         </array>
         <array key="Nunito-VariableFont_wght.ttf">
+            <string>Nunito-Bold</string>
             <string>Nunito-Regular</string>
-            <string>Nunito-SemiBold</string>
         </array>
     </customFonts>
     <scenes>
@@ -363,6 +363,7 @@
                     <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="ifx-ak-coj"/>
                     <connections>
                         <outlet property="avatarPic" destination="Yj2-CR-Ytd" id="E6A-ra-GbW"/>
+                        <outlet property="totalScoreLbl" destination="KBO-6D-P1O" id="4dz-na-3uI"/>
                         <outlet property="userNameTextField" destination="0ic-UA-cUV" id="J6H-ds-X0v"/>
                         <segue destination="hjZ-Hz-8p8" kind="presentation" identifier="toLoginVC" modalPresentationStyle="fullScreen" id="f03-Qz-MdW"/>
                     </connections>
