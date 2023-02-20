@@ -41,7 +41,7 @@ class GameViewController: UIViewController, GameCollectionViewCellDelegate {
         let nextIndexPath = IndexPath(item: indexPath.item + 1, section: indexPath.section)
         
         
-        if nextIndexPath.item < questions.count && result {
+        if nextIndexPath.item < questions.count && result  {
             collectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
             count += 1
             

@@ -23,7 +23,8 @@ class LaunchViewController: UIViewController{
 
         if let cachedCategories = cachedCategories {
             self.filteredCategories = try! JSONDecoder().decode([Category].self, from: cachedCategories)
-        }
+            
+                    }
         
         if !filteredCategories.isEmpty{
             animationView?.isHidden = true

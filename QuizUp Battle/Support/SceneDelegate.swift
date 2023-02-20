@@ -17,14 +17,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
-        let currentUser = Auth.auth().currentUser
+
+        guard let currentUser = Auth.auth().currentUser?.email else {return}
+        print("current userrrrrrrrr: \(currentUser)")
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if currentUser != nil || UserDefaults().bool(forKey: "name") {
+        if currentUser != nil {
+            print("HATAAAA")
             let vc = storyboard.instantiateViewController(withIdentifier: "launchVC") as! LaunchViewController
-            window?.rootViewController = vc
+            self.window?.rootViewController = vc
 
         } else {
             let vc = storyboard.instantiateViewController(withIdentifier: "OnboardingVC") as! OnboardingViewController

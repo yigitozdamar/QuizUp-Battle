@@ -28,6 +28,7 @@ class RankingsViewController: UIViewController, SETabItemProvider {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchFromDbWeekly()
+        tableView.reloadData()
     }
     
     @IBAction func timeSegment(_ sender: UISegmentedControl) {
@@ -124,6 +125,8 @@ extension RankingsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.listNumber.text = "\(indexPath.row + 1)"
         cell.nameLabel.text = users[indexPath.row].name
         cell.totalScoreLabel.text = "\(users[indexPath.row].totalScore)"
+        cell.crownImage.isHidden = false
+           cell.crownImage.tintColor = nil
         if indexPath.row == 0{
             cell.crownImage.tintColor = .systemYellow
         }else if indexPath.row == 1{
@@ -140,10 +143,14 @@ extension RankingsViewController: UITableViewDataSource, UITableViewDelegate {
             cell.genderImage.image = UIImage(named: "man")
             cell.genderImage.backgroundColor = UIColor(red: 0.698, green: 0.804, blue: 0.882, alpha: 1.0)
         }
+        
+      
         return cell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        
         if indexPath == self.indexPath {
             cell.backgroundColor = .red
         } else {

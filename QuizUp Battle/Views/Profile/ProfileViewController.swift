@@ -97,7 +97,7 @@ class ProfileViewController: UIViewController, SETabItemProvider {
                     }
                 }
             }
-//            UserDefaults.standard.set(self.totalScore, forKey: "totalScore")
+     //       UserDefaults.standard.set(self.totalScore, forKey: "totalScore")
 //            print("Saved to FB")
 //            print("Snapshot value: \(snapshot.value ?? "nil")")
         }

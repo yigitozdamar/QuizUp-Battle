@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eo1-h5-unm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lcO-aJ-Czh">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <accessibilityOverrides/>
     <dependencies>
@@ -12,11 +12,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Nunito-Regular.ttf">
-            <string>Nunito-Regular</string>
-        </array>
         <array key="Nunito-VariableFont_wght.ttf">
             <string>Nunito-Bold</string>
+            <string>Nunito-Regular</string>
             <string>Nunito-SemiBold</string>
         </array>
     </customFonts>
@@ -423,7 +421,7 @@
                                     <action selector="timeSegment:" destination="eo1-h5-unm" eventType="valueChanged" id="gbH-HZ-q4t"/>
                                 </connections>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VIt-gh-5Nc">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VIt-gh-5Nc">
                                 <rect key="frame" x="16" y="197" width="361" height="655"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <prototypes>
@@ -1996,10 +1994,10 @@
         <designable name="lOl-fi-fnz"/>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="f03-Qz-MdW"/>
+        <segue reference="1tI-mm-0Bj"/>
         <segue reference="izH-mk-aRG"/>
-        <segue reference="FLa-6p-Gvh"/>
-        <segue reference="pcj-ba-500"/>
+        <segue reference="sBd-Xc-xWR"/>
+        <segue reference="toR-3k-Hug"/>
         <segue reference="haf-T0-msJ"/>
     </inferredMetricsTieBreakers>
     <resources>
