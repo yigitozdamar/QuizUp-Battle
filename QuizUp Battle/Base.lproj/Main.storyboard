@@ -12,9 +12,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Nunito-VariableFont_wght.ttf">
+        <array key="Nunito-Bold.ttf">
             <string>Nunito-Bold</string>
+        </array>
+        <array key="Nunito-Regular.ttf">
             <string>Nunito-Regular</string>
+        </array>
+        <array key="Nunito-VariableFont_wght.ttf">
             <string>Nunito-SemiBold</string>
         </array>
     </customFonts>
@@ -981,11 +985,11 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="fEj-tW-TDr" userLabel="AnswerStack View">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="fEj-tW-TDr" userLabel="AnswerStack View">
                                                             <rect key="frame" x="0.0" y="120" width="353" height="276"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAV-rX-ylx">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="353" height="54.666666666666664"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="353" height="60"/>
                                                                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                                     <state key="normal" title="Button"/>
                                                                     <buttonConfiguration key="configuration" style="plain" title="first button">
@@ -1002,7 +1006,7 @@
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0g-uU-fyb">
-                                                                    <rect key="frame" x="0.0" y="66.666666666666686" width="353" height="54.666666666666657"/>
+                                                                    <rect key="frame" x="0.0" y="72" width="353" height="60"/>
                                                                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                                     <state key="normal" title="Button"/>
                                                                     <buttonConfiguration key="configuration" style="plain" title="first button">
@@ -1019,12 +1023,11 @@
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZzT-uz-Tmq">
-                                                                    <rect key="frame" x="0.0" y="133.33333333333331" width="353" height="54.666666666666657"/>
+                                                                    <rect key="frame" x="0.0" y="144" width="353" height="60"/>
                                                                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                                     <state key="normal" title="Button"/>
-                                                                    <buttonConfiguration key="configuration" style="plain" title="first button">
-                                                                        <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
-                                                                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <buttonConfiguration key="configuration" style="plain" title="third">
+                                                                        <color key="baseForegroundColor" white="0.0" alpha="0.88490790559999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </buttonConfiguration>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1036,12 +1039,11 @@
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clJ-Wz-53E">
-                                                                    <rect key="frame" x="0.0" y="200" width="353" height="76"/>
+                                                                    <rect key="frame" x="0.0" y="216" width="353" height="60"/>
                                                                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                                     <state key="normal" title="Button"/>
-                                                                    <buttonConfiguration key="configuration" style="plain" title="first button">
-                                                                        <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
-                                                                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <buttonConfiguration key="configuration" style="plain" title="fourth">
+                                                                        <color key="baseForegroundColor" white="0.0" alpha="0.88490790559999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </buttonConfiguration>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1056,7 +1058,6 @@
                                                         </stackView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="fEj-tW-TDr" secondAttribute="bottom" id="0YS-o9-ySP"/>
                                                         <constraint firstAttribute="trailing" secondItem="fEj-tW-TDr" secondAttribute="trailing" id="2Pe-w3-I7h"/>
                                                         <constraint firstItem="fEj-tW-TDr" firstAttribute="top" secondItem="BFN-py-k0d" secondAttribute="bottom" constant="20" id="z45-KH-zzT"/>
                                                         <constraint firstItem="fEj-tW-TDr" firstAttribute="leading" secondItem="fSV-tn-ORC" secondAttribute="leading" id="zK2-Vu-sMk"/>
@@ -1989,16 +1990,13 @@
             <point key="canvasLocation" x="3323" y="-404"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="hVm-Br-e1k"/>
-        <designable name="lOl-fi-fnz"/>
-    </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="1tI-mm-0Bj"/>
+        <segue reference="Ulx-p6-hJn"/>
+        <segue reference="f03-Qz-MdW"/>
         <segue reference="izH-mk-aRG"/>
         <segue reference="sBd-Xc-xWR"/>
-        <segue reference="toR-3k-Hug"/>
-        <segue reference="haf-T0-msJ"/>
+        <segue reference="pcj-ba-500"/>
+        <segue reference="jYS-L7-A2a"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="(O)" width="1125" height="2436"/>

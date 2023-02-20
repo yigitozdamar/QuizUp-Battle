@@ -96,10 +96,17 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.scoreLabel.text = "Score: \(count)"
         
         if questions[indexPath.row].type == "boolean" {
+            cell.firstBtn.backgroundColor = UIColor.systemGray6
+            cell.secondBtn.backgroundColor = UIColor.systemGray6
+            cell.thirdBtn.backgroundColor = .clear
+            cell.fourthBtn.backgroundColor = .clear
+            cell.thirdBtn.isEnabled = false
+            cell.fourthBtn.isEnabled = false
             cell.firstBtn.setTitle(shuffledAnswersArray[indexPath.row][0], for: .normal)
             cell.secondBtn.setTitle(shuffledAnswersArray[indexPath.row][1], for: .normal)
-            cell.thirdBtn.isHidden = true
-            cell.fourthBtn.isHidden = true
+            cell.thirdBtn.setTitle("", for: .normal)
+            cell.fourthBtn.setTitle("", for: .normal)
+            
             cell.invalidateIntrinsicContentSize()
           
         } else {
@@ -107,12 +114,15 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.secondBtn.setTitle(shuffledAnswersArray[indexPath.row][1], for: .normal)
             cell.thirdBtn.setTitle(shuffledAnswersArray[indexPath.row][2], for: .normal)
             cell.fourthBtn.setTitle(shuffledAnswersArray[indexPath.row][3], for: .normal)
+            cell.firstBtn.backgroundColor = UIColor.systemGray6
+            cell.secondBtn.backgroundColor = UIColor.systemGray6
+            cell.thirdBtn.backgroundColor = UIColor.systemGray6
+            cell.fourthBtn.backgroundColor = UIColor.systemGray6
+            cell.thirdBtn.isEnabled = true
+            cell.fourthBtn.isEnabled = true
         }
        
-        cell.firstBtn.backgroundColor = UIColor.systemGray6
-        cell.secondBtn.backgroundColor = UIColor.systemGray6
-        cell.thirdBtn.backgroundColor = UIColor.systemGray6
-        cell.fourthBtn.backgroundColor = UIColor.systemGray6
+       
       
         cell.questions = questions[indexPath.row]
         cell.startCountdown(countFired: 10)
