@@ -39,6 +39,10 @@ class LoginVC: UIViewController {
         }
     }
     
+    @IBAction func forgotPasswordBtnTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "forgotPasswordVC", sender: nil)
+    }
+    
     @IBAction func loginButton(_ sender: UIButton) {
         guard let email = emailTextField.text else { return  }
         guard let password = passwordTextField.text else { return  }

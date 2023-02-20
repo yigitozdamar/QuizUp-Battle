@@ -55,6 +55,7 @@
 		7FF74E06298596390067C3D9 /* CategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF74E05298596390067C3D9 /* CategoryManager.swift */; };
 		7FF74E08298597980067C3D9 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF74E07298597980067C3D9 /* AuthManager.swift */; };
 		7FF74E0A298598600067C3D9 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF74E09298598600067C3D9 /* Route.swift */; };
+		C3042A0C29A4083C009471DD /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3042A0B29A4083C009471DD /* ForgotPasswordViewController.swift */; };
 		C31036CE297AC4C5006EBBF3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036CD297AC4C5006EBBF3 /* UIView+Extension.swift */; };
 		C31036D1297AC5CB006EBBF3 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036D0297AC5CB006EBBF3 /* OnboardingSlide.swift */; };
 		C31036D3297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036D2297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift */; };
@@ -120,6 +121,7 @@
 		7FF74E09298598600067C3D9 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		829263A92AAC6B63C242ACAC /* Pods-QuizUp Battle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizUp Battle.release.xcconfig"; path = "Target Support Files/Pods-QuizUp Battle/Pods-QuizUp Battle.release.xcconfig"; sourceTree = "<group>"; };
 		98164C229831F220398D3A89 /* Pods-QuizUp Battle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizUp Battle.debug.xcconfig"; path = "Target Support Files/Pods-QuizUp Battle/Pods-QuizUp Battle.debug.xcconfig"; sourceTree = "<group>"; };
+		C3042A0B29A4083C009471DD /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		C31036CD297AC4C5006EBBF3 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		C31036D0297AC5CB006EBBF3 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		C31036D2297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -348,9 +350,18 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		C3042A0D29A40F26009471DD /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				C3042A0B29A4083C009471DD /* ForgotPasswordViewController.swift */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
 		C31036CB297AC2DA006EBBF3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C3042A0D29A40F26009471DD /* ForgotPassword */,
 				7F347B5329957CC5001D4B35 /* ResultGame */,
 				7FE0C9D6298930DA00EBB913 /* Game */,
 				7F073971298858DD00C183C9 /* Settings */,
@@ -579,6 +590,7 @@
 				C31036CE297AC4C5006EBBF3 /* UIView+Extension.swift in Sources */,
 				7F84FA8D299CF85F00827DC3 /* RankingsTableViewCell.swift in Sources */,
 				7FF74E06298596390067C3D9 /* CategoryManager.swift in Sources */,
+				C3042A0C29A4083C009471DD /* ForgotPasswordViewController.swift in Sources */,
 				7FE0C9D8298930F600EBB913 /* GameViewController.swift in Sources */,
 				7F70ED2B297C78290044984C /* SignUpViewController.swift in Sources */,
 				C3BEDE532987EC7400D4D2BF /* LaunchViewController.swift in Sources */,
