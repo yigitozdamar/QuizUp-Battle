@@ -75,7 +75,7 @@ class GameViewController: UIViewController, GameCollectionViewCellDelegate {
             
          } else {
              print("Sayfa Bitti")
-             performSegue(withIdentifier: "endGame", sender: self)
+             performSegue(withIdentifier: "toResultGameVC", sender: self)
          }
      }
     
@@ -121,9 +121,6 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.thirdBtn.isEnabled = true
             cell.fourthBtn.isEnabled = true
         }
-       
-       
-      
         cell.questions = questions[indexPath.row]
         cell.startCountdown(countFired: 10)
         
