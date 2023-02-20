@@ -11,6 +11,7 @@ struct Rankings {
     
     var name: String
     var totalScore: Int
+    var gender: String
     var timestamp = Date().timeIntervalSince1970
    
 }

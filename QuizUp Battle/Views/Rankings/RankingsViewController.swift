@@ -51,8 +51,8 @@ class RankingsViewController: UIViewController, SETabItemProvider {
             self.users.removeAll()
             for child in snapshot.children {
                 if let data = child as? DataSnapshot, let dict = data.value as? [String: Any] {
-                    if let user = dict["User"] as? String, let totalScore = dict["TotalScore"] as? Int {
-                        let fetchedUser = Rankings(name: user, totalScore: totalScore)
+                    if let user = dict["User"] as? String, let totalScore = dict["TotalScore"] as? Int, let gender = dict["gender"] as? String {
+                        let fetchedUser = Rankings(name: user, totalScore: totalScore, gender: gender)
                         self.users.append(fetchedUser)
                         
                         print(self.users)
@@ -91,8 +91,8 @@ class RankingsViewController: UIViewController, SETabItemProvider {
             self.users.removeAll()
             for child in snapshot.children {
                 if let data = child as? DataSnapshot, let dict = data.value as? [String: Any] {
-                    if let user = dict["User"] as? String, let totalScore = dict["TotalScore"] as? Int {
-                        let fetchedUser = Rankings(name: user, totalScore: totalScore)
+                    if let user = dict["User"] as? String, let totalScore = dict["TotalScore"] as? Int, let gender = dict["gender"] as? String  {
+                        let fetchedUser = Rankings(name: user, totalScore: totalScore, gender: gender)
                         self.users.append(fetchedUser)
                     }
                 }
@@ -124,6 +124,22 @@ extension RankingsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.listNumber.text = "\(indexPath.row + 1)"
         cell.nameLabel.text = users[indexPath.row].name
         cell.totalScoreLabel.text = "\(users[indexPath.row].totalScore)"
+        if indexPath.row == 0{
+            cell.crownImage.tintColor = .systemYellow
+        }else if indexPath.row == 1{
+            cell.crownImage.tintColor = .gray
+        }else if indexPath.row == 2{
+            cell.crownImage.tintColor = .brown
+        }else{
+            cell.crownImage.isHidden = true
+        }
+        if users[indexPath.row].gender == "female"{
+            cell.genderImage.image = UIImage(named: "woman")
+            cell.genderImage.backgroundColor = UIColor(red: 0.882, green: 0.765, blue: 0.863, alpha: 1.0)
+        }else{
+            cell.genderImage.image = UIImage(named: "man")
+            cell.genderImage.backgroundColor = UIColor(red: 0.698, green: 0.804, blue: 0.882, alpha: 1.0)
+        }
         return cell
     }
     

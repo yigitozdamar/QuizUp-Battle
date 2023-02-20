@@ -7,6 +7,7 @@
 
 import UIKit
 import Lottie
+import FirebaseAuth
 import FirebaseDatabase
 
 class ResultGameViewController: UIViewController {
@@ -38,11 +39,12 @@ class ResultGameViewController: UIViewController {
     
     @IBAction func returnHomeTapped(_ sender: UIButton) {
         self.cupAnimationView.stop()
+        saveToDb()
         let launchScreen = LaunchViewController()
         launchScreen.modalPresentationStyle = .fullScreen
         self.present(launchScreen, animated: true, completion: nil)
-        saveToDb()
-      }
+        
+    }
     
     @IBAction func restartGameTapped(_ sender: UIButton) {
         saveToDb()
@@ -63,39 +65,39 @@ class ResultGameViewController: UIViewController {
     }
     
     func saveToDb() {
+        guard let userID = Auth.auth().currentUser?.uid else { return }
         let databaseRef = Database.database(url: "https://quizupbattle-default-rtdb.europe-west1.firebasedatabase.app").reference()
-        let query = databaseRef.child("Users").queryOrdered(byChild: "User").queryEqual(toValue: user).queryLimited(toFirst: 1)
-        query.observeSingleEvent(of: .value) { snapshot in
-            if snapshot.exists(), let child = snapshot.children.first as? DataSnapshot {
-                let key = child.key
-                let childUpdates = ["Users/\(key)/TotalScore": self.totalScore]
-                databaseRef.updateChildValues(childUpdates) { error, ref in
-                    if let error = error {
-                        print("Error updating user data: \(error.localizedDescription)")
-                    } else {
-                        print("User data updated successfully.")
+        let userRef = databaseRef.child("Users").child(userID)
+        userRef.observeSingleEvent(of: .value) { snapshot in
+            if snapshot.exists() {
+                if let userData = snapshot.value as? [String: Any], let totalScore = userData["TotalScore"] as? Int {
+                    // User already exists, update TotalScore field
+                    let childUpdates = ["TotalScore": (totalScore + self.totalScore)]
+                    userRef.updateChildValues(childUpdates) { error, ref in
+                        if let error = error {
+                            print("Error updating user data: \(error.localizedDescription)")
+                        } else {
+                            print("User data updated successfully.")
+                        }
                     }
                 }
+                
             } else {
-                let dict : [String: Any] = ["User": self.user, "TotalScore": self.totalScore, "time": Date().timeIntervalSince1970]
-                let newRef = databaseRef.child("Users").childByAutoId()
-                newRef.setValue(dict) { error, ref in
+                // User does not exist, create new user entry with userID as key
+                let dict : [String: Any] = ["User": self.user, "TotalScore": self.totalScore, "time": Date().timeIntervalSince1970, "gender": "male"]
+                userRef.setValue(dict) { error, ref in
                     if let error = error {
                         print("Error adding new user: \(error.localizedDescription)")
                     } else {
                         print("New user added successfully.")
-                        print(dict)
                     }
                 }
             }
             UserDefaults.standard.set(self.totalScore, forKey: "totalScore")
             print("Saved to FB")
             print("Snapshot value: \(snapshot.value ?? "nil")")
-            print("Query matched \(snapshot.childrenCount) child/children")
         }
     }
-
-
 }
 
 
