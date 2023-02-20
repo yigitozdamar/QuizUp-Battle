@@ -435,16 +435,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDm-E7-jdT">
-                                                    <rect key="frame" x="5" y="10" width="351" height="69"/>
+                                                    <rect key="frame" x="8" y="10" width="345" height="66"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="192" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YUn-Ah-U1p">
-                                                            <rect key="frame" x="8" y="10" width="29" height="49"/>
+                                                            <rect key="frame" x="8" y="10" width="29" height="46"/>
                                                             <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man" translatesAutoresizingMaskIntoConstraints="NO" id="2Ik-vb-Qq0">
-                                                            <rect key="frame" x="52" y="10" width="30" height="49"/>
+                                                            <rect key="frame" x="52" y="10" width="30" height="46"/>
                                                             <color key="backgroundColor" red="0.69686803399999997" green="0.80424142890000005" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="4Kz-nM-MID"/>
@@ -452,19 +452,19 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steve McManaman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgA-om-ziV">
-                                                            <rect key="frame" x="92" y="10" width="159" height="49"/>
+                                                            <rect key="frame" x="92" y="10" width="153" height="46"/>
                                                             <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="19"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="1929" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIi-Kc-Lnh">
-                                                            <rect key="frame" x="255" y="10" width="36" height="49"/>
+                                                            <rect key="frame" x="249" y="10" width="36" height="46"/>
                                                             <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kcf-vz-YAE">
-                                                            <rect key="frame" x="296" y="10.666666666666664" width="53" height="46.999999999999986"/>
+                                                            <rect key="frame" x="290" y="10.666666666666664" width="53" height="43.999999999999986"/>
                                                             <color key="tintColor" systemColor="systemYellowColor"/>
                                                             <imageReference key="image" image="crown" catalog="system" variableValue="0.60000000000000009"/>
                                                         </imageView>
@@ -498,14 +498,15 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" systemColor="systemGray5Color"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="pDm-E7-jdT" secondAttribute="trailing" constant="5" id="8Hu-Gv-U6m"/>
-                                                <constraint firstAttribute="bottom" secondItem="pDm-E7-jdT" secondAttribute="bottom" constant="5" id="HW0-5h-eAA"/>
-                                                <constraint firstItem="pDm-E7-jdT" firstAttribute="leading" secondItem="g0l-tn-SPt" secondAttribute="leading" constant="5" id="ukK-qu-h6K"/>
+                                                <constraint firstAttribute="trailing" secondItem="pDm-E7-jdT" secondAttribute="trailing" constant="8" id="8Hu-Gv-U6m"/>
+                                                <constraint firstAttribute="bottom" secondItem="pDm-E7-jdT" secondAttribute="bottom" constant="8" id="HW0-5h-eAA"/>
+                                                <constraint firstItem="pDm-E7-jdT" firstAttribute="leading" secondItem="g0l-tn-SPt" secondAttribute="leading" constant="8" id="ukK-qu-h6K"/>
                                                 <constraint firstItem="pDm-E7-jdT" firstAttribute="top" secondItem="g0l-tn-SPt" secondAttribute="top" constant="10" id="wzc-b9-fOj"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <connections>
                                             <outlet property="crownImage" destination="kcf-vz-YAE" id="Obg-qW-xW4"/>
                                             <outlet property="genderImage" destination="2Ik-vb-Qq0" id="oVb-SQ-Ijt"/>
@@ -1669,7 +1670,6 @@
         <!--Forgot Password View Controller-->
         <scene sceneID="zL0-i5-kiA">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pbb-S6-fc4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="kXE-LI-xgV" customClass="ForgotPasswordViewController" customModule="QuizUp_Battle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ait-Ni-k99">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
@@ -1755,6 +1755,7 @@
                         <outlet property="resetButton" destination="h7L-Ev-f5d" id="gdd-WZ-bOh"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pbb-S6-fc4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-390.07633587786256" y="-939.43661971830988"/>
         </scene>
