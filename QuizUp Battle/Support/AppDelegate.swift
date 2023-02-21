@@ -10,6 +10,7 @@ import IQKeyboardManagerSwift
 import FirebaseCore
 import GoogleSignIn
 import FirebaseAuth
+import GoogleMobileAds
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+       
         FirebaseApp.configure()
         
         

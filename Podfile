@@ -15,6 +15,6 @@ pod 'SwiftyJSON', '~> 4.0'
 pod 'Alamofire'
 pod 'lottie-ios'
 pod 'FirebaseDatabase'
-pod 'FirebaseStorage'
+pod 'Google-Mobile-Ads-SDK'
 
 end
