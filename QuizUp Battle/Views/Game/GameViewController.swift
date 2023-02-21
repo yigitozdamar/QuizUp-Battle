@@ -39,17 +39,20 @@ class GameViewController: UIViewController, GameCollectionViewCellDelegate {
     func answerSelected(for cell: GameCollectionViewCell, with result: Bool) {
         guard let indexPath = collectionView.indexPath(for: cell) else { return }
         let nextIndexPath = IndexPath(item: indexPath.item + 1, section: indexPath.section)
-        
+        print("indexpathhhhh")
+        print(nextIndexPath)
         
         if nextIndexPath.item < questions.count && result  {
-            collectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
             count += 1
+            collectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
             
         }else if nextIndexPath.item < questions.count && !result{
             collectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
            
         } else {
-            print("Sayfa Bitti")
+            if result{
+                count += 1
+            }
             performSegue(withIdentifier: "toResultGameVC", sender: self)
         }
      
