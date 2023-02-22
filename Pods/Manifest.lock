@@ -636,34 +636,10 @@ PODS:
     - "gRPC-C++ (~> 1.44.0)"
     - leveldb-library (~> 1.22)
     - nanopb (< 2.30910.0, >= 2.30908.0)
-  - Google-Mobile-Ads-SDK (10.1.0):
-    - GoogleAppMeasurement (< 11.0, >= 7.0)
-    - GoogleUserMessagingPlatform (>= 1.1)
-  - GoogleAppMeasurement (10.5.0):
-    - GoogleAppMeasurement/AdIdSupport (= 10.5.0)
-    - GoogleUtilities/AppDelegateSwizzler (~> 7.8)
-    - GoogleUtilities/MethodSwizzler (~> 7.8)
-    - GoogleUtilities/Network (~> 7.8)
-    - "GoogleUtilities/NSData+zlib (~> 7.8)"
-    - nanopb (< 2.30910.0, >= 2.30908.0)
-  - GoogleAppMeasurement/AdIdSupport (10.5.0):
-    - GoogleAppMeasurement/WithoutAdIdSupport (= 10.5.0)
-    - GoogleUtilities/AppDelegateSwizzler (~> 7.8)
-    - GoogleUtilities/MethodSwizzler (~> 7.8)
-    - GoogleUtilities/Network (~> 7.8)
-    - "GoogleUtilities/NSData+zlib (~> 7.8)"
-    - nanopb (< 2.30910.0, >= 2.30908.0)
-  - GoogleAppMeasurement/WithoutAdIdSupport (10.5.0):
-    - GoogleUtilities/AppDelegateSwizzler (~> 7.8)
-    - GoogleUtilities/MethodSwizzler (~> 7.8)
-    - GoogleUtilities/Network (~> 7.8)
-    - "GoogleUtilities/NSData+zlib (~> 7.8)"
-    - nanopb (< 2.30910.0, >= 2.30908.0)
   - GoogleSignIn (7.0.0):
     - AppAuth (~> 1.5)
     - GTMAppAuth (< 3.0, >= 1.3)
     - GTMSessionFetcher/Core (< 4.0, >= 1.1)
-  - GoogleUserMessagingPlatform (2.0.1)
   - GoogleUtilities/AppDelegateSwizzler (7.10.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -672,8 +648,6 @@ PODS:
     - PromisesObjC (< 3.0, >= 1.2)
   - GoogleUtilities/Logger (7.10.0):
     - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (7.10.0):
-    - GoogleUtilities/Logger
   - GoogleUtilities/Network (7.10.0):
     - GoogleUtilities/Logger
     - "GoogleUtilities/NSData+zlib"
@@ -759,7 +733,6 @@ DEPENDENCIES:
   - FirebaseAuth
   - FirebaseDatabase
   - FirebaseFirestore
-  - Google-Mobile-Ads-SDK
   - GoogleSignIn
   - IQKeyboardManagerSwift (= 6.3.0)
   - lottie-ios
@@ -777,10 +750,7 @@ SPEC REPOS:
     - FirebaseCoreInternal
     - FirebaseDatabase
     - FirebaseFirestore
-    - Google-Mobile-Ads-SDK
-    - GoogleAppMeasurement
     - GoogleSignIn
-    - GoogleUserMessagingPlatform
     - GoogleUtilities
     - "gRPC-C++"
     - gRPC-Core
@@ -805,10 +775,7 @@ SPEC CHECKSUMS:
   FirebaseCoreInternal: e301297f4c15a17489e48ed722d733b1578e0c02
   FirebaseDatabase: 91f6f2ecb55fa5dff37cc3f2aae9ed6d6bf05266
   FirebaseFirestore: 244f71ff14ef44f39e00b44d356eac708ce03103
-  Google-Mobile-Ads-SDK: 894be2e3e3e8281004bda14381f9af7ad73eeffd
-  GoogleAppMeasurement: 40c70a7d89013f0eca72006c4b9732163ea4cdae
   GoogleSignIn: b232380cf495a429b8095d3178a8d5855b42e842
-  GoogleUserMessagingPlatform: 5f8b30daf181805317b6b985bb51c1ff3beca054
   GoogleUtilities: bad72cb363809015b1f7f19beb1f1cd23c589f95
   "gRPC-C++": 9675f953ace2b3de7c506039d77be1f2e77a8db2
   gRPC-Core: 943e491cb0d45598b0b0eb9e910c88080369290b
@@ -823,6 +790,6 @@ SPEC CHECKSUMS:
   SETabView: 20a3418b1bc61b36d7f6fb9195f1ebb0907bdf35
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 22f985e71f5b666b4bba49bdbde488ffc39b00a9
+PODFILE CHECKSUM: 20cb52b5d6f3c28d65738409af8b14d13b7f8d64
 
 COCOAPODS: 1.11.3
