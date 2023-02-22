@@ -7,15 +7,13 @@
 
 import UIKit
 import FirebaseAuth
-import GoogleMobileAds
 
-class ForgotPasswordViewController: UIViewController, GADBannerViewDelegate {
+
+class ForgotPasswordViewController: UIViewController {
     
     @IBOutlet weak var backImage: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var resetButton: UIButton!
-    
-    var bannerView: GADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,38 +22,10 @@ class ForgotPasswordViewController: UIViewController, GADBannerViewDelegate {
         
         resetButton.isEnabled = false
         emailTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        bannerView = GADBannerView(adSize: GADAdSizeBanner)
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
-        bannerView.delegate = self
+        
        
     }
-    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
-      // Add banner to view and add constraints as above.
-      addBannerViewToView(bannerView)
-    }
-
-    func addBannerViewToView(_ bannerView: GADBannerView) {
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(bannerView)
-        view.addConstraints(
-          [NSLayoutConstraint(item: bannerView,
-                              attribute: .bottom,
-                              relatedBy: .equal,
-                              toItem: bottomLayoutGuide,
-                              attribute: .top,
-                              multiplier: 1,
-                              constant: 0),
-           NSLayoutConstraint(item: bannerView,
-                              attribute: .centerX,
-                              relatedBy: .equal,
-                              toItem: view,
-                              attribute: .centerX,
-                              multiplier: 1,
-                              constant: 0)
-          ])
-    }
+    
     
     @objc func backTapped(){
         self.dismiss(animated: true)
