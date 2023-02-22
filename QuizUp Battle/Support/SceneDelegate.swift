@@ -19,31 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
-          let storyboard = UIStoryboard(name: "Main", bundle: nil)
-          
-          // Check if there is a current Firebase user
-          if let currentUser = Auth.auth().currentUser {
-              print("Current user: \(currentUser.email ?? "unknown")")
-              let vc = storyboard.instantiateViewController(withIdentifier: "launchVC") as! LaunchViewController
-              self.window?.rootViewController = vc
-          }
-          
-          // Listen for changes in the user's authentication state
-          Auth.auth().addStateDidChangeListener { (auth, user) in
-              if let user = user {
-                  // User is signed in
-                  print("User is signed in: \(user.email ?? "unknown")")
-                  let vc = storyboard.instantiateViewController(withIdentifier: "launchVC") as! LaunchViewController
-                  self.window?.rootViewController = vc
-              } else {
-                  // User is signed out
-                  print("User is signed out")
-                  let vc = storyboard.instantiateViewController(withIdentifier: "OnboardingVC") as! OnboardingViewController
-                  self.window?.rootViewController = vc
-              }
-          }
-          
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
         GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
             if error != nil || user == nil {

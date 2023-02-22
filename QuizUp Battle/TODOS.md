@@ -8,7 +8,7 @@
 6. settingsVC back button will be fixed +
 7. last questions true count +
 8. google ads + (test id used)
-9. auth
+9. auth +
 10. debugs
 11. adjustment in small screens
 

@@ -205,6 +205,7 @@
                         <outlet property="pageControl" destination="EbJ-jP-Ucu" id="VEa-kR-etJ"/>
                         <segue destination="Ut8-Ll-H5M" kind="presentation" identifier="signUp" modalPresentationStyle="fullScreen" id="Ldm-yU-Cdi"/>
                         <segue destination="hjZ-Hz-8p8" kind="presentation" identifier="login" modalPresentationStyle="fullScreen" id="1tI-mm-0Bj"/>
+                        <segue destination="lcO-aJ-Czh" kind="presentation" identifier="launchSC" modalPresentationStyle="fullScreen" id="q74-Ln-6XH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -598,6 +599,7 @@
                             <constraint firstItem="lOl-fi-fnz" firstAttribute="top" secondItem="z0v-Yd-3S3" secondAttribute="top" id="vVg-6E-MZA"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="5M1-Js-Eck"/>
                     <connections>
                         <outlet property="animationView" destination="lOl-fi-fnz" id="AQD-wd-Zcu"/>
                         <segue destination="Pba-IB-Buz" kind="presentation" identifier="toTabbarVC" modalPresentationStyle="fullScreen" id="3NF-2U-Dxb"/>
@@ -1681,7 +1683,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rhh-Bl-Osq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-390" y="711"/>
+            <point key="canvasLocation" x="-221" y="782"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="zL0-i5-kiA">
@@ -2138,7 +2140,7 @@
         <segue reference="1tI-mm-0Bj"/>
         <segue reference="izH-mk-aRG"/>
         <segue reference="sBd-Xc-xWR"/>
-        <segue reference="7hz-3M-ou6"/>
+        <segue reference="q74-Ln-6XH"/>
         <segue reference="haf-T0-msJ"/>
     </inferredMetricsTieBreakers>
     <resources>

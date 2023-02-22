@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class OnboardingViewController: UIViewController {
 
@@ -22,6 +23,16 @@ class OnboardingViewController: UIViewController {
         
         slides = [OnboardingSlide(image: UIImage(named: "illustration")),
                   OnboardingSlide(image: UIImage(named: "illustration1"))]
+        Auth.auth().addStateDidChangeListener { auth, user in
+                if user != nil{
+                    // User is signed in.
+                    print("User is not logged out.")
+                    self.performSegue(withIdentifier: "launchSC", sender: nil)
+                } else {
+                    // No user is signed in.
+                    print("No user is signed in.")
+                }
+            }
     }
     
     @IBAction func signUpButton(_ sender: Any) {
