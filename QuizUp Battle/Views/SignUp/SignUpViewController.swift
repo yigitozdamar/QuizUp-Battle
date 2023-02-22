@@ -30,15 +30,10 @@ class SignUpViewController: UIViewController {
             guard error == nil else { return }
             
             // If sign in succeeded, display the app's main content View.
-            print("Oldu")
             UserDefaults().set(signInResult?.user.profile?.name, forKey: "name")
             self.performSegue(withIdentifier: "toLaunchVCfromRegister", sender: nil)
             
         }
-    }
-    
-    @IBAction func facebookSignUp(_ sender: Any) {
-        
     }
     
     @IBAction func signUpButton(_ sender: UIButton) {
@@ -75,11 +70,6 @@ class SignUpViewController: UIViewController {
                 } else {
                     self?.performSegue(withIdentifier: "toLaunchVCfromRegister", sender: nil)
                     UserDefaults().set(email.components(separatedBy: "@")[0], forKey: "name")
-                    self?.emailTextField.text = ""
-                    self?.password.text = ""
-                    self?.confirmPassword.text = ""
-                    
-                    print("done")
                 }
             }
             

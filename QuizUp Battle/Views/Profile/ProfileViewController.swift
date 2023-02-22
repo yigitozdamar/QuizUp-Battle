@@ -13,19 +13,21 @@ import FirebaseDatabase
 class ProfileViewController: UIViewController, SETabItemProvider {
     
     @IBOutlet weak var totalScoreLbl: UILabel!
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var avatarPic: UIButton!
+    
     var ref: DatabaseReference!
     var user = UserDefaults().object(forKey: "name") ?? "Noname"
     var gender: String = "male"
     
-    @IBOutlet weak var userNameTextField: UITextField!
     var seTabBarItem: UITabBarItem? {
         return UITabBarItem(title: "", image: UIImage(systemName: "person"), tag: 0)
     }
-    @IBOutlet weak var avatarPic: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         score()
+        userNameTextField.text = UserDefaults().object(forKey: "name") as? String
     }
     
     @IBAction func genderType(_ sender: UISegmentedControl) {
@@ -74,10 +76,10 @@ class ProfileViewController: UIViewController, SETabItemProvider {
         let userRef = databaseRef.child("Users").child(userID)
         userRef.observeSingleEvent(of: .value) { snapshot, _  in
             if snapshot.exists() {
-                if let userData = snapshot.value as? [String: Any], let name = userData["TotalScore"] as? Int{
+                if let userData = snapshot.value as? [String: Any], let score = userData["TotalScore"] as? Int, let name = userData["User"] as? String{
                     // User already exists, update TotalScore field
-                    self.totalScoreLbl.text = name.description
-                  
+                    self.totalScoreLbl.text = score.description
+                    self.userNameTextField.text = name.description
                 }
                 
             } else {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09CF46E81B26D78A5193C648 /* Pods_QuizUp_Battle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698208958E628852CB7E910E /* Pods_QuizUp_Battle.framework */; };
+		7F19EB4B29A63112000AD362 /* Progressbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F19EB4A29A63111000AD362 /* Progressbar.swift */; };
 		7F347B5529957CDF001D4B35 /* ResultGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F347B5429957CDF001D4B35 /* ResultGameViewController.swift */; };
 		7F347B6029982653001D4B35 /* cup.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F347B5F29982653001D4B35 /* cup.json */; };
 		7F70ECEB297AAB140044984C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70ECEA297AAB140044984C /* AppDelegate.swift */; };
@@ -61,7 +62,6 @@
 		C31036D3297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036D2297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift */; };
 		C32A81F0298A9861004AD5B0 /* Url+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32A81EF298A9861004AD5B0 /* Url+Extension.swift */; };
 		C32A81F2298CFBA3004AD5B0 /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32A81F1298CFBA3004AD5B0 /* GameCollectionViewCell.swift */; };
-		C3422B9D299774AF00C7F1A3 /* Progressbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3422B9C299774AF00C7F1A3 /* Progressbar.swift */; };
 		C3916D57297C61FB002E1760 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3916D56297C61FB002E1760 /* TabbarViewController.swift */; };
 		C3BEDE532987EC7400D4D2BF /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BEDE522987EC7400D4D2BF /* LaunchViewController.swift */; };
 		C3BEDE552987F86F00D4D2BF /* triviaw.json in Resources */ = {isa = PBXBuildFile; fileRef = C3BEDE542987F86F00D4D2BF /* triviaw.json */; };
@@ -70,6 +70,7 @@
 
 /* Begin PBXFileReference section */
 		698208958E628852CB7E910E /* Pods_QuizUp_Battle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizUp_Battle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F19EB4A29A63111000AD362 /* Progressbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Progressbar.swift; sourceTree = "<group>"; };
 		7F347B5429957CDF001D4B35 /* ResultGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultGameViewController.swift; sourceTree = "<group>"; };
 		7F347B5F29982653001D4B35 /* cup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cup.json; sourceTree = "<group>"; };
 		7F70ECE7297AAB140044984C /* QuizUp Battle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QuizUp Battle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,7 +129,6 @@
 		C3287786299987D100B8710F /* TODOS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODOS.md; sourceTree = "<group>"; };
 		C32A81EF298A9861004AD5B0 /* Url+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Url+Extension.swift"; sourceTree = "<group>"; };
 		C32A81F1298CFBA3004AD5B0 /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
-		C3422B9C299774AF00C7F1A3 /* Progressbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progressbar.swift; sourceTree = "<group>"; };
 		C3916D56297C61FB002E1760 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		C3BEDE522987EC7400D4D2BF /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		C3BEDE542987F86F00D4D2BF /* triviaw.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triviaw.json; sourceTree = "<group>"; };
@@ -183,7 +183,7 @@
 		7F284D43297F18C2001A6F30 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				C3422B9E29977BA200C7F1A3 /* CountDownTimer */,
+				7F19EB4A29A63111000AD362 /* Progressbar.swift */,
 				7F70ECEA297AAB140044984C /* AppDelegate.swift */,
 				7F70ECEC297AAB140044984C /* SceneDelegate.swift */,
 				7F70ECF5297AAB160044984C /* LaunchScreen.storyboard */,
@@ -407,14 +407,6 @@
 			path = SignUp;
 			sourceTree = "<group>";
 		};
-		C3422B9E29977BA200C7F1A3 /* CountDownTimer */ = {
-			isa = PBXGroup;
-			children = (
-				C3422B9C299774AF00C7F1A3 /* Progressbar.swift */,
-			);
-			path = CountDownTimer;
-			sourceTree = "<group>";
-		};
 		C3CFEAB0297AE5A3003D97D1 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -581,9 +573,9 @@
 				C3916D57297C61FB002E1760 /* TabbarViewController.swift in Sources */,
 				7F70ECEB297AAB140044984C /* AppDelegate.swift in Sources */,
 				C3EDC68C298104E200D18DBC /* LoginVC.swift in Sources */,
-				C3422B9D299774AF00C7F1A3 /* Progressbar.swift in Sources */,
 				7FF74E08298597980067C3D9 /* AuthManager.swift in Sources */,
 				7F84FA8F299CFD1F00827DC3 /* Rankings.swift in Sources */,
+				7F19EB4B29A63112000AD362 /* Progressbar.swift in Sources */,
 				7FF74DFE2982BD5E0067C3D9 /* HomeCollectionViewCell.swift in Sources */,
 				7FF74E0A298598600067C3D9 /* Route.swift in Sources */,
 				7F84FA91299D048300827DC3 /* RankingsManager.swift in Sources */,

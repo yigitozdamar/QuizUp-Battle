@@ -31,7 +31,6 @@ class LoginVC: UIViewController {
             guard error == nil else { return }
             
             // If sign in succeeded, display the app's main content View.
-            print("Oldu")
             UserDefaults().set(signInResult?.user.profile?.name.components(separatedBy: " ")[0], forKey: "name")
             self.performSegue(withIdentifier: "toLaunchVC", sender: nil)
             
@@ -79,7 +78,6 @@ class LoginVC: UIViewController {
                 print("User signs in successfully")
                 UserDefaults().set(email.components(separatedBy: "@")[0], forKey: "name")
                 self.performSegue(withIdentifier: "toLaunchVC", sender: nil)
-                print("Girildi")
             }
             
             

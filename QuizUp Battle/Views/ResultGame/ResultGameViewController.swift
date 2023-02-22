@@ -9,11 +9,14 @@ import UIKit
 import Lottie
 import FirebaseAuth
 import FirebaseDatabase
+import GoogleSignIn
 
 class ResultGameViewController: UIViewController {
     
     var ref: DatabaseReference!
     var user = UserDefaults().object(forKey: "name") ?? "Noname"
+    let googleUser: GIDGoogleUser = GIDSignIn.sharedInstance.currentUser!
+    var userID = ""
     
     @IBOutlet var cupAnimationView: LottieAnimationView!
     
@@ -65,9 +68,15 @@ class ResultGameViewController: UIViewController {
     }
     
     func saveToDb() {
-        guard let userID = Auth.auth().currentUser?.uid else { return }
+        
+        if googleUser.userID != nil {
+            self.userID = self.googleUser.userID ?? ""
+        } else {
+            self.userID = Auth.auth().currentUser?.uid ?? ""
+        }
+         
         let databaseRef = Database.database(url: "https://quizupbattle-default-rtdb.europe-west1.firebasedatabase.app").reference()
-        let userRef = databaseRef.child("Users").child(userID)
+        let userRef = databaseRef.child("Users").child(self.userID)
         userRef.observeSingleEvent(of: .value) { snapshot in
             if snapshot.exists() {
                 if let userData = snapshot.value as? [String: Any], let totalScore = userData["TotalScore"] as? Int {
