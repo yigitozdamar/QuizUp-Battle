@@ -14,13 +14,14 @@ import GoogleSignIn
 struct RankingsManager {
     static let shared = RankingsManager()
     var ref: DatabaseReference!
+    let databaseRef = Database.database(url: "https://quizupbattle-default-rtdb.europe-west1.firebasedatabase.app").reference()
     let googleUser: GIDGoogleUser? = GIDSignIn.sharedInstance.currentUser
 
     var userID = ""
    
     func score(completion: @escaping (String, String) -> Void) {
         guard let userID = Auth.auth().currentUser?.uid else { return }
-        let databaseRef = Database.database(url: "https://quizupbattle-default-rtdb.europe-west1.firebasedatabase.app").reference()
+  
         let userRef = databaseRef.child("Users").child(userID)
         userRef.observeSingleEvent(of: .value) { snapshot, _  in
             if snapshot.exists() {
@@ -38,7 +39,6 @@ struct RankingsManager {
     
     func saveToDb(userName: String, gender: String) {
         guard let userID = Auth.auth().currentUser?.uid else { return }
-        let databaseRef = Database.database(url: "https://quizupbattle-default-rtdb.europe-west1.firebasedatabase.app").reference()
         let userRef = databaseRef.child("Users").child(userID)
         userRef.observeSingleEvent(of: .value) { snapshot, _  in
             if snapshot.exists() {
@@ -68,9 +68,7 @@ struct RankingsManager {
     }
     
      func saveScore(name: String, score: Int) {
-        var id = idTest()
-        
-        let databaseRef = Database.database(url: "https://quizupbattle-default-rtdb.europe-west1.firebasedatabase.app").reference()
+        let id = idTest()
         let userRef = databaseRef.child("Users").child(id)
         userRef.observeSingleEvent(of: .value) { snapshot in
             if snapshot.exists() {

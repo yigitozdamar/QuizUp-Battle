@@ -11,16 +11,11 @@ protocol GameCollectionViewCellDelegate: AnyObject {
     func answerSelected(for cell: GameCollectionViewCell, with result: Bool)
     func countdownFinished(for cell: GameCollectionViewCell)
 }
-
-
 class GameCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var proggresbar: Progressbar!
     @IBOutlet weak var questionAmount: UILabel!
     @IBOutlet weak var questionLbl: UILabel!
-    
     @IBOutlet var answerButtons: [UIButton]!
-    
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var firstBtn: UIButton!
     @IBOutlet weak var secondBtn: UIButton!
@@ -48,6 +43,14 @@ class GameCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        thirdBtn.backgroundColor = .clear
+        fourthBtn.backgroundColor = .clear
+        thirdBtn.isEnabled = false
+        fourthBtn.isEnabled = false
+    }
+    
     @IBAction func selectAnswer(_ sender: UIButton){
         selectedAnswer = sender.currentTitle
         delegate?.answerSelected(for: self, with: selectedAnswer == questions.correct_answer)
@@ -56,17 +59,12 @@ class GameCollectionViewCell: UICollectionViewCell {
             if button.currentTitle == selectedAnswer && button.currentTitle == questions.correct_answer {
                 button.backgroundColor = UIColor.green
                 timer.invalidate()
-//                countFired = 10
-              
+                
             } else if button.currentTitle == selectedAnswer {
                 button.backgroundColor = UIColor.red
                 timer.invalidate()
-//                countFired = 10
-            
-            } else {
-                button.backgroundColor = UIColor.systemGray6
+                
             }
         }
     }
-    
 }
