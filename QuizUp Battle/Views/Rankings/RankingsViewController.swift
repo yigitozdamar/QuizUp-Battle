@@ -19,13 +19,7 @@ class RankingsViewController: UIViewController, SETabItemProvider {
     var seTabBarItem: UITabBarItem? {
         return UITabBarItem(title: "", image: UIImage(systemName: "chart.bar"), tag: 0)
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print(users)
-        
-    }
-    
+  
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchFromDbWeekly()
@@ -44,7 +38,53 @@ class RankingsViewController: UIViewController, SETabItemProvider {
             break
         }
     }
+}
+//MARK: - Tableview
+extension RankingsViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return users.count
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "rankingsCell", for: indexPath) as? RankingsTableViewCell else { return RankingsTableViewCell()}
+        cell.listNumber.text = "\(indexPath.row + 1)"
+        cell.nameLabel.text = users[indexPath.row].name
+        cell.totalScoreLabel.text = "\(users[indexPath.row].totalScore)"
+        cell.crownImage.isHidden = false
+        cell.crownImage.tintColor = nil
+        if indexPath.row == 0{
+            cell.crownImage.tintColor = .systemYellow
+        }else if indexPath.row == 1{
+            cell.crownImage.tintColor = .gray
+        }else if indexPath.row == 2{
+            cell.crownImage.tintColor = .brown
+        }else{
+            cell.crownImage.isHidden = true
+        }
+        if users[indexPath.row].gender == "female"{
+            cell.genderImage.image = UIImage(named: "woman")
+            cell.genderImage.backgroundColor = UIColor(red: 0.882, green: 0.765, blue: 0.863, alpha: 1.0)
+        }else{
+            cell.genderImage.image = UIImage(named: "man")
+            cell.genderImage.backgroundColor = UIColor(red: 0.698, green: 0.804, blue: 0.882, alpha: 1.0)
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let cell = cell as? RankingsTableViewCell else {
+            return
+        }
+        if indexPath == self.indexPath {
+            cell.view.backgroundColor = .red
+        } else {
+            cell.view.backgroundColor = .white
+        }
+    }
+}
+
+//MARK: - Firebase Data Fetch
+extension RankingsViewController{
     func fetchFromDbAllTime() {
         ref = Database.database(url: "https://quizupbattle-default-rtdb.europe-west1.firebasedatabase.app").reference().child("Users")
         
@@ -108,49 +148,5 @@ class RankingsViewController: UIViewController, SETabItemProvider {
                 self.tableView.scrollToRow(at: self.indexPath, at: .middle, animated: true)
             }
         })
-    }
-}
-
-extension RankingsViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "rankingsCell", for: indexPath) as? RankingsTableViewCell else { return RankingsTableViewCell()}
-        cell.listNumber.text = "\(indexPath.row + 1)"
-        cell.nameLabel.text = users[indexPath.row].name
-        cell.totalScoreLabel.text = "\(users[indexPath.row].totalScore)"
-        cell.crownImage.isHidden = false
-        cell.crownImage.tintColor = nil
-        if indexPath.row == 0{
-            cell.crownImage.tintColor = .systemYellow
-        }else if indexPath.row == 1{
-            cell.crownImage.tintColor = .gray
-        }else if indexPath.row == 2{
-            cell.crownImage.tintColor = .brown
-        }else{
-            cell.crownImage.isHidden = true
-        }
-        if users[indexPath.row].gender == "female"{
-            cell.genderImage.image = UIImage(named: "woman")
-            cell.genderImage.backgroundColor = UIColor(red: 0.882, green: 0.765, blue: 0.863, alpha: 1.0)
-        }else{
-            cell.genderImage.image = UIImage(named: "man")
-            cell.genderImage.backgroundColor = UIColor(red: 0.698, green: 0.804, blue: 0.882, alpha: 1.0)
-        }
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let cell = cell as? RankingsTableViewCell else {
-            return
-        }
-        print("indexPath: \(indexPath), self.indexPath: \(self.indexPath)")
-        if indexPath == self.indexPath {
-            cell.view.backgroundColor = .red
-        } else {
-            cell.view.backgroundColor = .white
-        }
     }
 }

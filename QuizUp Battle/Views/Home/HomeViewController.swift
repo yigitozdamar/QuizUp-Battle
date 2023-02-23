@@ -7,27 +7,24 @@
 
 import UIKit
 import SETabView
-import FirebaseDatabase
-import FirebaseAuth
 
 class HomeViewController: UIViewController, SETabItemProvider {
-  
     
     @IBOutlet weak var collectionView: UICollectionView!
     let categoryManager = CategoryManager()
     var categoryList: [Category] = []
     var selectedTitle = ""
     var selectedCategory = ""
-    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        score()
+
+        RankingsManager.shared.score { _, _ in
+            return
+        }
         collectionView.register(UINib(nibName: HomeCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
    
         collectionView.reloadData()
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,22 +82,3 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension HomeViewController{
-    func score(){
-        guard let userID = Auth.auth().currentUser?.uid else { return }
-        let databaseRef = Database.database(url: "https://quizupbattle-default-rtdb.europe-west1.firebasedatabase.app").reference()
-        let userRef = databaseRef.child("Users").child(userID)
-        userRef.observeSingleEvent(of: .value) { snapshot, _  in
-            if snapshot.exists() {
-                if let userData = snapshot.value as? [String: Any], let name = userData["User"] as? String{
-                    // User already exists, update TotalScore field
-                   
-                    UserDefaults.standard.set(name, forKey: "name")
-                    
-                }
-            } else {
-                print("hata var")
-            }
-        }
-    }
-}

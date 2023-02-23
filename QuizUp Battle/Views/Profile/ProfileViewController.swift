@@ -8,7 +8,6 @@
 import UIKit
 import SETabView
 import FirebaseAuth
-import FirebaseDatabase
 
 class ProfileViewController: UIViewController, SETabItemProvider {
     
@@ -16,8 +15,6 @@ class ProfileViewController: UIViewController, SETabItemProvider {
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var avatarPic: UIButton!
     
-    var ref: DatabaseReference!
-    var user = UserDefaults().object(forKey: "name") ?? "Noname"
     var gender: String = "male"
     var seTabBarItem: UITabBarItem? {
         return UITabBarItem(title: "", image: UIImage(systemName: "person"), tag: 0)
@@ -25,8 +22,12 @@ class ProfileViewController: UIViewController, SETabItemProvider {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(user)
-        score()
+
+        RankingsManager.shared.score { total, textField in
+            self.totalScoreLbl.text = total
+            self.userNameTextField.text = textField
+        }
+      
         userNameTextField.text = UserDefaults().object(forKey: "name") as? String
     }
     
@@ -52,7 +53,8 @@ class ProfileViewController: UIViewController, SETabItemProvider {
     }
     
     @IBAction func saveButton(_ sender: UIButton) {
-        saveToDb()
+
+        RankingsManager.shared.saveToDb(userName: self.userNameTextField.text!, gender: gender)
     }
 }
 
@@ -76,49 +78,5 @@ extension ProfileViewController{
     }
 }
 
-
-//MARK: - Update Firebase Data
-extension ProfileViewController{
-    func saveToDb() {
-        guard let userID = Auth.auth().currentUser?.uid else { return }
-        let databaseRef = Database.database(url: "https://quizupbattle-default-rtdb.europe-west1.firebasedatabase.app").reference()
-        let userRef = databaseRef.child("Users").child(userID)
-        userRef.observeSingleEvent(of: .value) { snapshot, _  in
-            if snapshot.exists() {
-                if let userData = snapshot.value as? [String: Any], let name = userData["User"] as? String{
-                    // User already exists, update TotalScore field
-                    let childUpdates = ["User": (self.userNameTextField.text ?? "") == "" ? "Player\(Int.random(in: 0...1000))" : self.userNameTextField.text!, "gender": self.gender]
-                    userRef.updateChildValues(childUpdates) { error, ref in
-                        if let error = error {
-                            print("Error updating user data: \(error.localizedDescription)")
-                        } else {
-                            print("User data updated successfully.")
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
-    func score(){
-        guard let userID = Auth.auth().currentUser?.uid else { return }
-        let databaseRef = Database.database(url: "https://quizupbattle-default-rtdb.europe-west1.firebasedatabase.app").reference()
-        let userRef = databaseRef.child("Users").child(userID)
-        userRef.observeSingleEvent(of: .value) { snapshot, _  in
-            if snapshot.exists() {
-                if let userData = snapshot.value as? [String: Any], let score = userData["TotalScore"] as? Int, let name = userData["User"] as? String{
-                    // User already exists, update TotalScore field
-                    self.totalScoreLbl.text = score.description
-                    self.userNameTextField.text = name.description
-                    UserDefaults.standard.set(name, forKey: "name")
-                    print(self.user)
-                }
-            } else {
-                print("hata var")
-            }
-        }
-    }
-    
-}
 
 
