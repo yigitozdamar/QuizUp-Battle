@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class GameViewController: UIViewController, GameCollectionViewCellDelegate {
     
@@ -18,13 +19,15 @@ class GameViewController: UIViewController, GameCollectionViewCellDelegate {
     let settingsManager = SettingsManager()
     var index = 0
     var count = 0
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("GAME:.....")
         setUpQuestionsAndAnswers()
+        
+       
         
         collectionView.reloadData()
     }
@@ -39,8 +42,6 @@ class GameViewController: UIViewController, GameCollectionViewCellDelegate {
     func answerSelected(for cell: GameCollectionViewCell, with result: Bool) {
         guard let indexPath = collectionView.indexPath(for: cell) else { return }
         let nextIndexPath = IndexPath(item: indexPath.item + 1, section: indexPath.section)
-        print("indexpathhhhh")
-        print(nextIndexPath)
         
         if nextIndexPath.item < questions.count && result  {
             count += 1
@@ -53,6 +54,7 @@ class GameViewController: UIViewController, GameCollectionViewCellDelegate {
             if result{
                 count += 1
             }
+           
             performSegue(withIdentifier: "toResultGameVC", sender: self)
         }
         

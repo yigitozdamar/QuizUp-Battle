@@ -8,27 +8,36 @@
 import UIKit
 import SETabView
 import FirebaseAuth
+import GoogleSignIn
+import FirebaseDatabase
+import GoogleMobileAds
 
-class ProfileViewController: UIViewController, SETabItemProvider {
+class ProfileViewController: UIViewController, SETabItemProvider, GADBannerViewDelegate {
     
     @IBOutlet weak var totalScoreLbl: UILabel!
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var avatarPic: UIButton!
     
+    @IBOutlet var googleAdsView: GADBannerView!
+    
     var gender: String = "male"
+    var userID = ""
+    let databaseRef = Database.database(url: "https://quizupbattle-default-rtdb.europe-west1.firebasedatabase.app").reference()
+    
     var seTabBarItem: UITabBarItem? {
         return UITabBarItem(title: "", image: UIImage(systemName: "person"), tag: 0)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        RankingsManager.shared.score { total, textField in
-            self.totalScoreLbl.text = total
-            self.userNameTextField.text = textField
-        }
+        googleAdsView = GADBannerView(adSize: GADAdSizeBanner)
+        googleAdsView.adUnitID = "ca-app-pub-7477505248489811~1772779889"
+        googleAdsView.rootViewController = self
+        googleAdsView.load(GADRequest())
+        googleAdsView.delegate = self
+        score()
       
-        userNameTextField.text = UserDefaults().object(forKey: "name") as? String
+//        userNameTextField.text = UserDefaults().object(forKey: "name") as? String
     }
     
     @IBAction func genderType(_ sender: UISegmentedControl) {
@@ -44,8 +53,11 @@ class ProfileViewController: UIViewController, SETabItemProvider {
     
     @IBAction func logOutButton(_ sender: UIButton) {
         UserDefaults.standard.removeObject(forKey: "name")
+        
+        
         do{
             try Auth.auth().signOut()
+            GIDSignIn.sharedInstance.signOut()
             performSegue(withIdentifier: "toLoginVC", sender: nil)
         }catch{
             print("logout hata")
@@ -54,7 +66,59 @@ class ProfileViewController: UIViewController, SETabItemProvider {
     
     @IBAction func saveButton(_ sender: UIButton) {
 
-        RankingsManager.shared.saveToDb(userName: self.userNameTextField.text!, gender: gender)
+        saveToDb(userName: self.userNameTextField.text!, gender: gender)
+        
+        let alert = UIAlertController(title: "", message: "Your settings have been changed succesfully", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func score() {
+        
+        if Auth.auth().currentUser?.uid != nil {
+            self.userID = Auth.auth().currentUser?.uid ?? ""
+        } else {
+            self.userID = GIDSignIn.sharedInstance.currentUser?.userID ?? ""
+        }
+        
+        let userRef = databaseRef.child("Users").child(self.userID)
+        userRef.observeSingleEvent(of: .value) { snapshot, _  in
+            if snapshot.exists() {
+                if let userData = snapshot.value as? [String: Any], let score = userData["TotalScore"] as? Int, let name = userData["User"] as? String{
+                    self.totalScoreLbl.text = score.description
+                    self.userNameTextField.text = name.description
+                    UserDefaults.standard.set(name, forKey: "name")
+                }
+            } else {
+                print("hata var")
+            }
+        }
+    }
+    
+    func saveToDb(userName: String, gender: String) {
+        
+        if Auth.auth().currentUser?.uid != nil {
+            self.userID = Auth.auth().currentUser?.uid ?? ""
+        } else {
+            self.userID = GIDSignIn.sharedInstance.currentUser?.userID ?? ""
+        }
+        
+        let userRef = databaseRef.child("Users").child(self.userID)
+        userRef.observeSingleEvent(of: .value) { snapshot, _  in
+            if snapshot.exists() {
+                if let userData = snapshot.value as? [String: Any]{
+                    // User already exists, update TotalScore field
+                    let childUpdates = ["User": userName , "gender": gender]
+                    userRef.updateChildValues(childUpdates) { error, ref in
+                        if let error = error {
+                            print("Error updating user data: \(error.localizedDescription)")
+                        } else {
+                            print("User data updated successfully.")
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

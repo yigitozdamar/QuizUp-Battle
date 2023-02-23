@@ -85,6 +85,7 @@ extension RankingsViewController: UITableViewDataSource, UITableViewDelegate {
 
 //MARK: - Firebase Data Fetch
 extension RankingsViewController{
+    
     func fetchFromDbAllTime() {
         ref = Database.database(url: "https://quizupbattle-default-rtdb.europe-west1.firebasedatabase.app").reference().child("Users")
         
@@ -121,7 +122,7 @@ extension RankingsViewController{
         
         // Calculate the start and end timestamps for the past week
         let endTimestamp = Date().timeIntervalSince1970
-        let startTimestamp = Calendar.current.date(byAdding: .day, value: -7, to: Date())?.timeIntervalSince1970 ?? 0
+        let startTimestamp = Calendar.current.date(byAdding: .day, value: -2, to: Date())?.timeIntervalSince1970 ?? 0
         
         // Create a query to fetch data from the past week
         let query = ref?.queryOrdered(byChild: "time").queryStarting(atValue: startTimestamp).queryEnding(atValue: endTimestamp)

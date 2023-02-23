@@ -9,5 +9,8 @@
 7. last questions true count +
 9. auth +
 10. debugs
-11. adjustment in small screens
+11. adjustment in small screens +
+12. soru geçerken ışıldama +
+14. key security
+15. db read write
 

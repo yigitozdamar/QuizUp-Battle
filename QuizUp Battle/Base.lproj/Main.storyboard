@@ -12,13 +12,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Nunito-Bold.ttf">
-            <string>Nunito-Bold</string>
-        </array>
-        <array key="Nunito-Regular.ttf">
-            <string>Nunito-Regular</string>
-        </array>
         <array key="Nunito-VariableFont_wght.ttf">
+            <string>Nunito-Bold</string>
+            <string>Nunito-Regular</string>
             <string>Nunito-SemiBold</string>
         </array>
     </customFonts>
@@ -334,6 +330,14 @@
                                             <constraint firstAttribute="height" constant="50" id="dnV-IW-bUj"/>
                                         </constraints>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9cs-Rc-eac">
+                                        <rect key="frame" x="11.666666666666657" y="573" width="320" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="5RJ-aG-uKC"/>
+                                            <constraint firstAttribute="width" constant="320" id="hHs-j9-z7G"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
@@ -345,6 +349,7 @@
                                     <constraint firstItem="eSl-N2-syj" firstAttribute="leading" secondItem="EPG-xV-1MG" secondAttribute="leading" constant="30" id="HUw-AU-Uyh"/>
                                     <constraint firstItem="Yj2-CR-Ytd" firstAttribute="top" secondItem="EPG-xV-1MG" secondAttribute="top" constant="50" id="IQh-SP-63Q"/>
                                     <constraint firstAttribute="trailing" secondItem="eSl-N2-syj" secondAttribute="trailing" constant="30" id="Nyj-Tv-nGU"/>
+                                    <constraint firstItem="9cs-Rc-eac" firstAttribute="top" secondItem="eSl-N2-syj" secondAttribute="bottom" constant="35" id="Pid-Dp-84B"/>
                                     <constraint firstItem="g8Z-8h-UDv" firstAttribute="leading" secondItem="EPG-xV-1MG" secondAttribute="leading" constant="16" id="Rqy-oX-Pbu"/>
                                     <constraint firstAttribute="trailing" secondItem="0FL-Br-hQb" secondAttribute="trailing" constant="110" id="UBl-Fz-0ZF"/>
                                     <constraint firstItem="KBO-6D-P1O" firstAttribute="leading" secondItem="yEW-G4-QEj" secondAttribute="trailing" constant="13.333333333333329" id="Y10-uW-2yL"/>
@@ -353,6 +358,7 @@
                                     <constraint firstItem="0FL-Br-hQb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EPG-xV-1MG" secondAttribute="leading" constant="20" symbolic="YES" id="cOu-H3-Xm5"/>
                                     <constraint firstItem="eSl-N2-syj" firstAttribute="top" secondItem="yEW-G4-QEj" secondAttribute="bottom" constant="25" id="dT9-kC-9ob"/>
                                     <constraint firstItem="0FL-Br-hQb" firstAttribute="top" secondItem="Yj2-CR-Ytd" secondAttribute="bottom" constant="30" id="j6V-zr-gjk"/>
+                                    <constraint firstItem="9cs-Rc-eac" firstAttribute="centerX" secondItem="EPG-xV-1MG" secondAttribute="centerX" id="ld2-kN-M6G"/>
                                     <constraint firstItem="KBO-6D-P1O" firstAttribute="top" secondItem="0ic-UA-cUV" secondAttribute="bottom" constant="35" id="pBh-UP-zrB"/>
                                     <constraint firstItem="yEW-G4-QEj" firstAttribute="leading" secondItem="EPG-xV-1MG" secondAttribute="leading" constant="16" id="uhw-Jt-l7B"/>
                                 </constraints>
@@ -376,6 +382,7 @@
                     <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="ifx-ak-coj"/>
                     <connections>
                         <outlet property="avatarPic" destination="Yj2-CR-Ytd" id="E6A-ra-GbW"/>
+                        <outlet property="googleAdsView" destination="9cs-Rc-eac" id="I26-4T-dDo"/>
                         <outlet property="totalScoreLbl" destination="KBO-6D-P1O" id="4dz-na-3uI"/>
                         <outlet property="userNameTextField" destination="0ic-UA-cUV" id="J6H-ds-X0v"/>
                         <segue destination="hjZ-Hz-8p8" kind="presentation" identifier="toLoginVC" modalPresentationStyle="fullScreen" id="f03-Qz-MdW"/>
@@ -383,7 +390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xwp-UY-8zS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3322.9007633587785" y="1107.7464788732395"/>
+            <point key="canvasLocation" x="3322.4000000000001" y="1106.8965517241379"/>
         </scene>
         <!--Rankings View Controller-->
         <scene sceneID="fdB-pK-2kP">

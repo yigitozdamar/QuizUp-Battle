@@ -28,8 +28,6 @@
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<false/>
-        <key>GADApplicationIdentifier</key>
-        <string>ca-app-pub-7477505248489811~1772779889</string>
 		<key>UISceneConfigurations</key>
 		<dict>
 			<key>UIWindowSceneSessionRoleApplication</key>
@@ -46,7 +44,7 @@
 		</dict>
 	</dict>
     <key>GADApplicationIdentifier</key>
-    <string>ca-app-pub-7477505248489811~2028996415</string>
+    <string>ca-app-pub-7477505248489811~1772779889</string>
     <key>SKAdNetworkItems</key>
     <array>
       <dict>
