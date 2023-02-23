@@ -15,7 +15,7 @@ class ResultGameViewController: UIViewController {
     
     var ref: DatabaseReference!
     var user = UserDefaults().object(forKey: "name") ?? "Noname"
-    let googleUser: GIDGoogleUser = GIDSignIn.sharedInstance.currentUser!
+    let googleUser: GIDGoogleUser? = GIDSignIn.sharedInstance.currentUser
     var userID = ""
     
     @IBOutlet var cupAnimationView: LottieAnimationView!
@@ -69,8 +69,8 @@ class ResultGameViewController: UIViewController {
     
     func saveToDb() {
         
-        if googleUser.userID != nil {
-            self.userID = self.googleUser.userID ?? ""
+        if googleUser?.userID != nil {
+            self.userID = self.googleUser?.userID ?? ""
         } else {
             self.userID = Auth.auth().currentUser?.uid ?? ""
         }
@@ -79,8 +79,9 @@ class ResultGameViewController: UIViewController {
         let userRef = databaseRef.child("Users").child(self.userID)
         userRef.observeSingleEvent(of: .value) { snapshot in
             if snapshot.exists() {
-                if let userData = snapshot.value as? [String: Any], let totalScore = userData["TotalScore"] as? Int {
+                if let userData = snapshot.value as? [String: Any], let totalScore = userData["TotalScore"] as? Int{
                     // User already exists, update TotalScore field
+                   
                     let childUpdates = ["TotalScore": (totalScore + self.totalScore)]
                     userRef.updateChildValues(childUpdates) { error, ref in
                         if let error = error {

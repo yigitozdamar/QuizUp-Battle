@@ -7,12 +7,12 @@
 
 import Foundation
 import FirebaseCore
+import FirebaseAuth
 import FirebaseDatabase
+import GoogleSignIn
 
 struct RankingsManager {
     static let shared = RankingsManager()
-    
-    var databaseRef = Database.database().reference()
-    var rankings: [Rankings] = []
-
+    var ref: DatabaseReference!
+  
 }

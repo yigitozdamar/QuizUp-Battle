@@ -17,16 +17,12 @@ class ForgotPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         backImage.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
         
         resetButton.isEnabled = false
         emailTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        
-       
     }
-    
-    
     @objc func backTapped(){
         self.dismiss(animated: true)
     }

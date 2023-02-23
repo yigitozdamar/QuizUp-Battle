@@ -11,20 +11,21 @@ import FirebaseDatabase
 import FirebaseAuth
 
 class RankingsViewController: UIViewController, SETabItemProvider {
+  
+    @IBOutlet weak var tableView: UITableView!
     var ref: DatabaseReference!
     var indexPath: IndexPath!
-    
+    var users: [Rankings] = []
     var seTabBarItem: UITabBarItem? {
         return UITabBarItem(title: "", image: UIImage(systemName: "chart.bar"), tag: 0)
     }
     
-    @IBOutlet weak var tableView: UITableView!
-    var users: [Rankings] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(users)
         
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchFromDbWeekly()
@@ -32,7 +33,6 @@ class RankingsViewController: UIViewController, SETabItemProvider {
     }
     
     @IBAction func timeSegment(_ sender: UISegmentedControl) {
-        
         switch sender.selectedSegmentIndex {
         case 0:
             print("weekly")
@@ -62,7 +62,7 @@ class RankingsViewController: UIViewController, SETabItemProvider {
                 // Sort the users array by TotalScore in descending order
                 self.users.sort { $0.totalScore > $1.totalScore }
                 self.tableView.reloadData()
-                
+                print("USERSSSSS: \(self.users)")
                 if let index = self.users.firstIndex(where: { $0.name == UserDefaults().object(forKey: "name") as! String }) {
                     print("The index of 6 in the array is: \(index)")
                     // Scroll to the row corresponding to the newly added item
@@ -72,8 +72,6 @@ class RankingsViewController: UIViewController, SETabItemProvider {
                 } else {
                     print("6 is not in the array")
                 }
-                
-                
             }
         })
     }
@@ -101,7 +99,7 @@ class RankingsViewController: UIViewController, SETabItemProvider {
             
             // Sort the users array by TotalScore in descending order
             self.users.sort { $0.totalScore > $1.totalScore }
-            
+            print("usersss\(self.users)")
             self.tableView.reloadData()
             
             if let index = self.users.firstIndex(where: { $0.name == UserDefaults().object(forKey: "name") as! String }) {
@@ -111,8 +109,6 @@ class RankingsViewController: UIViewController, SETabItemProvider {
             }
         })
     }
-    
-    
 }
 
 extension RankingsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -126,7 +122,7 @@ extension RankingsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.nameLabel.text = users[indexPath.row].name
         cell.totalScoreLabel.text = "\(users[indexPath.row].totalScore)"
         cell.crownImage.isHidden = false
-           cell.crownImage.tintColor = nil
+        cell.crownImage.tintColor = nil
         if indexPath.row == 0{
             cell.crownImage.tintColor = .systemYellow
         }else if indexPath.row == 1{
@@ -143,18 +139,18 @@ extension RankingsViewController: UITableViewDataSource, UITableViewDelegate {
             cell.genderImage.image = UIImage(named: "man")
             cell.genderImage.backgroundColor = UIColor(red: 0.698, green: 0.804, blue: 0.882, alpha: 1.0)
         }
-        
-      
         return cell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-        guard let cell = cell as? RankingsTableViewCell else { return }
-            if indexPath == self.indexPath {
-                cell.view.backgroundColor = .red
-            } else {
-                cell.view.backgroundColor = .white
-            }
+        guard let cell = cell as? RankingsTableViewCell else {
+            return
+        }
+        print("indexPath: \(indexPath), self.indexPath: \(self.indexPath)")
+        if indexPath == self.indexPath {
+            cell.view.backgroundColor = .red
+        } else {
+            cell.view.backgroundColor = .white
+        }
     }
 }
