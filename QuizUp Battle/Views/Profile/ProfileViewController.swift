@@ -17,11 +17,11 @@ class ProfileViewController: UIViewController, SETabItemProvider, GADBannerViewD
     @IBOutlet weak var totalScoreLbl: UILabel!
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var avatarPic: UIButton!
-    @IBOutlet var googleAdsView: GADBannerView!
     
     var gender: String = ""
     var userID = ""
     let databaseRef = Database.database(url: "https://quizupbattle-default-rtdb.europe-west1.firebasedatabase.app").reference()
+    var bannerView: GADBannerView!
     
     var seTabBarItem: UITabBarItem? {
         return UITabBarItem(title: "", image: UIImage(systemName: "person"), tag: 0)
@@ -29,13 +29,40 @@ class ProfileViewController: UIViewController, SETabItemProvider, GADBannerViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        googleAdsView = GADBannerView(adSize: GADAdSizeBanner)
-        googleAdsView.adUnitID = "ca-app-pub-7477505248489811~1772779889"
-        googleAdsView.rootViewController = self
-        googleAdsView.load(GADRequest())
-        googleAdsView.delegate = self
+        bannerView = GADBannerView(adSize: GADAdSizeBanner)
+        addBannerViewToView(bannerView)
+        bannerView.adUnitID = "ca-app-pub-7477505248489811/9208965518"
+         bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        bannerView.delegate = self
         score()
     }
+    
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+      // Add banner to view and add constraints as above.
+      addBannerViewToView(bannerView)
+    }
+    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+       bannerView.translatesAutoresizingMaskIntoConstraints = false
+       view.addSubview(bannerView)
+       view.addConstraints(
+         [NSLayoutConstraint(item: bannerView,
+                             attribute: .bottom,
+                             relatedBy: .equal,
+                             toItem: bottomLayoutGuide,
+                             attribute: .top,
+                             multiplier: 1,
+                             constant: -30),
+          NSLayoutConstraint(item: bannerView,
+                             attribute: .centerX,
+                             relatedBy: .equal,
+                             toItem: view,
+                             attribute: .centerX,
+                             multiplier: 1,
+                             constant: 0)
+         ])
+      }
     
     @IBAction func genderType(_ sender: UISegmentedControl) {
         
