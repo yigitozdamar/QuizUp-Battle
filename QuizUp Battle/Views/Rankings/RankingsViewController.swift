@@ -82,15 +82,12 @@ extension RankingsViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = cell as? RankingsTableViewCell else {
             return
         }
-        
-        
             if indexPath == self.indexPath {
                 cell.view.backgroundColor = .red
             } else {
                 cell.view.backgroundColor = .white
             
         }
-       
     }
 }
 
@@ -158,6 +155,9 @@ extension RankingsViewController{
                 // Scroll to the row corresponding to the newly added item
                 self.indexPath = IndexPath(row: index, section: 0)
                 self.tableView.scrollToRow(at: self.indexPath, at: .middle, animated: true)
+            }else {
+                self.indexPath = nil
+                print("index nil")
             }
         })
     }

@@ -63,9 +63,7 @@ class ResultGameViewController: UIViewController , GADFullScreenContentDelegate 
     
     @IBAction func restartGameTapped(_ sender: UIButton) {
         saveToDb()
-        
         //TODO: Google ads implementation
-        
         
         if self.interstitial != nil {
             self.interstitial?.present(fromRootViewController: self)
