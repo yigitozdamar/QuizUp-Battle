@@ -10,6 +10,9 @@ import FirebaseAuth
 import GoogleSignIn
 import FirebaseDatabase
 import SETabView
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseAnalytics
 
 class HomeViewController: UIViewController, SETabItemProvider {
     
@@ -28,6 +31,9 @@ class HomeViewController: UIViewController, SETabItemProvider {
         collectionView.register(UINib(nibName: HomeCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
    
         collectionView.reloadData()
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "id-\(String(describing: title))"
+        ])
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -19,12 +19,19 @@ class RankingsViewController: UIViewController, SETabItemProvider {
     var seTabBarItem: UITabBarItem? {
         return UITabBarItem(title: "", image: UIImage(systemName: "chart.bar"), tag: 0)
     }
-  
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        
+       
         fetchFromDbWeekly()
+      
         tableView.reloadData()
     }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        fetchFromDbWeekly()
+//
+//        tableView.reloadData()
+//    }
     
     @IBAction func timeSegment(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
@@ -75,11 +82,15 @@ extension RankingsViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = cell as? RankingsTableViewCell else {
             return
         }
-        if indexPath == self.indexPath {
-            cell.view.backgroundColor = .red
-        } else {
-            cell.view.backgroundColor = .white
+        
+        
+            if indexPath == self.indexPath {
+                cell.view.backgroundColor = .red
+            } else {
+                cell.view.backgroundColor = .white
+            
         }
+       
     }
 }
 
@@ -94,18 +105,17 @@ extension RankingsViewController{
             for child in snapshot.children {
                 if let data = child as? DataSnapshot, let dict = data.value as? [String: Any] {
                     if let user = dict["User"] as? String, let totalScore = dict["TotalScore"] as? Int, let gender = dict["gender"] as? String {
+                      
                         let fetchedUser = Rankings(name: user, totalScore: totalScore, gender: gender)
                         self.users.append(fetchedUser)
-                        
                         print(self.users)
                     }
                 }
                 // Sort the users array by TotalScore in descending order
                 self.users.sort { $0.totalScore > $1.totalScore }
                 self.tableView.reloadData()
-                print("USERSSSSS: \(self.users)")
+                
                 if let index = self.users.firstIndex(where: { $0.name == UserDefaults().object(forKey: "name") as! String }) {
-                    print("The index of 6 in the array is: \(index)")
                     // Scroll to the row corresponding to the newly added item
                     self.indexPath = IndexPath(row: index, section: 0)
                     self.tableView.scrollToRow(at: self.indexPath, at: .middle, animated: true)
@@ -132,7 +142,9 @@ extension RankingsViewController{
             for child in snapshot.children {
                 if let data = child as? DataSnapshot, let dict = data.value as? [String: Any] {
                     if let user = dict["User"] as? String, let totalScore = dict["TotalScore"] as? Int, let gender = dict["gender"] as? String  {
+                   
                         let fetchedUser = Rankings(name: user, totalScore: totalScore, gender: gender)
+                        
                         self.users.append(fetchedUser)
                     }
                 }
@@ -140,7 +152,6 @@ extension RankingsViewController{
             
             // Sort the users array by TotalScore in descending order
             self.users.sort { $0.totalScore > $1.totalScore }
-            print("usersss\(self.users)")
             self.tableView.reloadData()
             
             if let index = self.users.firstIndex(where: { $0.name == UserDefaults().object(forKey: "name") as! String }) {

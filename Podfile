@@ -16,6 +16,6 @@ pod 'Alamofire'
 pod 'lottie-ios'
 pod 'FirebaseDatabase'
 pod 'Google-Mobile-Ads-SDK'
-pod 'FirebaseAnalytics'
+pod 'Firebase/Analytics'
 
 end
