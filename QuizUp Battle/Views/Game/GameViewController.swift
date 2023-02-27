@@ -79,7 +79,6 @@ class GameViewController: UIViewController, GameCollectionViewCellDelegate {
             collectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
             
         } else {
-            print("Sayfa Bitti")
             performSegue(withIdentifier: "toResultGameVC", sender: self)
         }
     }

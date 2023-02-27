@@ -16,7 +16,7 @@ class TabbarViewController:  SETabViewController {
         super.viewDidLoad()
         // set tab bar look collectively
         
-        setTabColors(backgroundColor: UIColor(red: 239/255, green: 238/255, blue: 252/255, alpha: 1.0), ballColor: UIColor.white, tintColor: UIColor.purple, unselectedItemTintColor: UIColor.black, barTintColor: .clear)
+        setTabColors(backgroundColor: UIColor(red: 239/255, green: 238/255, blue: 252/255, alpha: 1.0), ballColor: UIColor.purple.withAlphaComponent(0.7), tintColor: UIColor.white, unselectedItemTintColor: UIColor.black, barTintColor: .clear)
         
         // set the view controllers
         setViewControllers(getViewControllers())

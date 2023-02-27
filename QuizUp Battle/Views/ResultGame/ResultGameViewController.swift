@@ -15,7 +15,7 @@ import GoogleMobileAds
 class ResultGameViewController: UIViewController , GADFullScreenContentDelegate {
     
     var ref: DatabaseReference!
-    var user = UserDefaults().object(forKey: "name") as! String
+    var user = UserDefaults().object(forKey: "name") as? String
     let googleUser: GIDGoogleUser? = GIDSignIn.sharedInstance.currentUser
     var userID = ""
     
@@ -40,7 +40,7 @@ class ResultGameViewController: UIViewController , GADFullScreenContentDelegate 
         scoreCalculate()
         correctAnswerLabel.text = "\(result)"
         scoreLabel.text = "\(totalScore)"
-        googleAds()
+//        googleAds()
         
     }
     
@@ -49,11 +49,11 @@ class ResultGameViewController: UIViewController , GADFullScreenContentDelegate 
         saveToDb()
         //TODO: Google ads implementation
         
-        if self.interstitial != nil {
-            self.interstitial?.present(fromRootViewController: self)
-        } else {
-            print("Ad wasn't ready")
-        }
+//        if self.interstitial != nil {
+//            self.interstitial?.present(fromRootViewController: self)
+//        } else {
+//            print("Ad wasn't ready")
+//        }
         
         let launchScreen = LaunchViewController()
         launchScreen.modalPresentationStyle = .fullScreen
@@ -65,11 +65,11 @@ class ResultGameViewController: UIViewController , GADFullScreenContentDelegate 
         saveToDb()
         //TODO: Google ads implementation
         
-        if self.interstitial != nil {
-            self.interstitial?.present(fromRootViewController: self)
-        } else {
-            print("Ad wasn't ready")
-        }
+//        if self.interstitial != nil {
+//            self.interstitial?.present(fromRootViewController: self)
+//        } else {
+//            print("Ad wasn't ready")
+//        }
         
         
         self.performSegue(withIdentifier: "toSettingsVC", sender: self)
@@ -134,7 +134,7 @@ class ResultGameViewController: UIViewController , GADFullScreenContentDelegate 
     
     func googleAds() {
         let request = GADRequest()
-        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-7477505248489811/1330475497",
+        GADInterstitialAd.load(withAdUnitID:SecretKey.interstatialKey,
                                request: request,
                                completionHandler: { [self] ad, error in
             if let error = error {

@@ -19,7 +19,6 @@ struct Category: Codable{
     
 }
 
-
 struct CategoryStats: Decodable {
     let category_id: Int
     var category_question_count: category_question_count

@@ -74,7 +74,7 @@ class Progressbar: UIView {
     private func updateProgress() {
           
         let countDown = Int( (progress * 11.5) )
-          print(countDown)
+         
           textLayer.string = "\(countDown)"
           foregroundLayer?.strokeEnd = progress
       }

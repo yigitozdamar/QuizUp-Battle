@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SettingsViewController: UIViewController {
     
@@ -43,6 +44,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         questionTitleLabel?.text = selectedTitle
+        UserDefaults().set(Auth.auth().currentUser?.displayName, forKey: "name")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -91,9 +93,9 @@ class SettingsViewController: UIViewController {
         settingsManager.createUrl(amount: String(selectedQuestionNumber), difficulty: selectedDifficulty, type: selectedQuestionType, category: selectedCategory)
         settingsManager.request { [weak self] result in
             guard let self = self else { return }
-            print("result :   \(result)")
+            
             self.questions = result
-            print("SHUFFLE")
+            
             for question in self.questions {
                 self.shuffledAnswers = question.shuffleAnswers()
             }

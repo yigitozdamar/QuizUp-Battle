@@ -26,12 +26,12 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func googleSignUp(_ sender: UIButton) {
-        GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
+        GIDSignIn.sharedInstance.signIn(withPresenting: self) { [weak self] signInResult, error in
             guard error == nil else { return }
             
             // If sign in succeeded, display the app's main content View.
             UserDefaults().set(signInResult?.user.profile?.name, forKey: "name")
-            self.performSegue(withIdentifier: "toLaunchVCfromRegister", sender: nil)
+            self?.performSegue(withIdentifier: "toLaunchVCfromRegister", sender: nil)
             
         }
     }
@@ -43,7 +43,7 @@ class SignUpViewController: UIViewController {
         guard let passwordText2 = confirmPassword.text else { return  }
         
         if passwordText == passwordText2 {
-            Auth.auth().createUser(withEmail: email, password: passwordText) {[weak self] authResult, error in
+            Auth.auth().createUser(withEmail: email, password: passwordText) { [weak self] authResult, error in
                 
                 if error != nil{
                     let err = error as! NSError
@@ -64,7 +64,7 @@ class SignUpViewController: UIViewController {
                         self?.sameEmail()
                             print("email already in use")
                         default:
-                            print("arrr:")
+                            print(err.localizedDescription)
                     }
                     
                 } else {
@@ -74,7 +74,7 @@ class SignUpViewController: UIViewController {
             }
             
         }else {
-            print("şiflers uyusmuyoır")
+            print("şifreler uyusmuyoır")
         }
         
         

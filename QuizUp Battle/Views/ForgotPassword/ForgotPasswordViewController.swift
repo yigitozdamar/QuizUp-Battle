@@ -32,14 +32,14 @@ class ForgotPasswordViewController: UIViewController {
             return
         }
         
-        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+        Auth.auth().sendPasswordReset(withEmail: email) { [weak self] (error) in
             if let error = error {
                 print("Error sending password reset email: \(error.localizedDescription)")
                 return
             }
             
             print("Password reset email sent successfully")
-            self.dismiss(animated: true)
+            self?.dismiss(animated: true)
         }
     }
     
