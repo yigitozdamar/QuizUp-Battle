@@ -15,9 +15,11 @@
         <array key="Nunito-Bold.ttf">
             <string>Nunito-Bold</string>
         </array>
+        <array key="Nunito-SemiBold.ttf">
+            <string>Nunito-SemiBold</string>
+        </array>
         <array key="Nunito-VariableFont_wght.ttf">
             <string>Nunito-Regular</string>
-            <string>Nunito-SemiBold</string>
         </array>
     </customFonts>
     <scenes>
@@ -1168,14 +1170,14 @@
         <scene sceneID="PSc-br-iVA">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="mJ7-cN-gk0" customClass="ResultGameViewController" customModule="QuizUp_Battle" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Lj7-T7-W0e">
+                    <view key="view" contentMode="scaleToFill" id="Lj7-T7-W0e">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hc9-9n-odT">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hc9-9n-odT">
                                 <rect key="frame" x="12" y="77" width="366" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="hVm-Br-e1k" customClass="LottieAnimationView" customModule="Lottie">
+                                    <view contentMode="scaleAspectFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hVm-Br-e1k" customClass="LottieAnimationView" customModule="Lottie">
                                         <rect key="frame" x="48" y="24" width="270" height="0.0"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="270" id="EbT-uT-VZ2"/>
@@ -1694,18 +1696,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Policy here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1V-ND-sgb">
-                                <rect key="frame" x="88" y="64" width="235" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="aw2-zw-EIe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vP-YE-Uqy">
-                                <rect key="frame" x="19" y="22" width="40" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vP-YE-Uqy">
+                                <rect key="frame" x="10" y="10" width="40" height="35"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
@@ -1715,16 +1707,32 @@
                                     <action selector="backtoSignUp:" destination="D8v-pO-nEk" eventType="touchUpInside" id="OPn-wN-mC4"/>
                                 </connections>
                             </button>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uv4-jN-0Xb">
+                                <rect key="frame" x="0.0" y="55" width="390" height="732"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MLb-hj-1Ei"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="MLb-hj-1Ei" firstAttribute="trailing" secondItem="b1V-ND-sgb" secondAttribute="trailing" constant="67" id="BkR-1C-8HB"/>
-                            <constraint firstItem="b1V-ND-sgb" firstAttribute="top" secondItem="MLb-hj-1Ei" secondAttribute="top" constant="17" id="Sww-FQ-bWr"/>
-                            <constraint firstItem="b1V-ND-sgb" firstAttribute="leading" secondItem="MLb-hj-1Ei" secondAttribute="leading" constant="88" id="gYy-Im-ZQz"/>
+                            <constraint firstItem="Uv4-jN-0Xb" firstAttribute="leading" secondItem="MLb-hj-1Ei" secondAttribute="leading" id="6nb-H0-stk"/>
+                            <constraint firstItem="Uv4-jN-0Xb" firstAttribute="top" secondItem="2vP-YE-Uqy" secondAttribute="bottom" constant="10" id="C9i-1J-cHV"/>
+                            <constraint firstItem="2vP-YE-Uqy" firstAttribute="leading" secondItem="MLb-hj-1Ei" secondAttribute="leading" constant="10" id="Oq4-ob-9tC"/>
+                            <constraint firstItem="MLb-hj-1Ei" firstAttribute="bottom" secondItem="Uv4-jN-0Xb" secondAttribute="bottom" id="Q5t-fo-256"/>
+                            <constraint firstItem="2vP-YE-Uqy" firstAttribute="top" secondItem="R6E-i2-Xzy" secondAttribute="top" constant="10" id="QDe-1A-7Kf"/>
+                            <constraint firstItem="Uv4-jN-0Xb" firstAttribute="centerX" secondItem="R6E-i2-Xzy" secondAttribute="centerX" id="eFX-lL-4lB"/>
+                            <constraint firstItem="Uv4-jN-0Xb" firstAttribute="trailing" secondItem="MLb-hj-1Ei" secondAttribute="trailing" id="hB9-f7-2Bh"/>
+                            <constraint firstItem="MLb-hj-1Ei" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2vP-YE-Uqy" secondAttribute="trailing" symbolic="YES" id="jcp-2D-nTd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sIo-NZ-lYI"/>
+                    <connections>
+                        <outlet property="webkite" destination="Uv4-jN-0Xb" id="fg8-8u-Rf1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bnb-o7-n1r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2239,10 +2247,6 @@
             <point key="canvasLocation" x="3321.5384615384614" y="1926.5402843601894"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="hVm-Br-e1k"/>
-        <designable name="lOl-fi-fnz"/>
-    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="f03-Qz-MdW"/>
         <segue reference="oBl-a3-rig"/>

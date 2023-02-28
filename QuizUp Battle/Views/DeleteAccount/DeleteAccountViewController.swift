@@ -15,6 +15,8 @@ class DeleteAccountViewController: UIViewController, SETabItemProvider {
     }
 
     @IBAction func deleteAccount(_ sender: UIButton) {
+        
+        // googlesignin delete function need to be implemente!!!
         let user = Auth.auth().currentUser
         UserDefaults.standard.removeObject(forKey: "clear")
 
