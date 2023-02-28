@@ -31,6 +31,8 @@ class TabbarViewController:  SETabViewController {
             storyboard.instantiateViewController(withIdentifier: "homeVC"),
             storyboard.instantiateViewController(withIdentifier: "rankingsVC"),
             storyboard.instantiateViewController(withIdentifier: "profileVC"),
+            storyboard.instantiateViewController(withIdentifier: "DeleteVC"),
+            
         ]
     }
 

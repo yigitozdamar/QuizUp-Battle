@@ -61,6 +61,8 @@
 		C31036D3297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31036D2297AC6C6006EBBF3 /* OnboardingCollectionViewCell.swift */; };
 		C32A81F0298A9861004AD5B0 /* Url+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32A81EF298A9861004AD5B0 /* Url+Extension.swift */; };
 		C32A81F2298CFBA3004AD5B0 /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32A81F1298CFBA3004AD5B0 /* GameCollectionViewCell.swift */; };
+		C3733E3329AE51E700F7DFC2 /* DeleteAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3733E3229AE51E700F7DFC2 /* DeleteAccountViewController.swift */; };
+		C3733E3629AE54F100F7DFC2 /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3733E3529AE54F100F7DFC2 /* PolicyViewController.swift */; };
 		C3916D57297C61FB002E1760 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3916D56297C61FB002E1760 /* TabbarViewController.swift */; };
 		C3BEDE532987EC7400D4D2BF /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BEDE522987EC7400D4D2BF /* LaunchViewController.swift */; };
 		C3BEDE552987F86F00D4D2BF /* triviaw.json in Resources */ = {isa = PBXBuildFile; fileRef = C3BEDE542987F86F00D4D2BF /* triviaw.json */; };
@@ -128,6 +130,8 @@
 		C3287786299987D100B8710F /* TODOS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODOS.md; sourceTree = "<group>"; };
 		C32A81EF298A9861004AD5B0 /* Url+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Url+Extension.swift"; sourceTree = "<group>"; };
 		C32A81F1298CFBA3004AD5B0 /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
+		C3733E3229AE51E700F7DFC2 /* DeleteAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountViewController.swift; sourceTree = "<group>"; };
+		C3733E3529AE54F100F7DFC2 /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
 		C3916D56297C61FB002E1760 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		C3BEDE522987EC7400D4D2BF /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		C3BEDE542987F86F00D4D2BF /* triviaw.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triviaw.json; sourceTree = "<group>"; };
@@ -258,6 +262,7 @@
 				7F70ECF8297AAB160044984C /* Info.plist */,
 				7FD106FE297F1FCC0005E9DF /* GoogleService-Info.plist */,
 				C3287786299987D100B8710F /* TODOS.md */,
+				C3733E3529AE54F100F7DFC2 /* PolicyViewController.swift */,
 			);
 			path = "QuizUp Battle";
 			sourceTree = "<group>";
@@ -368,6 +373,7 @@
 		C31036CB297AC2DA006EBBF3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C3733E3429AE540C00F7DFC2 /* DeleteAccount */,
 				C3042A0D29A40F26009471DD /* ForgotPassword */,
 				7F347B5329957CC5001D4B35 /* ResultGame */,
 				7FE0C9D6298930DA00EBB913 /* Game */,
@@ -412,6 +418,14 @@
 				7F70ED2A297C78290044984C /* SignUpViewController.swift */,
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		C3733E3429AE540C00F7DFC2 /* DeleteAccount */ = {
+			isa = PBXGroup;
+			children = (
+				C3733E3229AE51E700F7DFC2 /* DeleteAccountViewController.swift */,
+			);
+			path = DeleteAccount;
 			sourceTree = "<group>";
 		};
 		C3CFEAB0297AE5A3003D97D1 /* Onboarding */ = {
@@ -575,6 +589,8 @@
 				7F016C2029AD546200263600 /* Secrets.swift in Sources */,
 				7FE0C9D329885D4D00EBB913 /* String+Extension.swift in Sources */,
 				7FF74E03298594810067C3D9 /* CategoryData.swift in Sources */,
+				C3733E3629AE54F100F7DFC2 /* PolicyViewController.swift in Sources */,
+				C3733E3329AE51E700F7DFC2 /* DeleteAccountViewController.swift in Sources */,
 				C31036D1297AC5CB006EBBF3 /* OnboardingSlide.swift in Sources */,
 				7FE0C9D129885C9500EBB913 /* SettingsViewController.swift in Sources */,
 				7F70ECEF297AAB140044984C /* OnboardingViewController.swift in Sources */,

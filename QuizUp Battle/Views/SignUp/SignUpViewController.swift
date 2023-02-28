@@ -36,6 +36,9 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    @IBAction func policyBtnTapped(_ sender: UIButton) {
+    }
+    
     @IBAction func signUpButton(_ sender: UIButton) {
         
         guard let email = emailTextField.text else { return  }
