@@ -262,7 +262,6 @@
 				7F70ECF8297AAB160044984C /* Info.plist */,
 				7FD106FE297F1FCC0005E9DF /* GoogleService-Info.plist */,
 				C3287786299987D100B8710F /* TODOS.md */,
-				C3733E3529AE54F100F7DFC2 /* PolicyViewController.swift */,
 			);
 			path = "QuizUp Battle";
 			sourceTree = "<group>";
@@ -416,6 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				7F70ED2A297C78290044984C /* SignUpViewController.swift */,
+				C3733E3529AE54F100F7DFC2 /* PolicyViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
