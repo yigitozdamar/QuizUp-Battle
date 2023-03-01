@@ -22,7 +22,7 @@ class HomeViewController: UIViewController, SETabItemProvider {
     var selectedTitle = ""
     var selectedCategory = ""
     var userID = ""
-    let databaseRef = Database.database(url: "https://quizupbattle-default-rtdb.europe-west1.firebasedatabase.app").reference()
+    let databaseRef = Database.database(url: "https://quizup-battle-default-rtdb.europe-west1.firebasedatabase.app").reference()
 
     
     override func viewDidLoad() {

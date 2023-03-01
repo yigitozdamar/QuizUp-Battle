@@ -84,7 +84,7 @@ extension RankingsViewController: UITableViewDataSource, UITableViewDelegate {
 extension RankingsViewController{
     
     func fetchFromDbAllTime() {
-        ref = Database.database(url: "https://quizupbattle-default-rtdb.europe-west1.firebasedatabase.app").reference().child("Users")
+        ref = Database.database(url: "https://quizup-battle-default-rtdb.europe-west1.firebasedatabase.app").reference().child("Users")
         
         ref?.observe(.value, with: { [weak self] snapshot in
             self?.users.removeAll()
@@ -113,7 +113,7 @@ extension RankingsViewController{
     }
     
     func fetchFromDbWeekly() {
-        ref = Database.database(url: "https://quizupbattle-default-rtdb.europe-west1.firebasedatabase.app").reference().child("Users")
+        ref = Database.database(url: "https://quizup-battle-default-rtdb.europe-west1.firebasedatabase.app").reference().child("Users")
         
         // Calculate the start and end timestamps for the past week
         let endTimestamp = Date().timeIntervalSince1970
