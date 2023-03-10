@@ -17,5 +17,7 @@ pod 'lottie-ios'
 pod 'FirebaseDatabase'
 pod 'Google-Mobile-Ads-SDK'
 pod 'Firebase/Analytics'
+pod 'FirebaseAnalytics'
+pod 'FirebaseCrashlytics'
 
 end

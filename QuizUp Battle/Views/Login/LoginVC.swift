@@ -23,26 +23,32 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
     }
     
     @IBAction func googleLogin(_ sender: UIButton) {
-//        GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
-//            guard error == nil else { return }
-//
-//            // If sign in succeeded, display the app's main content View.
-//            UserDefaults().set(signInResult?.user.profile?.name, forKey: "name")
-//            self.performSegue(withIdentifier: "toLaunchVC", sender: nil)
-//
-//        }
+        
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+        
+        // Create Google Sign In configuration object.
+        let config = GIDConfiguration(clientID: clientID)
+        GIDSignIn.sharedInstance.configuration = config
+        
         GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
             guard error == nil else {
                 print("Error signing in with Google: \(error!.localizedDescription)")
                 return
             }
             
-            let credential = GoogleAuthProvider.credential(withIDToken: signInResult.user.idToken,
-                                                           accessToken: signInResult.user.accessToken)
+            
+            
+            guard let idToken = signInResult?.user.idToken, let accessToken = signInResult?.user.accessToken else {
+                return
+            }
+            
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString,
+                                                           accessToken: accessToken.tokenString)
+            
             
             Auth.auth().signIn(with: credential) { authResult, error in
                 guard error == nil else {
@@ -55,13 +61,13 @@ class LoginVC: UIViewController {
                 self.performSegue(withIdentifier: "toLaunchVC", sender: nil)
             }
         }
-
-
-
+        
+        
+        
     }
     
     @IBAction func forgotPasswordBtnTapped(_ sender: UIButton) {
-       
+        
         performSegue(withIdentifier: "forgotPasswordVC", sender: nil)
     }
     
@@ -79,21 +85,21 @@ class LoginVC: UIViewController {
                         print("Wrong Password")
                     case AuthErrorCode.userDisabled.rawValue:
                         self?.alert(message: error.localizedDescription)
-
+                        
                         print("Wrong email")
                         
                     case AuthErrorCode.wrongPassword.rawValue:
                         self?.alert(message: error.localizedDescription)
-
+                        
                         print("account exists")
                         
                     case AuthErrorCode.invalidEmail.rawValue:
                         self?.alert(message: error.localizedDescription)
-
+                        
                         print("email already in use")
                     default:
                         self?.alert(message: error.localizedDescription)
-
+                        
                         print("error: \(error.localizedDescription)")
                 }
                 

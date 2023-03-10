@@ -5,9 +5,11 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.168436767996-qme3vcgnipekdjnpeiklbr279jrch724</string>
+				<string>com.googleusercontent.apps.59082453199-q662d367be1olene6ca9i5p64f8ct0s4</string>
 			</array>
 		</dict>
 		<dict>
@@ -17,34 +19,10 @@
 			<array/>
 		</dict>
 	</array>
-	<key>GIDClientID</key>
-	<string>$(GID_CLIENTID)</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Nunito-Medium.ttf</string>
-		<string>Nunito-Bold.ttf</string>
-	</array>
-	<key>UIApplicationSceneManifest</key>
-	<dict>
-		<key>UIApplicationSupportsMultipleScenes</key>
-		<false/>
-		<key>UISceneConfigurations</key>
-		<dict>
-			<key>UIWindowSceneSessionRoleApplication</key>
-			<array>
-				<dict>
-					<key>UISceneConfigurationName</key>
-					<string>Default Configuration</string>
-					<key>UISceneDelegateClassName</key>
-					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
-					<key>UISceneStoryboardFile</key>
-					<string>Main</string>
-				</dict>
-			</array>
-		</dict>
-	</dict>
 	<key>GADApplicationIdentifier</key>
 	<string>$(GAD_APPLICATIONID)</string>
+	<key>GIDClientID</key>
+	<string>$(GID_CLIENTID)</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>
@@ -248,5 +226,29 @@
 			<string>3qcr597p9d.skadnetwork</string>
 		</dict>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Nunito-Medium.ttf</string>
+		<string>Nunito-Bold.ttf</string>
+	</array>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict>
+			<key>UIWindowSceneSessionRoleApplication</key>
+			<array>
+				<dict>
+					<key>UISceneConfigurationName</key>
+					<string>Default Configuration</string>
+					<key>UISceneDelegateClassName</key>
+					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+					<key>UISceneStoryboardFile</key>
+					<string>Main</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
 </dict>
 </plist>

@@ -26,13 +26,36 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func googleSignUp(_ sender: UIButton) {
-        GIDSignIn.sharedInstance.signIn(withPresenting: self) { [weak self] signInResult, error in
-            guard error == nil else { return }
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+        
+        // Create Google Sign In configuration object.
+        let config = GIDConfiguration(clientID: clientID)
+        GIDSignIn.sharedInstance.configuration = config
+        
+        GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
+            guard error == nil else {
+                print("Error signing in with Google: \(error!.localizedDescription)")
+                return
+            }
             
-            // If sign in succeeded, display the app's main content View.
-            UserDefaults().set(signInResult?.user.profile?.name, forKey: "name")
-            self?.performSegue(withIdentifier: "toLaunchVCfromRegister", sender: nil)
+            guard let idToken = signInResult?.user.idToken, let accessToken = signInResult?.user.accessToken else {
+                return
+            }
             
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString,
+                                                           accessToken: accessToken.tokenString)
+            
+            
+            Auth.auth().signIn(with: credential) { authResult, error in
+                guard error == nil else {
+                    print("Error signing in with Firebase: \(error!.localizedDescription)")
+                    return
+                }
+                
+                // If sign in succeeded with Firebase, display the app's main content view.
+                UserDefaults.standard.set(signInResult?.user.profile?.name, forKey: "name")
+                self.performSegue(withIdentifier: "toLaunchVC", sender: nil)
+            }
         }
     }
     
