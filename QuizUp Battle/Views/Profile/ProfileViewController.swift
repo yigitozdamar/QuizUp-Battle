@@ -20,7 +20,7 @@ class ProfileViewController: UIViewController, SETabItemProvider, GADBannerViewD
     
     var gender: String = ""
     var userID = ""
-    let databaseRef = Database.database(url: "https://quizupbattle-default-rtdb.europe-west1.firebasedatabase.app").reference()
+    let databaseRef = Database.database(url: "https://quizup-battle-default-rtdb.europe-west1.firebasedatabase.app").reference()
     var bannerView: GADBannerView!
     
     var seTabBarItem: UITabBarItem? {
@@ -32,6 +32,7 @@ class ProfileViewController: UIViewController, SETabItemProvider, GADBannerViewD
         
         bannerView = GADBannerView(adSize: GADAdSizeBanner)
         addBannerViewToView(bannerView)
+        userNameTextField.text = UserDefaults().object(forKey: "name") as? String
         bannerView.adUnitID = SecretKey.adsKey
          bannerView.rootViewController = self
         bannerView.load(GADRequest())

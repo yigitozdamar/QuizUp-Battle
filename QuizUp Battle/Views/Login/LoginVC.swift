@@ -27,14 +27,37 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func googleLogin(_ sender: UIButton) {
+//        GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
+//            guard error == nil else { return }
+//
+//            // If sign in succeeded, display the app's main content View.
+//            UserDefaults().set(signInResult?.user.profile?.name, forKey: "name")
+//            self.performSegue(withIdentifier: "toLaunchVC", sender: nil)
+//
+//        }
         GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
-            guard error == nil else { return }
+            guard error == nil else {
+                print("Error signing in with Google: \(error!.localizedDescription)")
+                return
+            }
             
-            // If sign in succeeded, display the app's main content View.
-            UserDefaults().set(signInResult?.user.profile?.name, forKey: "name")
-            self.performSegue(withIdentifier: "toLaunchVC", sender: nil)
+            let credential = GoogleAuthProvider.credential(withIDToken: signInResult.user.idToken,
+                                                           accessToken: signInResult.user.accessToken)
             
+            Auth.auth().signIn(with: credential) { authResult, error in
+                guard error == nil else {
+                    print("Error signing in with Firebase: \(error!.localizedDescription)")
+                    return
+                }
+                
+                // If sign in succeeded with Firebase, display the app's main content view.
+                UserDefaults.standard.set(signInResult?.user.profile?.name, forKey: "name")
+                self.performSegue(withIdentifier: "toLaunchVC", sender: nil)
+            }
         }
+
+
+
     }
     
     @IBAction func forgotPasswordBtnTapped(_ sender: UIButton) {

@@ -98,7 +98,7 @@ class ResultGameViewController: UIViewController , GADFullScreenContentDelegate 
         }
         print("useriddd: \(self.userID)")
         
-        let databaseRef = Database.database(url: "https://quizupbattle-default-rtdb.europe-west1.firebasedatabase.app").reference()
+        let databaseRef = Database.database(url: "https://quizup-battle-default-rtdb.europe-west1.firebasedatabase.app").reference()
         let userRef = databaseRef.child("Users").child(self.userID)
         userRef.observeSingleEvent(of: .value) { snapshot in
             if snapshot.exists() {
