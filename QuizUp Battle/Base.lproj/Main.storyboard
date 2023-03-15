@@ -619,7 +619,7 @@
                                 <rect key="frame" x="0.0" y="48" width="414" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yry-0n-JHN">
-                                        <rect key="frame" x="172" y="2.5" width="70" height="35"/>
+                                        <rect key="frame" x="172.5" y="3" width="69.5" height="34.5"/>
                                         <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="25"/>
                                         <color key="textColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1171,7 +1171,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hc9-9n-odT">
-                                <rect key="frame" x="12" y="77" width="390" height="667"/>
+                                <rect key="frame" x="12" y="30" width="390" height="470"/>
                                 <subviews>
                                     <view contentMode="scaleAspectFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hVm-Br-e1k" customClass="LottieAnimationView" customModule="Lottie">
                                         <rect key="frame" x="60" y="24" width="270" height="0.0"/>
@@ -1786,6 +1786,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="resetBtn:" destination="kXE-LI-xgV" eventType="touchUpInside" id="21d-Vs-YUM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChL-BP-CVf">
                                 <rect key="frame" x="10" y="10" width="30" height="30"/>

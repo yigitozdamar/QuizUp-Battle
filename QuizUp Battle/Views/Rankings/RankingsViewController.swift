@@ -106,7 +106,7 @@ extension RankingsViewController{
                     self?.tableView.scrollToRow(at: (self?.indexPath)!, at: .middle, animated: true)
                     
                 } else {
-                    print("6 is not in the array")
+                    print("Hata")
                 }
             }
         })

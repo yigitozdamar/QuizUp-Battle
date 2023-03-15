@@ -39,8 +39,16 @@ class ForgotPasswordViewController: UIViewController {
             }
             
             print("Password reset email sent successfully")
-            self?.dismiss(animated: true)
+            
         }
+        let alert = UIAlertController(title: "E-MAIL SENT",
+                                      message: "You can check your inbox or junk mail folder.",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            self.dismiss(animated: true)
+        }))
+        self.present(alert, animated: true)
+        
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {

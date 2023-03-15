@@ -40,7 +40,7 @@ class ResultGameViewController: UIViewController , GADFullScreenContentDelegate 
         scoreCalculate()
         correctAnswerLabel.text = "\(result)"
         scoreLabel.text = "\(totalScore)"
-//        googleAds()
+        googleAds()
         
     }
     
@@ -49,11 +49,11 @@ class ResultGameViewController: UIViewController , GADFullScreenContentDelegate 
         saveToDb()
         //TODO: Google ads implementation
         
-//        if self.interstitial != nil {
-//            self.interstitial?.present(fromRootViewController: self)
-//        } else {
-//            print("Ad wasn't ready")
-//        }
+        if self.interstitial != nil {
+            self.interstitial?.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn't ready")
+        }
         
         let launchScreen = LaunchViewController()
         launchScreen.modalPresentationStyle = .fullScreen
@@ -65,11 +65,11 @@ class ResultGameViewController: UIViewController , GADFullScreenContentDelegate 
         saveToDb()
         //TODO: Google ads implementation
         
-//        if self.interstitial != nil {
-//            self.interstitial?.present(fromRootViewController: self)
-//        } else {
-//            print("Ad wasn't ready")
-//        }
+        if self.interstitial != nil {
+            self.interstitial?.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn't ready")
+        }
         
         
         self.performSegue(withIdentifier: "toSettingsVC", sender: self)
