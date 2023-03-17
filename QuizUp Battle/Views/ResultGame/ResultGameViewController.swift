@@ -96,7 +96,7 @@ class ResultGameViewController: UIViewController , GADFullScreenContentDelegate 
         } else {
             self.userID = GIDSignIn.sharedInstance.currentUser?.userID ?? ""
         }
-        print("useriddd: \(self.userID)")
+        
         
         let databaseRef = Database.database(url: "https://quizup-battle-default-rtdb.europe-west1.firebasedatabase.app").reference()
         let userRef = databaseRef.child("Users").child(self.userID)

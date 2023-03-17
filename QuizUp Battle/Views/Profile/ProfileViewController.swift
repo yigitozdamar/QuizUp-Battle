@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController, SETabItemProvider, GADBannerViewD
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var avatarPic: UIButton!
     
+   
     var gender: String = ""
     var userID = ""
     let databaseRef = Database.database(url: "https://quizup-battle-default-rtdb.europe-west1.firebasedatabase.app").reference()
@@ -30,15 +31,15 @@ class ProfileViewController: UIViewController, SETabItemProvider, GADBannerViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        userNameTextField.text = UserDefaults().object(forKey: "name") as? String
         bannerView = GADBannerView(adSize: GADAdSizeBanner)
         addBannerViewToView(bannerView)
-        userNameTextField.text = UserDefaults().object(forKey: "name") as? String
         bannerView.adUnitID = SecretKey.adsKey
-         bannerView.rootViewController = self
+        bannerView.rootViewController = self
         bannerView.load(GADRequest())
         bannerView.delegate = self
         score()
-      
+        bannerViewDidReceiveAd(bannerView)
     }
     
     func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {

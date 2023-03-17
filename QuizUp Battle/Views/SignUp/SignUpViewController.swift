@@ -38,6 +38,8 @@ class SignUpViewController: UIViewController {
                 return
             }
             
+            
+            
             guard let idToken = signInResult?.user.idToken, let accessToken = signInResult?.user.accessToken else {
                 return
             }
@@ -54,7 +56,7 @@ class SignUpViewController: UIViewController {
                 
                 // If sign in succeeded with Firebase, display the app's main content view.
                 UserDefaults.standard.set(signInResult?.user.profile?.name, forKey: "name")
-                self.performSegue(withIdentifier: "toLaunchVC", sender: nil)
+                self.performSegue(withIdentifier: "toLaunchVCfromRegister", sender: nil)
             }
         }
     }
@@ -111,14 +113,14 @@ class SignUpViewController: UIViewController {
     }
     
     func sameEmail(){
-        let ac = UIAlertController(title: "Kayıtlı Email", message: "Bu email zaten kayıtlı", preferredStyle: .alert)
+        let ac = UIAlertController(title: "Email already exists", message: "You can't sign up with existing email address", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         present(ac, animated: true)
     }
     
     
     func errorMessage(){
-        let ac = UIAlertController(title: "Geçersiz E-Mail", message: "Geçerli bir mail giriniz!", preferredStyle: .alert)
+        let ac = UIAlertController(title: "Invalid E-Mail", message: "Please enter a valid email!", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         present(ac, animated: true)
     }
