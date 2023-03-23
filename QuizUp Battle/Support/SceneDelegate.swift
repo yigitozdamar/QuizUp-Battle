@@ -25,11 +25,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             if error != nil || user == nil {
                 // Show the app's signed-out state.
                 let vc = storyboard.instantiateViewController(withIdentifier: "OnboardingVC") as! OnboardingViewController
+                self.window?.overrideUserInterfaceStyle = .light
                 self.window?.rootViewController = vc
             } else {
                 // Show the app's signed-in state.
                 let vc = storyboard.instantiateViewController(withIdentifier: "launchVC") as! LaunchViewController
+                self.window?.overrideUserInterfaceStyle = .light
                 self.window?.rootViewController = vc
+                
             }
         }
 

@@ -12,7 +12,7 @@
 		7F19EB4B29A63112000AD362 /* Progressbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F19EB4A29A63111000AD362 /* Progressbar.swift */; };
 		7F347B5529957CDF001D4B35 /* ResultGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F347B5429957CDF001D4B35 /* ResultGameViewController.swift */; };
 		7F347B6029982653001D4B35 /* cup.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F347B5F29982653001D4B35 /* cup.json */; };
-		7F48B24A29AF4A78001BED58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F48B24929AF4A78001BED58 /* GoogleService-Info.plist */; };
+		7F666C3D29CC9FA200BDDAB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F666C3C29CC9FA200BDDAB5 /* GoogleService-Info.plist */; };
 		7F70ECEB297AAB140044984C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70ECEA297AAB140044984C /* AppDelegate.swift */; };
 		7F70ECED297AAB140044984C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70ECEC297AAB140044984C /* SceneDelegate.swift */; };
 		7F70ECEF297AAB140044984C /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F70ECEE297AAB140044984C /* OnboardingViewController.swift */; };
@@ -74,9 +74,10 @@
 		7F016C1F29AD546200263600 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		7F016C2129AD56D300263600 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		7F19EB4A29A63111000AD362 /* Progressbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Progressbar.swift; sourceTree = "<group>"; };
+		7F2384A529CC95BB00DE8345 /* QuizUp Battle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "QuizUp Battle.entitlements"; sourceTree = "<group>"; };
 		7F347B5429957CDF001D4B35 /* ResultGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultGameViewController.swift; sourceTree = "<group>"; };
 		7F347B5F29982653001D4B35 /* cup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cup.json; sourceTree = "<group>"; };
-		7F48B24929AF4A78001BED58 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7F666C3C29CC9FA200BDDAB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7F70ECE7297AAB140044984C /* QuizUp Battle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QuizUp Battle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F70ECEA297AAB140044984C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F70ECEC297AAB140044984C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -250,6 +251,7 @@
 		7F70ECE9297AAB140044984C /* QuizUp Battle */ = {
 			isa = PBXGroup;
 			children = (
+				7F2384A529CC95BB00DE8345 /* QuizUp Battle.entitlements */,
 				7F016C1E29AD542900263600 /* Secrets */,
 				7F07397029884DF700C183C9 /* Assets */,
 				7FF74E04298596200067C3D9 /* Managers */,
@@ -259,7 +261,7 @@
 				7F70ED28297AB2840044984C /* Fonts */,
 				7F284D43297F18C2001A6F30 /* Support */,
 				7F70ECF0297AAB140044984C /* Main.storyboard */,
-				7F48B24929AF4A78001BED58 /* GoogleService-Info.plist */,
+				7F666C3C29CC9FA200BDDAB5 /* GoogleService-Info.plist */,
 				7F70ECF8297AAB160044984C /* Info.plist */,
 				C3287786299987D100B8710F /* TODOS.md */,
 			);
@@ -518,8 +520,8 @@
 				7F70ED27297AB27B0044984C /* README.txt in Resources */,
 				7F70ED20297AB27B0044984C /* Nunito-SemiBoldItalic.ttf in Resources */,
 				7F70ED19297AB27B0044984C /* Nunito-Light.ttf in Resources */,
-				7F48B24A29AF4A78001BED58 /* GoogleService-Info.plist in Resources */,
 				7F70ECF4297AAB160044984C /* Assets.xcassets in Resources */,
+				7F666C3D29CC9FA200BDDAB5 /* GoogleService-Info.plist in Resources */,
 				7F70ED24297AB27B0044984C /* Nunito-MediumItalic.ttf in Resources */,
 				7F70ED26297AB27B0044984C /* Nunito-Italic-VariableFont_wght.ttf in Resources */,
 				7F70ED1B297AB27B0044984C /* Nunito-SemiBold.ttf in Resources */,
@@ -574,7 +576,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		8928B4A38A0A6E63E38F74B1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -785,10 +787,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = "QuizUp Battle/QuizUp Battle.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = T8DT652963;
+				DEVELOPMENT_TEAM = 9QBXH4CD4D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "QuizUp Battle/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "QuizUp Battle";
@@ -803,8 +807,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yigitozdamar.QuizUp-Battle";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yigitozdamar.quizupbattle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -821,9 +826,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = "QuizUp Battle/QuizUp Battle.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = T8DT652963;
+				DEVELOPMENT_TEAM = 9QBXH4CD4D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "QuizUp Battle/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "QuizUp Battle";
@@ -838,8 +845,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yigitozdamar.QuizUp-Battle";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yigitozdamar.quizupbattle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
