@@ -21,7 +21,6 @@ class HomeViewController: UIViewController, SETabItemProvider {
     var categoryList: [Category] = []
     var selectedTitle = ""
     var selectedCategory = ""
-    var userID = ""
     let databaseRef = Database.database(url: "https://quizup-battle-default-rtdb.europe-west1.firebasedatabase.app").reference()
 
     
@@ -60,22 +59,22 @@ class HomeViewController: UIViewController, SETabItemProvider {
     func score() {
         
         if Auth.auth().currentUser?.uid != nil {
-            self.userID = Auth.auth().currentUser?.uid ?? ""
-        } else {
-            self.userID = GIDSignIn.sharedInstance.currentUser?.userID ?? ""
+            guard let userID = Auth.auth().currentUser?.uid else { return }
+            let userRef = databaseRef.child("Users").child(userID)
+            userRef.observeSingleEvent(of: .value) { snapshot, _  in
+                if snapshot.exists() {
+                    if let userData = snapshot.value as? [String: Any], let name = userData["User"] as? String{
+                        
+                        UserDefaults.standard.set(name, forKey: "name")
+                    }
+                } else {
+                    print("hata var")
+                }
+            }
+          
         }
         
-        let userRef = databaseRef.child("Users").child(self.userID)
-        userRef.observeSingleEvent(of: .value) { snapshot, _  in
-            if snapshot.exists() {
-                if let userData = snapshot.value as? [String: Any], let name = userData["User"] as? String{
-                    
-                    UserDefaults.standard.set(name, forKey: "name")
-                }
-            } else {
-                print("hata var")
-            }
-        }
+     
     }
     
 }

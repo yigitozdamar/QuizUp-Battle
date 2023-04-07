@@ -33,7 +33,7 @@ class LaunchViewController: UIViewController{
                 let tabbarVC = TabbarViewController()
                 tabbarVC.categoryList = self.filteredCategories
                 tabbarVC.modalPresentationStyle = .fullScreen
-                self.present(tabbarVC, animated: true, completion: nil)
+                self.present(tabbarVC, animated: true)
             }
         }else{
             self.animationView.play()
@@ -51,7 +51,7 @@ class LaunchViewController: UIViewController{
                     let tabbarViewController = TabbarViewController()
                     tabbarViewController.categoryList = self.filteredCategories
                     tabbarViewController.modalPresentationStyle = .fullScreen
-                    self.present(tabbarViewController, animated: true, completion: nil)
+                    self.present(tabbarViewController, animated: true)
                     
                     self.animationView.stop()
                 }

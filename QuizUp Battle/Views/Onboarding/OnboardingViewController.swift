@@ -27,7 +27,7 @@ class OnboardingViewController: UIViewController {
                 if user != nil{
                     // User is signed in.
                     print("User is not logged out.")
-                    self.performSegue(withIdentifier: "launchSC", sender: nil)
+                    self.performSegue(withIdentifier: "launchVC", sender: nil)
                 } else {
                     // No user is signed in.
                     print("No user is signed in.")
@@ -45,6 +45,13 @@ class OnboardingViewController: UIViewController {
         performSegue(withIdentifier: "login", sender: nil)
     }
     
+    @IBAction func continueWtihoutLogin(_ sender: Any) {
+        
+        Auth.auth().signInAnonymously { authDataResult, error in
+            UserDefaults().set(authDataResult?.user.displayName, forKey: "name")
+            self.performSegue(withIdentifier: "launchVC", sender: nil)
+        }
+    }
     
 }
 

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import GoogleSignIn
 import FirebaseCore
 import FirebaseAuth
 
@@ -23,42 +22,6 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    }
-    
-    @IBAction func googleSignUp(_ sender: UIButton) {
-        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
-        
-        // Create Google Sign In configuration object.
-        let config = GIDConfiguration(clientID: clientID)
-        GIDSignIn.sharedInstance.configuration = config
-        
-        GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
-            guard error == nil else {
-                print("Error signing in with Google: \(error!.localizedDescription)")
-                return
-            }
-            
-            
-            
-            guard let idToken = signInResult?.user.idToken, let accessToken = signInResult?.user.accessToken else {
-                return
-            }
-            
-            let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString,
-                                                           accessToken: accessToken.tokenString)
-            
-            
-            Auth.auth().signIn(with: credential) { authResult, error in
-                guard error == nil else {
-                    print("Error signing in with Firebase: \(error!.localizedDescription)")
-                    return
-                }
-                
-                // If sign in succeeded with Firebase, display the app's main content view.
-                UserDefaults.standard.set(signInResult?.user.profile?.name, forKey: "name")
-                self.performSegue(withIdentifier: "toLaunchVCfromRegister", sender: nil)
-            }
-        }
     }
     
     @IBAction func policyBtnTapped(_ sender: UIButton) {

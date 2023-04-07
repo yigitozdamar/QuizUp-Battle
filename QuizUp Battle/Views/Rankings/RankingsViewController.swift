@@ -106,7 +106,7 @@ extension RankingsViewController{
                     self?.tableView.scrollToRow(at: (self?.indexPath)!, at: .middle, animated: true)
                     
                 } else {
-                    print("Hata")
+                    print("Hata Fetch db alltime")
                 }
             }
         })

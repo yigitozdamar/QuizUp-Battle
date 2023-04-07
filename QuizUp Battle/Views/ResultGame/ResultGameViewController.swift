@@ -16,8 +16,6 @@ class ResultGameViewController: UIViewController , GADFullScreenContentDelegate 
     
     var ref: DatabaseReference!
     var user = UserDefaults().object(forKey: "name") as? String
-    let googleUser: GIDGoogleUser? = GIDSignIn.sharedInstance.currentUser
-    var userID = ""
     
     @IBOutlet var cupAnimationView: LottieAnimationView!
     
@@ -92,44 +90,43 @@ class ResultGameViewController: UIViewController , GADFullScreenContentDelegate 
     func saveToDb() {
         
         if Auth.auth().currentUser?.uid != nil {
-            self.userID = Auth.auth().currentUser?.uid ?? ""
-        } else {
-            self.userID = GIDSignIn.sharedInstance.currentUser?.userID ?? ""
-        }
-        
-        
-        let databaseRef = Database.database(url: "https://quizup-battle-default-rtdb.europe-west1.firebasedatabase.app").reference()
-        let userRef = databaseRef.child("Users").child(self.userID)
-        userRef.observeSingleEvent(of: .value) { snapshot in
-            if snapshot.exists() {
-                if let userData = snapshot.value as? [String: Any], let totalScore = userData["TotalScore"] as? Int{
-                    // User already exists, update TotalScore field
+            guard let userID = Auth.auth().currentUser?.uid else { return }
+            let databaseRef = Database.database(url: "https://quizup-battle-default-rtdb.europe-west1.firebasedatabase.app").reference()
+            let userRef = databaseRef.child("Users").child(userID)
+            userRef.observeSingleEvent(of: .value) { snapshot in
+                if snapshot.exists() {
+                    if let userData = snapshot.value as? [String: Any], let totalScore = userData["TotalScore"] as? Int{
+                        // User already exists, update TotalScore field
+                        
+                        let childUpdates = ["TotalScore": (totalScore + self.totalScore), "time": Date().timeIntervalSince1970 ]
+                        userRef.updateChildValues(childUpdates) { error, ref in
+                            if let error = error {
+                                print("Error updating user data: \(error.localizedDescription)")
+                            } else {
+                                print("User data updated successfully.")
+                            }
+                        }
+                    }
                     
-                    let childUpdates = ["TotalScore": (totalScore + self.totalScore), "time": Date().timeIntervalSince1970 ]
-                    userRef.updateChildValues(childUpdates) { error, ref in
+                } else {
+                    // User does not exist, create new user entry with userID as key
+                    let dict : [String: Any] = ["User": self.user, "TotalScore": self.totalScore, "time": Date().timeIntervalSince1970, "gender": "male"]
+                    userRef.setValue(dict) { error, ref in
                         if let error = error {
-                            print("Error updating user data: \(error.localizedDescription)")
+                            print("Error adding new user: \(error.localizedDescription)")
                         } else {
-                            print("User data updated successfully.")
+                            print("New user added successfully.")
                         }
                     }
                 }
-                
-            } else {
-                // User does not exist, create new user entry with userID as key
-                let dict : [String: Any] = ["User": self.user, "TotalScore": self.totalScore, "time": Date().timeIntervalSince1970, "gender": "male"]
-                userRef.setValue(dict) { error, ref in
-                    if let error = error {
-                        print("Error adding new user: \(error.localizedDescription)")
-                    } else {
-                        print("New user added successfully.")
-                    }
-                }
+                UserDefaults.standard.set(self.totalScore, forKey: "totalScore")
+                print("Saved to FB")
+                print("Snapshot value: \(snapshot.value ?? "nil")")
             }
-            UserDefaults.standard.set(self.totalScore, forKey: "totalScore")
-            print("Saved to FB")
-            print("Snapshot value: \(snapshot.value ?? "nil")")
         }
+        
+        
+       
     }
     
     func googleAds() {
