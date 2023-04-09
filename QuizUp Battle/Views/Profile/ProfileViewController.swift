@@ -56,7 +56,7 @@ class ProfileViewController: UIViewController, SETabItemProvider, GADBannerViewD
                              toItem: bottomLayoutGuide,
                              attribute: .top,
                              multiplier: 1,
-                             constant: view.bounds.height > 667 ? -30 : 0),
+                             constant: view.bounds.height > 667 ? -53 : -23),
           NSLayoutConstraint(item: bannerView,
                              attribute: .centerX,
                              relatedBy: .equal,
