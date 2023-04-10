@@ -9,7 +9,6 @@ import UIKit
 import Lottie
 import FirebaseAuth
 import FirebaseDatabase
-import GoogleSignIn
 import GoogleMobileAds
 
 class ResultGameViewController: UIViewController , GADFullScreenContentDelegate {
@@ -142,7 +141,23 @@ class ResultGameViewController: UIViewController , GADFullScreenContentDelegate 
             interstitial?.fullScreenContentDelegate = self
         }
         )
+        
+        /// Tells the delegate that the ad failed to present full screen content.
+        func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+            print("Ad did fail to present full screen content.")
+        }
+        
+        /// Tells the delegate that the ad will present full screen content.
+        func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+            print("Ad will present full screen content.")
+        }
+        
+        /// Tells the delegate that the ad dismissed full screen content.
+        func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+            print("Ad did dismiss full screen content.")
+        }
     }
+ 
 }
 
 

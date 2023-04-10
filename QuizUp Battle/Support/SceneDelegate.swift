@@ -8,7 +8,6 @@
 import UIKit
 import FirebaseCore
 import FirebaseAuth
-import GoogleSignIn
 import SETabView
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {

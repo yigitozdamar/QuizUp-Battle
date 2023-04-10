@@ -7,7 +7,6 @@
 
 import UIKit
 import FirebaseAuth
-import GoogleSignIn
 import FirebaseDatabase
 import SETabView
 import FirebaseCore

@@ -8,7 +8,6 @@
 import UIKit
 import SETabView
 import FirebaseAuth
-import GoogleSignIn
 import FirebaseDatabase
 import GoogleMobileAds
 
@@ -83,7 +82,6 @@ class ProfileViewController: UIViewController, SETabItemProvider, GADBannerViewD
         UserDefaults.standard.removeObject(forKey: "name")
         do{
             try Auth.auth().signOut()
-            GIDSignIn.sharedInstance.signOut()
             performSegue(withIdentifier: "toLoginVC", sender: nil)
         }catch{
             print("logout hata")

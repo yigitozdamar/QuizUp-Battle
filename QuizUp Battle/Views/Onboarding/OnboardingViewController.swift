@@ -14,12 +14,14 @@ class OnboardingViewController: UIViewController {
     
     @IBOutlet weak var pageControl: UIPageControl!
     
+    @IBOutlet weak var continueButton: UIButton!
     
     var slides: [OnboardingSlide] = []
     var currentPage = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        continueButton.titleLabel?.textAlignment = .center
         
         slides = [OnboardingSlide(image: UIImage(named: "illustration")),
                   OnboardingSlide(image: UIImage(named: "illustration1"))]
